@@ -6,10 +6,15 @@
   <title>Das wirklich echt funktionierende Tool</title>
   <meta charset="utf-8">
   <style>
+
+
+
     .item1 {grid-area: BlockSelection;}
     .item2 {grid-area: blocklyDiv;}
     .item3 {grid-area: HTMLPage;}
     .item4 {grid-area: HTMLCode;}
+
+
 
     .grid-container{
       display: grid;
@@ -18,6 +23,8 @@
         'BlockSelection blocklyDiv HTMLCode';
       gap: 10px;
     }
+
+
 
     #blocklyDiv {
       height: 100vh;
@@ -66,21 +73,33 @@
 
   </style>
 
+  <!-- Laden der benötigten Blockly-Module -->
+
   <script src="node_modules/blockly/blockly_compressed.js"></script>
   <script src="node_modules/blockly/blocks_compressed.js"></script>
+
+  <!-- Laden der benötigten Blockly-Sprachfiles für deutsche Sprache -->
+
   <script src="node_modules/blockly/msg/de.js"></script>
 
 </head>
 
 <body>
 
+<!-- Laden der benötigten Javascript-Files aus dem Unterverzeichnis js -->
+
 <script src="js/html_blocks.js"></script>
 <script src="js/html_generator.js"></script>
 <script src="js/main.js"></script>
 
+<!-- Leiste zur Auswahl von Leveln -->
+
 <div id="LevelSelectionDiv">
+  <!-- Buttons für die verschiedenen Level mit Weiterleitung auf den zugehörigen HTML-File -->
   <button class="levelButton" onclick="location.href='level1.html'">Level 1</button>
 </div>
+
+<!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
 
 <div class="grid-container">
   <div class="item1"><div id="BlockSelectionDiv"></div></div>
@@ -89,11 +108,24 @@
   <div class="item4"><div id="HTMLCodeDiv"></div></div>
 </div>
 
-<script>const workspace = Blockly.inject('blocklyDiv', {toolbox:toolbox});
+<!-- Beginn Skript-Block -->
+
+<script>
+
+ // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
+  const workspace = Blockly.inject('blocklyDiv', {toolbox:toolbox});
+
+  /* Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert und dann der HTMLCodeDiv also der
+  Code-Anzeige den bisher in den Blöcken verwendeten Code zuweist
+   */
+
   function update(event){
     var code = HtmlGenerator.workspaceToCode(workspace);
     document.getElementById('HTMLCodeDiv').innerText = code;
   }
+
+  //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
+
 workspace.addChangeListener(update);
 </script>
 

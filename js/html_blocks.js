@@ -1,6 +1,10 @@
 "use script"
 
+//Speziell definierte HTML-Blöcke und ihre Eigenschaften
+
 const htmlBlocks = [
+
+  //HTML-Page Block
 
   {
     "type": "html_page",
@@ -22,6 +26,8 @@ const htmlBlocks = [
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   }
 ]
+
+//Initialisierung der oben definierten Blöcke
 
 for (var iBlock in htmlBlocks) {
   function makeBlock(json) {
