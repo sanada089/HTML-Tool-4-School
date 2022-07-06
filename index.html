@@ -122,11 +122,15 @@
   function update(event){
     var code = HtmlGenerator.workspaceToCode(workspace);
     document.getElementById('HTMLCodeDiv').innerText = code;
+
   }
+
+
 
   //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
 
 workspace.addChangeListener(update);
+
 </script>
 
 </body>

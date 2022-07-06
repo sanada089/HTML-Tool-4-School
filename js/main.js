@@ -9,6 +9,22 @@ var toolbox = {
       "kind": "block",
       "type": "html_page",
     },
+    {
+      "kind": "block",
+      "type": "head",
+    },
+    {
+      "kind": "block",
+      "type": "body",
+    },
+    {
+      "kind": "block",
+      "type": "title",
+    },
+    {
+      "kind": "block",
+      "type": "string",
+    },
   ]
 }
 
