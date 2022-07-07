@@ -5,33 +5,31 @@ const HtmlGenerator = new Blockly.Generator('HTML');
 
 //Code-Definition für die verschiedenen Blöcke
 
+
+/*
 HtmlGenerator.init = function (workspace) {};
 HtmlGenerator.finish = function (code) {
   return code;
 };
+
 HtmlGenerator.scrub_ = function (block, code) {
   var nextBlock = block.nextConnection && block.nextConnection.targetBlock();
   var nextCode = HtmlGenerator.blockToCode(nextBlock);
   return code + nextCode;
 };
+*/
+
 
 HtmlGenerator["html_page"] = function (block) {
   var statements_head = HtmlGenerator.statementToCode(block, "head");
   var statements_body = HtmlGenerator.statementToCode(block, "body");
 
   var code =
-    '<!DOCTYPE HTML>\n<html>\n<head>\n  <meta charset="utf-8">\n' +
+    '<!DOCTYPE HTML>\n<html>\n<meta charset="utf-8">\n' +
     statements_head +
-    "</head>\n\n<body>\n" +
     statements_body +
-    "</body>\n</html>\n";
+    "\n</html>\n";
 
-  return code;
-};
-
-HtmlGenerator["body"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "content");
-  var code = "<body>\n" + statements_content + "</body>\n";
   return code;
 };
 
@@ -39,6 +37,12 @@ HtmlGenerator["head"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "content");
   var code =
     '<head>\n  <meta charset="utf-8">\n' + statements_content + "</head>\n";
+  return code;
+};
+
+HtmlGenerator["body"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "content");
+  var code = "<body>\n" + statements_content + "</body>\n";
   return code;
 };
 
