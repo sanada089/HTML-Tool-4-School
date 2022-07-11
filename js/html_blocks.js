@@ -16,7 +16,7 @@ const htmlBlocks = [
       },
       {
         "type": "input_statement",
-        "name": "head",
+        "name": "HEAD",
         "check": "head"
       },
       {
@@ -24,7 +24,7 @@ const htmlBlocks = [
       },
       {
         "type": "input_statement",
-        "name": "body",
+        "name": "BODY",
         "check": "body"
       }
     ],
@@ -40,7 +40,7 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "input_statement",
-        "name": "content",
+        "name": "CONTENT",
         "check": "title"
       }
     ],
@@ -57,7 +57,7 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "input_statement",
-        "name": "content",
+        "name": "CONTENT",
         "check": "title"
       }
     ],
@@ -74,7 +74,7 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "input_statement",
-        "name": "content",
+        "name": "CONTENT",
         "check": "String"
       }
     ],
@@ -91,7 +91,7 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "field_input",
-        "name": "content",
+        "name": "CONTENT",
         "text": ""
       }
     ],
@@ -99,7 +99,53 @@ const htmlBlocks = [
     "nextStatement": null,
     "colour": 0,
     "tooltip": "",
-    "helpUrl": "http://www.w3schools.com/tags/tag_html.asp"
+    "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
+  },
+  {
+    type: "headline",
+    message0: "Überschrift %1 %2 %3",
+    args0: [
+      {
+        type: "field_dropdown",
+        name: "LEVEL",
+        options: [
+          ["Größe 6", "h1"],
+          ["Größe 5", "h2"],
+          ["Größe 4", "h2"],
+          ["Größe 3", "h4"],
+          ["Größe 2", "h5"],
+          ["Größe 1", "h6"]
+        ]
+      },
+      {
+        type: "input_dummy"
+      },
+      {
+        type: "input_statement",
+        name: "content"
+      }
+    ],
+    previousStatement: null,
+    nextStatement: null,
+    colour: 90,
+    tooltip: "",
+    helpUrl: "https://www.w3schools.com/tags/tag_html.asp"
+  },
+  {
+    type: "paragraph",
+    message0: "Absatz %1",
+    args0: [
+      {
+        type: "input_statement",
+        name: "CONTENT",
+        check: "html"
+      }
+    ],
+    previousStatement: "html",
+    nextStatement: "html",
+    colour: 90,
+    tooltip: "",
+    helpUrl: "https://www.w3schools.com/tags/tag_html.asp"
   },
 ]
 

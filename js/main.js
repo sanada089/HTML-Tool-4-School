@@ -25,6 +25,14 @@ var toolbox = {
       "kind": "block",
       "type": "string",
     },
+    {
+      "kind": "block",
+      "type": "headline",
+    },
+    {
+      "kind": "block",
+      "type": "paragraph",
+    },
   ]
 }
 
