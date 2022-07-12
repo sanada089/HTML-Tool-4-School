@@ -6,7 +6,7 @@ const HtmlGenerator = new Blockly.Generator('HTML');
 //Code-Definition für die verschiedenen Blöcke
 
 
-/*
+
 HtmlGenerator.init = function (workspace) {};
 HtmlGenerator.finish = function (code) {
   return code;
@@ -17,7 +17,7 @@ HtmlGenerator.scrub_ = function (block, code) {
   var nextCode = HtmlGenerator.blockToCode(nextBlock);
   return code + nextCode;
 };
-*/
+
 
 
 HtmlGenerator["html_page"] = function (block) {
@@ -35,8 +35,7 @@ HtmlGenerator["html_page"] = function (block) {
 
 HtmlGenerator["head"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code =
-    '<head>\n' + statements_content + "</head>\n";
+  var code = "<head>\n" + statements_content + "</head>\n";
   return code;
 };
 
