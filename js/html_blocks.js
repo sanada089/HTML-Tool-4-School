@@ -41,12 +41,14 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": "title"
+        "check": ["title",
+                  "paragraph",
+                  "string",
+                  "headline"],
       }
     ],
     "inputsInline": false,
-    "previousStatement": null,
-    "nextStatement": null,
+    "previousStatement": "head",
     "colour": 60,
     "tooltip": "",
     "helpUrl": ""
@@ -58,12 +60,14 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": "title"
+        "check": ["title",
+          "paragraph",
+          "string",
+          "headline"],
       }
     ],
     "inputsInline": false,
-    "previousStatement": null,
-    "nextStatement": null,
+    "previousStatement": "body",
     "colour": 60,
     "tooltip": "",
     "helpUrl": ""
@@ -75,11 +79,11 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": "String"
+        "check": "string"
       }
     ],
     "inputsInline": false,
-    "previousStatement": null,
+    "previousStatement": "title",
     "nextStatement": null,
     "colour": 0,
     "tooltip": "",
@@ -95,20 +99,20 @@ const htmlBlocks = [
         "text": ""
       }
     ],
-    "previousStatement": null,
+    "previousStatement": "string",
     "nextStatement": null,
     "colour": 0,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
   {
-    type: "headline",
-    message0: "Überschrift %1 %2 %3",
-    args0: [
+    "type": "headline",
+    "message0": "Überschrift %1 %2 %3",
+    "args0": [
       {
-        type: "field_dropdown",
-        name: "LEVEL",
-        options: [
+        "type": "field_dropdown",
+        "name": "LEVEL",
+        "options": [
           ["Größe 6", "h1"],
           ["Größe 5", "h2"],
           ["Größe 4", "h2"],
@@ -118,34 +122,36 @@ const htmlBlocks = [
         ]
       },
       {
-        type: "input_dummy"
+        "type": "input_dummy"
       },
       {
-        type: "input_statement",
-        name: "content"
+        "type": "input_statement",
+        "name": "CONTENT",
+        "check": "string"
       }
     ],
-    previousStatement: null,
-    nextStatement: null,
-    colour: 90,
-    tooltip: "",
-    helpUrl: "https://www.w3schools.com/tags/tag_html.asp"
+    "previousStatement": "headline",
+    "nextStatement": null,
+    "colour": 90,
+    "tooltip": "",
+    "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
   {
-    type: "paragraph",
-    message0: "Absatz %1",
-    args0: [
+    "type": "paragraph",
+    "message0": "Absatz %1",
+    "args0": [
       {
-        type: "input_statement",
-        name: "CONTENT",
-        check: "html"
+        "type": "input_statement",
+        "name": "CONTENT",
+        "check": ["string",
+                  "headline"]
       }
     ],
-    previousStatement: "html",
-    nextStatement: "html",
-    colour: 90,
-    tooltip: "",
-    helpUrl: "https://www.w3schools.com/tags/tag_html.asp"
+    "previousStatement": "paragraph",
+    "nextStatement": null,
+    "colour": 90,
+    "tooltip": "",
+    "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
 ]
 
