@@ -57,7 +57,30 @@ var toolbox = {
       "kind": "block",
       "type": "image",
     },
-
+    {
+      "kind": "block",
+      "type": "specialtext",
+    },
+    {
+      "kind": "block",
+      "type": "link",
+    },
+    {
+      "kind": "block",
+      "type": "linkdescription",
+    },
+    {
+      "kind": "block",
+      "type": "table",
+    },
+    {
+      "kind": "block",
+      "type": "tablerow",
+    },
+    {
+      "kind": "block",
+      "type": "tabledata",
+    },
   ]
 }
 

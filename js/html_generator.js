@@ -123,7 +123,57 @@ HtmlGenerator["style"] = function (block) {
   var font = block.getFieldValue("FONT");
   var backgroundcolor = block.getFieldValue("BACKGROUND");
   var textcolor = block.getFieldValue("TEXTCOLOR");
-
   var code = "'font-family: " + font + ";background-color: " + backgroundcolor + ";color: " + textcolor + ";'";
   return code;
+};
+
+HtmlGenerator["specialtext"] = function(block) {
+  var text_specialtext = block.getFieldValue('CONTENT');
+  var dropdown_schriftart = block.getFieldValue("FONT");
+  var dropdown_schriftgroesse = block.getFieldValue("FONTSIZE");
+  var colour_name = block.getFieldValue("TEXTCOLOR");
+  var code = "<span style = 'color: " + colour_name + "'" +
+    "'font-family: " + dropdown_schriftart + "'" +
+    "'font-size: " + dropdown_schriftgroesse + "'>" +
+    text_specialtext +
+    "</span>\n";
+  return code;
+};
+
+HtmlGenerator["link"] = function(block) {
+  var text_link = block.getFieldValue("LINK");
+  var code = "<a href= '" + text_link + "'>"
+    + text_link +
+    "</a>\n";
+  return code;
+};
+
+
+HtmlGenerator["linkdescription"] = function(block) {
+  var text_link = block.getFieldValue("LINK");
+  var text_linkdescription = block.getFieldValue("LINKDESCRIPTION");
+  var code = "<a href= '" + text_link + "'>"
+    + text_linkdescription +
+    "</a>\n";
+  return code;
+};
+
+HtmlGenerator["table"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  var code = "<table>" + statements_content + "</table>\n";
+  return code;
+};
+
+HtmlGenerator["tablerow"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  var code = "<tr>" + statements_content + "</tr>\n";
+  return code;
+};
+
+HtmlGenerator["tabledata"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  var code = "<td>" + statements_content + "</td>\n";
+  return code;
 }
+
+

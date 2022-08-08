@@ -142,7 +142,18 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "string",
-    "nextStatement": null,
+    "nextStatement": [
+      "string",
+      "headline",
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+      "orderedlist"
+    ],
     "colour": 0,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
@@ -368,6 +379,202 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
+
+
+  {
+    "type": "specialtext",
+    "message0": "Specialtext %1 %2 Schriftart %3 %4 Schriftgröße %5 %6 Textfarbe %7",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "CONTENT",
+        "text": ""
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "FONT",
+        "options": [
+          ["Arial", "Arial"],
+          ["Brush Script MT", "Brush Script MT"],
+          ["Courier New", "Courier New"],
+          ["Garamond", "Garamond"],
+          ["Georgia", "Georgia"],
+          ["Helvetica", "Helvetica"],
+          ["Tahoma", "Tahoma"],
+          ["Times New Roman", "Times New Roman"],
+          ["Trebuchet MS", "Trebuchet MS"],
+          ["Verdana", "Verdana"]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "FONTSIZE",
+        "options": [
+          ["8", "8"],
+          ["10", "10"],
+          ["12", "12"],
+          ["14", "14"],
+          ["16", "16"],
+          ["18", "18"],
+          ["20", "20"],
+          ["22", "22"],
+          ["24", "24"],
+          ["26", "26"]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_colour",
+        "name": "TEXTCOLOR",
+        "colour": "#ff0000"
+      }
+    ],
+    "previousStatement": "string",
+      "nextStatement": [
+        "string",
+        "headline",
+        "paragraph",
+        "specialtext",
+        "unorderedlist",
+        "division",
+        "link",
+        "image",
+        "table",
+        "orderedlist"
+      ],
+    "colour": 0,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "link",
+    "message0": "Link %1 %2",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "LINK",
+        "text": ""
+      },
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "String"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": [
+      "string",
+      "headline",
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+      "orderedlist"
+    ],
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+{
+  "type": "linkdescription",
+  "message0": "Link %1 Linkbeschreibung %2 %3",
+  "args0": [
+  {
+    "type": "field_input",
+    "name": "LINK",
+    "text": ""
+  },
+  {
+    "type": "field_input",
+    "name": "LINKDESCRIPTION",
+    "text": ""
+  },
+  {
+    "type": "input_value",
+    "name": "NAME",
+    "check": "String"
+  }
+],
+  "previousStatement": null,
+  "nextStatement": [
+    "string",
+    "headline",
+    "paragraph",
+    "specialtext",
+    "unorderedlist",
+    "division",
+    "link",
+    "image",
+    "table",
+    "orderedlist"
+  ],
+  "colour": 300,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+  {
+    "type": "table",
+    "message0": "Tabelle %1",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+        "check": "tablerow"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": ["tablerow"],
+    "colour": 190,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "tablerow",
+    "message0": "Tabellenreihe %1",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": ["tabledata"],
+    "colour": 190,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "tabledata",
+    "message0": "Datenzelle %1",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": ["string", "specialtext"],
+    "colour": 190,
+    "tooltip": "",
+    "helpUrl": ""
+  }
+
 ]
 
 //Initialisierung der oben definierten Blöcke
