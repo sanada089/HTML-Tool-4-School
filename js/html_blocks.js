@@ -14,6 +14,7 @@ const htmlBlocks = [
         "type": "input_dummy",
         "align": "CENTRE"
       },
+
       {
         "type": "input_statement",
         "name": "HEAD",
@@ -41,10 +42,13 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": ["title",
+        "check": ["division",
+                  "title",
                   "paragraph",
                   "string",
-                  "headline"],
+                  "headline",
+                  "orderedlist",
+                  "unorderedlist"],
       }
     ],
     "inputsInline": false,
@@ -60,10 +64,13 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": ["title",
+        "check": ["division",
+          "title",
           "paragraph",
           "string",
-          "headline"],
+          "headline",
+          "orderedlist",
+          "unorderedlist"],
       }
     ],
     "inputsInline": false,
@@ -72,6 +79,41 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
+
+  {
+    "type": "division",
+    "message0": "Division %1 Style %2 Inhalt %3",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "STYLE",
+        "check": "style"
+      },
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+        "check": ["string",
+          "headline",
+          "paragraph",
+          "specialtext",
+          "unorderedlist",
+          "division",
+          "link",
+          "image",
+          "table",
+          "orderedlist"],
+      }
+    ],
+    "previousStatement": "division",
+    "nextStatement": "division",
+    "colour": 60,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
   {
     "type": "title",
     "message0": "Titel %1",
@@ -91,7 +133,7 @@ const htmlBlocks = [
   },
   {
     "type": "string",
-    "message0": "text %1",
+    "message0": "Text %1",
     "args0": [
       {
         "type": "field_input",
@@ -152,6 +194,179 @@ const htmlBlocks = [
     "colour": 90,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
+  },
+  {
+    "type": "orderedlist",
+    "message0": "Nummerierte Liste %1",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+        "check": "listitem"
+      }
+    ],
+    "previousStatement": "orderedlist",
+    "nextStatement": ["string",
+      "headline",
+    "paragraph",
+    "specialtext",
+    "unorderedlist",
+    "division",
+    "link",
+    "image",
+    "table",
+    "orderedlist"],
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "unorderedlist",
+    "message0": "Unnummerierte Liste %1",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+        "check": "listitem"
+      }
+    ],
+    "previousStatement": "unorderedlist",
+    "nextStatement": ["string",
+      "headline",
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+    "orderedlist"],
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "listitem",
+    "message0": "Listeneintrag %1",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+        "check": [
+          "string",
+          "specialtext",
+          "image",
+          "link",
+          "table"
+        ]
+      }
+    ],
+    "previousStatement": "listitem",
+    "nextStatement": "listitem",
+    "colour": 180,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "image",
+    "message0": "Bild %1",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+        "check": "imageblock"
+      }
+    ],
+    "previousStatement": "image",
+    "nextStatement": ["string",
+      "headline",
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+      "orderedlist"],
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "style",
+    "message0": "Schriftart %1 %2 Hintergrundfarbe %3 %4 Schriftfarbe %5",
+    "args0": [
+      {
+        "type": "field_dropdown",
+        "name": "FONT",
+        "options": [
+          [
+            "Arial, sans-serif",
+            "Arial, sans-serif"
+          ],
+          [
+            "Brush Script MT, cursive",
+            "Brush Script MT, cursive"
+          ],
+          [
+            "Courier New, monospace",
+            "Courier New, monospace"
+          ],
+          [
+            "Garamond, serif",
+            "Garamond, serif"
+          ],
+          [
+            "Georgia, serif",
+            "Georgia, serif"
+          ],
+          [
+            "Helvetica, sans-serif",
+            "Helvetica, sans-serif"
+          ],
+          [
+            "Tahoma, sans-serif",
+            "Tahoma, sans-serif"
+          ],
+          [
+            "Times New Roman, serif",
+            "Times New Roman, serif"
+          ],
+          [
+            "Trebuchet MS, sans-serif",
+            "Trebuchet MS, sans-serif"
+          ],
+          [
+            "Verdana, sans-serif",
+            "Verdana, sans-serif"
+          ]
+        ]
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_colour",
+        "name": "BACKGROUND",
+        "colour": "#ff0000"
+      },
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_colour",
+        "name": "TEXTCOLOR",
+        "colour": "#ff0000"
+      }
+    ],
+    "output": "style",
+    "colour": 10,
+    "tooltip": "",
+    "helpUrl": ""
   },
 ]
 

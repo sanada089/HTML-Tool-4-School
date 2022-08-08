@@ -19,6 +19,14 @@ var toolbox = {
     },
     {
       "kind": "block",
+      "type": "division",
+    },
+    {
+      "kind": "block",
+      "type": "style",
+    },
+    {
+      "kind": "block",
       "type": "title",
     },
     {
@@ -33,6 +41,23 @@ var toolbox = {
       "kind": "block",
       "type": "paragraph",
     },
+    {
+      "kind": "block",
+      "type": "orderedlist",
+    },
+    {
+      "kind": "block",
+      "type": "unorderedlist",
+    },
+    {
+      "kind": "block",
+      "type": "listitem",
+    },
+    {
+      "kind": "block",
+      "type": "image",
+    },
+
   ]
 }
 

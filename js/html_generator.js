@@ -45,6 +45,19 @@ HtmlGenerator["body"] = function (block) {
   return code;
 };
 
+HtmlGenerator["division"] = function (block) {
+  var statements_style = HtmlGenerator.statementToCode(block, "STYLE");
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+
+  var code =
+    '<div style=' +
+    statements_style + ">\n" +
+    statements_content +
+    "<div>\n";
+
+  return code;
+};
+
 HtmlGenerator["title"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
@@ -75,5 +88,42 @@ HtmlGenerator["headline"] = function (block) {
 HtmlGenerator["paragraph"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
   var code = "<p>" + statements_content + "</p> \n";
+  return code;
+};
+
+HtmlGenerator["orderedlist"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+
+  var code = "<ol>" + statements_content + "</ol>\n";
+  return code;
+};
+
+HtmlGenerator["unorderedlist"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+
+  var code = "<ul>" + statements_content + "</ul>\n";
+  return code;
+};
+
+HtmlGenerator["listitem"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+
+  var code = "<li>" + statements_content + "</li>\n";
+  return code;
+};
+
+HtmlGenerator["image"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+
+  var code = "<img>" + statements_content + "</img>\n";
+  return code;
+};
+
+HtmlGenerator["style"] = function (block) {
+  var font = block.getFieldValue("FONT");
+  var backgroundcolor = block.getFieldValue("BACKGROUND");
+  var textcolor = block.getFieldValue("TEXTCOLOR");
+
+  var code = "'font-family: " + font + ";background-color: " + backgroundcolor + ";color: " + textcolor + ";'";
   return code;
 }
