@@ -47,7 +47,6 @@ HtmlGenerator["body"] = function (block) {
 
 HtmlGenerator["title"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-
   var code = "<title>" + statements_content + "</title>\n";
   return code;
 };
@@ -57,6 +56,21 @@ HtmlGenerator["string"] = function (block) {
   var code = text_content + "\n";
   return code;
 };
+
+HtmlGenerator["specialtext"] = function (block) {
+  var specialtext_content = block.getFieldValue("CONTENT");
+  var colour_name = block.getFieldValue("FARBE");
+  var schriftart_name = block.getFieldValue("SCHRIFTART");
+  var schriftgroesse_name = block.getFieldValue("SCHRIFTGRÖSSE");
+  var code =
+    "<span style = 'color: " + colour_name + "'" +
+    "'font-size:" + schriftgroesse_name + "'" +
+    "'font-family:" + schriftart_name + "'>" +
+    specialtext_content
+  "</span>"
+  return code;
+};
+
 
 HtmlGenerator["headline"] = function (block) {
   var dropdown_level = block.getFieldValue("LEVEL");
@@ -77,3 +91,12 @@ HtmlGenerator["paragraph"] = function (block) {
   var code = "<p>" + statements_content + "</p> \n";
   return code;
 }
+
+HtmlGenerator["link"] = function (block) {
+  var link_name =  block.getFieldValue("LINK");
+  var code = "<a href='" +
+    link_name +
+
+  return code;
+}
+

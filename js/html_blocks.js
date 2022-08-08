@@ -89,9 +89,10 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
+
   {
     "type": "string",
-    "message0": "text %1",
+    "message0": "Text %1",
     "args0": [
       {
         "type": "field_input",
@@ -100,11 +101,17 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "string",
-    "nextStatement": null,
+    "nextStatement": [
+      "string",
+      "headline",
+      "paragraph",
+      "link"
+      ],
     "colour": 0,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
+
   {
     "type": "headline",
     "message0": "Überschrift %1 %2 %3",
@@ -153,7 +160,98 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
+
+    {
+      "type": "specialtext",
+      "message0": "Specialtext %1",
+      "args0": [
+        {
+          "type": "field_input",
+          "name": "CONTENT",
+          "text": ""
+        },
+        {
+          "type": "field_colour",
+          "name": "FARBE",
+          "colour": "#ff0000"
+        },
+        {
+          "type": "field_dropdown",
+          "name": "SCHRIFTART",
+          "options": [
+              ["Arial", "Arial"],
+              ["Comic Sans MS", "Comic Sans MS"],
+              ["Courier New", "Courier New"],
+              ["Calibri", "Calibri"]
+          ]
+        },
+        {
+          "type": "field_dropdown",
+          "name": "SCHRIFTGRÖSSE",
+          "options": [
+              ["8", "8"],
+              ["10", "10"],
+              ["12", "12"],
+              ["14", "14"],
+              ["16", "16"],
+              ["18", "18"],
+              ["20", "20"],
+              ["22", "22"],
+              ["24", "24"],
+              ["26", "26"],
+              ["28", "28"],
+              ["36", "36"],
+              ["48", "48"],
+              ["72", "72"]
+          ]
+        },
+      ]
+
+  "previousStatement": "string",
+  "nextStatement": [
+  "string",
+  "specialtext",
+  "headline",
+  "paragraph",
+    "link"
+  ],
+  "colour": 0,
+  "tooltip": "",
+  "helpUrl": ""
+},
+
+  {
+    "type": "link",
+    "message0": "Link %1 %2",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "LINK",
+        "text": ""
+      },
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "String"
+      }
+    ],
+    "previousStatement": "string",
+    "nextStatement": [
+      "string",
+      "specialtext",
+      "headline",
+      "paragraph",
+      "link"
+    ],
+    "colour": 0,
+    "tooltip": "",
+    "helpUrl": ""
+  }
+
+
 ]
+
+
 
 //Initialisierung der oben definierten Blöcke
 

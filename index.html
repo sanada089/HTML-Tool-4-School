@@ -25,11 +25,13 @@
 
 
 
+
     #blocklyDiv {
       height: 100vh;
       width: 60vw;
       display: grid;
       background-color: gold;
+
     }
 
 
@@ -45,7 +47,6 @@
       width: 39vw;
       display: grid;
       background-color: blue;
-
     }
     #LevelSelectionDiv{
       width: 100vw;
@@ -114,7 +115,6 @@
   function update(event){
     var code = HtmlGenerator.workspaceToCode(workspace);
     document.getElementById('HTMLCodeDiv').innerText = code;
-
   }
 
 

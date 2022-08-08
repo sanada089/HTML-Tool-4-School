@@ -27,6 +27,10 @@ var toolbox = {
     },
     {
       "kind": "block",
+      "type": "specialtext",
+    },
+    {
+      "kind": "block",
       "type": "headline",
     },
     {
