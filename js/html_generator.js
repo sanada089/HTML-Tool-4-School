@@ -94,7 +94,7 @@ HtmlGenerator["paragraph"] = function (block) {
 HtmlGenerator["orderedlist"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
-  var code = "<ol>" + statements_content + "</ol>\n";
+  var code = "<ol>\n" + statements_content + "</ol>\n";
   return code;
 };
 

@@ -44,7 +44,6 @@
       height: 45vh;
       width: 39vw;
       display: grid;
-      background-color: blue;
 
     }
     #LevelSelectionDiv{
@@ -96,7 +95,8 @@
 
 <div class="grid-container">
   <div class="item2"><div id="blocklyDiv"></div></div>
-  <div class="item3"><div id="HTMLPageDiv"></div></div>
+  <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
+  <div class="item3"><iframe name="preview" id="HTMLPageDiv"></iframe></div>
   <div class="item4"><div id="HTMLCodeDiv"></div></div>
 </div>
 
@@ -109,11 +109,17 @@
 
   /* Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert und dann der HTMLCodeDiv also der
   Code-Anzeige den bisher in den Blöcken verwendeten Code zuweist
+  Zusätzlich wird ein IFrame erstellt um eine Preview des bisher generierten Codes zu erzeugen
    */
 
   function update(event){
     var code = HtmlGenerator.workspaceToCode(workspace);
     document.getElementById('HTMLCodeDiv').innerText = code;
+
+    const ifr = document.preview;
+    const html = code;
+    ifr.document.write(html);
+    ifr.document.close();
 
   }
 
@@ -123,6 +129,8 @@
 workspace.addChangeListener(update);
 
 </script>
+
+
 
 </body>
 
