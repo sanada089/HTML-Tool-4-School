@@ -164,6 +164,12 @@ HtmlGenerator["table"] = function (block) {
   return code;
 };
 
+HtmlGenerator["tablehead"] = function (block) {
+  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  var code = "<th>" + statements_content + "</th>\n";
+  return code;
+};
+
 HtmlGenerator["tablerow"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
   var code = "<tr>" + statements_content + "</tr>\n";

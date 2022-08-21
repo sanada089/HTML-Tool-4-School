@@ -101,13 +101,17 @@ var toolbox = {
       ]
     },
     {
-      "kind": "Tabelle",
-      "name": "Textstruktur",
+      "kind": "category",
+      "name": "Tabelle",
       "colour": "100",
       "contents": [
         {
           "kind": "block",
           "type": "table",
+        },
+        {
+          "kind": "block",
+          "type": "tablehead",
         },
         {
           "kind": "block",
@@ -119,6 +123,7 @@ var toolbox = {
         },
       ]
     },
+
   ]
 
 }

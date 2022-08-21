@@ -546,6 +546,22 @@ const htmlBlocks = [
   },
 
   {
+    "type": "tablehead",
+    "message0": "Tabellenkopf %1",
+    "args0": [
+      {
+        "type": "input_statement",
+        "name": "CONTENT",
+      }
+      ],
+    "previousStatement": null,
+    "nextStatement": ["string", "specialtext"],
+    "colour": 190,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
     "type": "tablerow",
     "message0": "Tabellenreihe %1",
     "args0": [
