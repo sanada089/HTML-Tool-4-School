@@ -1,5 +1,6 @@
 "use script"
 
+
 //Speziell definierte HTML-Blöcke und ihre Eigenschaften
 
 const htmlBlocks = [
@@ -177,6 +178,7 @@ const htmlBlocks = [
       {
         "type": "input_dummy"
       },
+
       {
         "type": "input_statement",
         "name": "CONTENT",
