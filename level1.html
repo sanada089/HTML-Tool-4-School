@@ -1,10 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="de">
+
+
 <head>
-  <meta charset="UTF-8">
-  <title>Level 1</title>
+  <title>HTML-Tool</title>
+  <meta charset="utf-8">
+  <style>
+
+
+
+    .item2 {grid-area: blocklyDiv;}
+    .item3 {grid-area: HTMLPage;}
+    .item4 {grid-area: HTMLCode;}
+
+
+
+    .grid-container{
+      display: grid;
+      grid-template-areas:
+        'blocklyDiv HTMLPage'
+        'blocklyDiv HTMLCode';
+      gap: 10px;
+    }
+
+
+    #blocklyDiv {
+      height: 100vh;
+      width: 60vw;
+      display: grid;
+      background-color: gold;
+    }
+
+
+
+    #HTMLCodeDiv{
+      height: 45vh;
+      width: 39vw;
+      background-color: whitesmoke;
+      display: grid;
+      overflow: scroll;
+    }
+    #HTMLPageDiv{
+      height: 45vh;
+      width: 39vw;
+      display: grid;
+
+    }
+    #LevelSelectionDiv{
+      width: 100vw;
+      height: 5vh;
+      background-color: lightskyblue;
+      margin-bottom: 20px;
+    }
+
+    .levelButton {
+      border: none;
+      color: white;
+      text-align: center;
+      margin: 4px 2px;
+      cursor: pointer;
+      font-size: 24px;
+      background-color: lightskyblue;
+    }
+
+  </style>
+
+  <!-- Laden der benötigten Blockly-Module -->
+
+  <script src="node_modules/blockly/blockly_compressed.js"></script>
+  <script src="node_modules/blockly/blocks_compressed.js"></script>
+
+  <!-- Laden der benötigten Blockly-Sprachfiles für deutsche Sprache -->
+
+  <script src="node_modules/blockly/msg/de.js"></script>
+
 </head>
+
 <body>
-<p>Willkommen in Level 1</p>
+
+<!-- Laden der benötigten Javascript-Files aus dem Unterverzeichnis js -->
+
+<script src="js/html_blocks.js"></script>
+<script src="js/html_generator.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Leiste zur Auswahl von Leveln -->
+
+<div id="LevelSelectionDiv">
+  <!-- Buttons für die verschiedenen Level mit Weiterleitung auf den zugehörigen HTML-File -->
+  <button class="levelButton" onclick="location.href='level1.html'">Level 1</button>
+</div>
+
+<!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
+
+<div class="grid-container">
+  <div class="item2"><div id="blocklyDiv"></div></div>
+  <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
+  <div class="item3"><iframe name="preview" id="HTMLPageDiv"></iframe></div>
+  <div class="item4"><div id="HTMLCodeDiv"></div></div>
+</div>
+
+<!-- Beginn Skript-Block -->
+
+<script>
+
+  // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
+  const workspace = Blockly.inject('blocklyDiv', {toolbox:toolbox});
+
+  /* Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert und dann der HTMLCodeDiv also der
+  Code-Anzeige den bisher in den Blöcken verwendeten Code zuweist
+  Zusätzlich wird ein IFrame erstellt um eine Preview des bisher generierten Codes zu erzeugen
+   */
+
+  function update(event){
+    var code = HtmlGenerator.workspaceToCode(workspace);
+    document.getElementById('HTMLCodeDiv').innerText = code;
+
+    const ifr = document.preview;
+    const html = code;
+    ifr.document.write(html);
+    ifr.document.close();
+
+  }
+
+
+  //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
+
+  workspace.addChangeListener(update);
+
+</script>
+
+
+
 </body>
+
 </html>
