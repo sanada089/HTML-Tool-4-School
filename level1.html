@@ -8,18 +8,22 @@
   <style>
 
 
+    .item2 {
+      grid-area: blocklyDiv;
+    }
 
-    .item2 {grid-area: blocklyDiv;}
-    .item3 {grid-area: HTMLPage;}
-    .item4 {grid-area: HTMLCode;}
+    .item3 {
+      grid-area: HTMLPage;
+    }
+
+    .item4 {
+      grid-area: HTMLCode;
+    }
 
 
-
-    .grid-container{
+    .grid-container {
       display: grid;
-      grid-template-areas:
-        'blocklyDiv HTMLPage'
-        'blocklyDiv HTMLCode';
+      grid-template-areas: 'blocklyDiv HTMLPage' 'blocklyDiv HTMLCode';
       gap: 10px;
     }
 
@@ -31,20 +35,22 @@
       background-color: gold;
     }
 
-    #HTMLCodeDiv{
+    #HTMLCodeDiv {
       height: 45vh;
       width: 39vw;
       background-color: whitesmoke;
       display: grid;
       overflow: scroll;
     }
-    #HTMLPageDiv{
+
+    #HTMLPageDiv {
       height: 45vh;
       width: 39vw;
       display: grid;
 
     }
-    #LevelSelectionDiv{
+
+    #LevelSelectionDiv {
       height: 5vh;
       width: 100vw;
       background-color: lightskyblue;
@@ -82,6 +88,7 @@
       left: 100%;
       margin-left: -80px;
     }
+
     /* Popup arrow */
     .popup .popuptext::after {
       content: "";
@@ -121,6 +128,7 @@
       left: 100%;
       margin-left: -80px;
     }
+
     /* Popup arrow */
     .popup1 .popuptext1::after {
       content: "";
@@ -186,10 +194,16 @@
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
 
 <div class="grid-container">
-  <div class="item2"><div id="blocklyDiv"></div></div>
+  <div class="item2">
+    <div id="blocklyDiv"></div>
+  </div>
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
-  <div class="item3"><iframe name="preview" id="HTMLPageDiv"></iframe></div>
-  <div class="item4"><div id="HTMLCodeDiv"></div></div>
+  <div class="item3">
+    <iframe name="preview" id="HTMLPageDiv"></iframe>
+  </div>
+  <div class="item4">
+    <div id="HTMLCodeDiv"></div>
+  </div>
 </div>
 
 
@@ -198,7 +212,7 @@
   <span class="popuptext" id="myPopup">Hallo, ich bin Herr Hausl
   <audio id="audio_with_controls" controls>
 
-    <source src="Hallo.ogg" type="audio/ogg" />
+    <source src="Hallo.ogg" type="audio/ogg"/>
 
 </audio>
   </span>
@@ -214,14 +228,14 @@
 <script>
 
   // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
-  const workspace = Blockly.inject('blocklyDiv', {toolbox:toolbox});
+  const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
 
   /* Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert und dann der HTMLCodeDiv also der
   Code-Anzeige den bisher in den Blöcken verwendeten Code zuweist
   Zusätzlich wird ein IFrame erstellt um eine Preview des bisher generierten Codes zu erzeugen
    */
 
-  function update(event){
+  function update(event) {
     var code = HtmlGenerator.workspaceToCode(workspace);
     document.getElementById('HTMLCodeDiv').innerText = code;
 
@@ -238,7 +252,6 @@
   workspace.addChangeListener(update);
 
 </script>
-
 
 
 </body>
