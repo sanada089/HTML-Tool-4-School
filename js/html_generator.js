@@ -5,8 +5,6 @@ const HtmlGenerator = new Blockly.Generator('HTML');
 
 //Code-Definition für die verschiedenen Blöcke
 
-
-
 HtmlGenerator.init = function (workspace) {};
 HtmlGenerator.finish = function (code) {
   return code;
@@ -160,9 +158,11 @@ HtmlGenerator["linkdescription"] = function(block) {
 
 HtmlGenerator["table"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<table>" + statements_content + "</table>\n";
+  var code = "<table border = 1>" + statements_content + "</table>\n";
   return code;
 };
+
+
 
 HtmlGenerator["tablehead"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");

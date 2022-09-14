@@ -25,13 +25,11 @@
 
 
     #blocklyDiv {
-      height: 100vh;
+      height: 70vh;
       width: 60vw;
       display: grid;
       background-color: gold;
     }
-
-
 
     #HTMLCodeDiv{
       height: 45vh;
@@ -47,11 +45,12 @@
 
     }
     #LevelSelectionDiv{
-      width: 100vw;
       height: 5vh;
+      width: 100vw;
       background-color: lightskyblue;
       margin-bottom: 20px;
     }
+
 
     .levelButton {
       border: none;
@@ -61,6 +60,84 @@
       cursor: pointer;
       font-size: 24px;
       background-color: lightskyblue;
+    }
+
+    .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .popup .popuptext {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      left: 100%;
+      margin-left: -80px;
+    }
+    /* Popup arrow */
+    .popup .popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    .popup .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s
+    }
+
+    .popup1 {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .popup1 .popuptext1 {
+      visibility: hidden;
+      width: 160px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 8px 0;
+      position: absolute;
+      z-index: 1;
+      bottom: 100%;
+      left: 100%;
+      margin-left: -80px;
+    }
+    /* Popup arrow */
+    .popup1 .popuptext1::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #555 transparent transparent transparent;
+    }
+
+    /* Toggle this class when clicking on the popup container (hide and show the popup) */
+    .popup1 .show {
+      visibility: visible;
+      -webkit-animation: fadeIn 1s;
+      animation: fadeIn 1s
     }
 
   </style>
@@ -73,6 +150,21 @@
   <!-- Laden der benötigten Blockly-Sprachfiles für deutsche Sprache -->
 
   <script src="node_modules/blockly/msg/de.js"></script>
+  <script>
+    // When the user clicks on <div>, open the popup
+    function myFunction() {
+      var popup = document.getElementById('myPopup');
+      popup.classList.toggle('show');
+    }
+  </script>
+
+  <script>
+    // When the user clicks on <div>, open the popup
+    function myFunction1() {
+      var popup1 = document.getElementById('myPopup1');
+      popup1.classList.toggle('show');
+    }
+  </script>
 
 </head>
 
@@ -98,6 +190,23 @@
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3"><iframe name="preview" id="HTMLPageDiv"></iframe></div>
   <div class="item4"><div id="HTMLCodeDiv"></div></div>
+</div>
+
+
+<div class="popup" onclick="myFunction()">
+  <img src="istockphoto-1014757370-612x612.jpg" style="width:100px;height:200px;">
+  <span class="popuptext" id="myPopup">Hallo, ich bin Herr Hausl
+  <audio id="audio_with_controls" controls>
+
+    <source src="Hallo.ogg" type="audio/ogg" />
+
+</audio>
+  </span>
+</div>
+
+<div class="popup1" onclick="myFunction1()">
+  <img src="istockphoto-834467010-612x612.jpg" style="width:200px;height:200px;">
+  <span class="popuptext1" id="myPopup1">Hallo, ich bin Frau Gscheidhaferl</span>
 </div>
 
 <!-- Beginn Skript-Block -->

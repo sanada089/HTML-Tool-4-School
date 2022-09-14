@@ -1,9 +1,10 @@
 //Definition der Toolbox
 
+
 var toolbox = {
   "kind": "categoryToolbox",
 
-  //Blöcke, die in der Toolbox verwendet werden
+  //Blöcke, die in der Toolbox (jeweiligen Kategorie) verwendet werden
   "contents": [
     {
       "kind": "category",
@@ -98,6 +99,10 @@ var toolbox = {
           "kind": "block",
           "type": "listitem",
         },
+        {
+          "kind": "block",
+          "type": "string",
+        },
       ]
     },
     {
@@ -120,6 +125,10 @@ var toolbox = {
         {
           "kind": "block",
           "type": "tabledata",
+        },
+        {
+          "kind": "block",
+          "type": "string",
         },
       ]
     },

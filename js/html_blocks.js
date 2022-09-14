@@ -309,6 +309,7 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
+
   {
     "type": "style",
     "message0": "Schriftart %1 %2 Hintergrundfarbe %3 %4 Schriftfarbe %5",
@@ -539,11 +540,23 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": null,
-    "nextStatement": ["tablerow"],
+    "nextStatement": [
+      "string",
+      "headline",
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+      "orderedlist"
+    ],
     "colour": 190,
     "tooltip": "",
     "helpUrl": ""
   },
+
 
   {
     "type": "tablehead",
