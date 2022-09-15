@@ -105,7 +105,15 @@
 <script>
 
  // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
-  const workspace = Blockly.inject('blocklyDiv', {toolbox:toolbox});
+
+const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
+
+ var xml_text = localStorage.getItem("blockly-html-code");
+ if (xml_text) {
+   var xml = Blockly.Xml.textToDom(xml_text);
+   Blockly.Xml.domToWorkspace(xml, workspace);
+ }
+
 
   /* Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert und dann der HTMLCodeDiv also der
   Code-Anzeige den bisher in den Blöcken verwendeten Code zuweist
@@ -113,13 +121,19 @@
    */
 
   function update(event){
+
     var code = HtmlGenerator.workspaceToCode(workspace);
     document.getElementById('HTMLCodeDiv').innerText = code;
+    console.log(code);
 
     const ifr = document.preview;
     const html = code;
     ifr.document.write(html);
     ifr.document.close();
+
+    var xml = Blockly.Xml.workspaceToDom(workspace);
+    var xml_text = Blockly.Xml.domToText(xml);
+    localStorage.setItem("blockly-html-code", xml_text);
 
   }
 
