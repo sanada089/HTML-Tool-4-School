@@ -16,18 +16,19 @@
 
   <script src="node_modules/blockly/msg/de.js"></script>
   <script>
+
+    var popup;
+
     // When the user clicks on <div>, open the popup
     function myFunction() {
-      var popup = document.getElementById('myPopup');
+      popup = document.getElementById('myPopup');
       popup.classList.toggle('show');
     }
-  </script>
 
-  <script>
     // When the user clicks on <div>, open the popup
     function myFunction1() {
-      var popup1 = document.getElementById('myPopup1');
-      popup1.classList.toggle('show');
+      popup = document.getElementById('myPopup1');
+      popup.classList.toggle('show');
     }
   </script>
 
@@ -79,10 +80,14 @@
   </span>
 </div>
 
-<div class="popup1" onclick="myFunction1()">
+<div class="popup" onclick="myFunction1()">
   <img src="istockphoto-834467010-612x612.jpg" style="width:200px;height:200px;">
-  <span class="popuptext1" id="myPopup1">Hallo, ich bin Frau Gscheidhaferl</span>
+  <span class="popuptext" id="myPopup1">Hallo, ich bin Frau Gscheidhaferl. <br><br> Wie kann ich dir helfen? <br><br>
+    <button class="helpButton" onclick="window.open('HTMLHelp.html','_blank')">Was ist HTML?</button>
+    <button class="helpButton">Was soll ich tun?</button> </span>
 </div>
+
+
 
 <!-- Beginn Skript-Block -->
 
@@ -106,7 +111,7 @@
   //previewCode ist die Vorschau der aktuell erwünschten Seite
   var previewCode;
 
-  //Setzen von previewCode anhand des aktuellen Lernstandes
+  //Setzen von previewCode anhand des aktuellen Lernstandes !!!TO DO!!!
 
   previewCode="<!DOCTYPE HTML>\n" +
     "<html>\n" +

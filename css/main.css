@@ -67,6 +67,14 @@
   background-color: lightskyblue;
 }
 
+.helpButton {
+  color: black;
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
 .popup {
   position: relative;
   display: inline-block;
@@ -107,12 +115,6 @@
   animation: fadeIn 1s
 }
 
-.popup1 {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
 .popup1 .popuptext1 {
   visibility: hidden;
   width: 160px;
@@ -138,11 +140,4 @@
   border-width: 5px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup1 .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s
 }
