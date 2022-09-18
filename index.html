@@ -5,73 +5,13 @@
 <head>
   <title>HTML-Tool</title>
   <meta charset="utf-8">
-  <style>
-
-
-
-    .item2 {grid-area: blocklyDiv;}
-    .item3 {grid-area: HTMLPage;}
-    .item4 {grid-area: HTMLCode;}
-
-
-
-    .grid-container{
-      display: grid;
-      grid-template-areas:
-        'blocklyDiv HTMLPage'
-        'blocklyDiv HTMLCode';
-      gap: 10px;
-    }
-
-
-    #blocklyDiv {
-      height: 100vh;
-      width: 60vw;
-      display: grid;
-      background-color: gold;
-    }
-
-
-
-    #HTMLCodeDiv{
-      height: 45vh;
-      width: 39vw;
-      background-color: whitesmoke;
-      display: grid;
-      overflow: scroll;
-    }
-    #HTMLPageDiv{
-      height: 45vh;
-      width: 39vw;
-      display: grid;
-
-    }
-    #LevelSelectionDiv{
-      width: 100vw;
-      height: 5vh;
-      background-color: lightskyblue;
-      margin-bottom: 20px;
-    }
-
-    .levelButton {
-      border: none;
-      color: white;
-      text-align: center;
-      margin: 4px 2px;
-      cursor: pointer;
-      font-size: 24px;
-      background-color: lightskyblue;
-    }
-
-  </style>
+  <link rel="stylesheet" href="css/main.css">
 
   <!-- Laden der benötigten Blockly-Module -->
-
   <script src="node_modules/blockly/blockly_compressed.js"></script>
   <script src="node_modules/blockly/blocks_compressed.js"></script>
 
   <!-- Laden der benötigten Blockly-Sprachfiles für deutsche Sprache -->
-
   <script src="node_modules/blockly/msg/de.js"></script>
 
 </head>
@@ -87,8 +27,8 @@
 <!-- Leiste zur Auswahl von Leveln -->
 
 <div id="LevelSelectionDiv">
-  <!-- Buttons für die verschiedenen Level mit Weiterleitung auf den zugehörigen HTML-File -->
-  <button class="levelButton" onclick="location.href='level1.html'">Level 1</button>
+  <!-- Button um zwischen Lern-Sektion und Bastel-Sektion hin und her zu wechseln -->
+  <button class="levelButton" onclick="location.href='level1.html'">Lernecke</button>
 </div>
 
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
