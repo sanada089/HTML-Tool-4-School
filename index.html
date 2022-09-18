@@ -48,28 +48,29 @@
 
 const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
 
+//Laden des vorherigen Zustandes des workspace aus der localStorage des Browsers
+
  var xml_text = localStorage.getItem("blockly-html-code");
  if (xml_text) {
    var xml = Blockly.Xml.textToDom(xml_text);
    Blockly.Xml.domToWorkspace(xml, workspace);
  }
 
-
-  /* Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert und dann der HTMLCodeDiv also der
-  Code-Anzeige den bisher in den Blöcken verwendeten Code zuweist
-  Zusätzlich wird ein IFrame erstellt um eine Preview des bisher generierten Codes zu erzeugen
-   */
+  // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
 
   function update(event){
 
+   // Umwandlung des workspace zu HTML-Code via HTMLGenerator
     var code = HtmlGenerator.workspaceToCode(workspace);
     document.getElementById('HTMLCodeDiv').innerText = code;
-    console.log(code);
 
+    // Erstellung des IFrame aus dem erzeugten HTML-Code
     const ifr = document.preview;
     const html = code;
     ifr.document.write(html);
     ifr.document.close();
+
+    // Speichern des Zustandes des workspace in der localStorage des Browsers
 
     var xml = Blockly.Xml.workspaceToDom(workspace);
     var xml_text = Blockly.Xml.domToText(xml);
@@ -81,6 +82,8 @@ const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
   //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
 
 workspace.addChangeListener(update);
+
+
 
 </script>
 

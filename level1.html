@@ -46,18 +46,22 @@
 <div id="LevelSelectionDiv">
   <!-- Button um zwischen Lern-Sektion und Bastel-Sektion hin und her zu wechseln -->
   <button class="levelButton" onclick="location.href='index.html'">Bastelecke</button>
+  <button class="switchButton" onclick=switchPreview()>Aufgabenstellung/<br> Vorschau</button>
 </div>
 
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
 
 <div class="grid-container">
+
   <div class="item2">
     <div id="blocklyDiv"></div>
   </div>
+
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3">
     <iframe name="preview" id="HTMLPageDiv"></iframe>
   </div>
+
   <div class="item4">
     <div id="HTMLCodeDiv"></div>
   </div>
@@ -87,19 +91,51 @@
   // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
   const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
 
-  /* Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert und dann der HTMLCodeDiv also der
-  Code-Anzeige den bisher in den Blöcken verwendeten Code zuweist
-  Zusätzlich wird ein IFrame erstellt um eine Preview des bisher generierten Codes zu erzeugen
-   */
+  //Laden des vorherigen Zustandes des workspace aus der localStorage des Browsers
 
-  function update(event) {
+  var xml_text = localStorage.getItem("blockly-html-code-learning");
+  if (xml_text) {
+    var xml = Blockly.Xml.textToDom(xml_text);
+    Blockly.Xml.domToWorkspace(xml, workspace);
+  }
+
+  //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
+  var html;
+  //previewFlag=2 bedeutet, dass die Preview noch nie aufgerufen wurde
+  var previewFlag;
+  //previewCode ist die Vorschau der aktuell erwünschten Seite
+  var previewCode;
+
+  //Setzen von previewCode anhand des aktuellen Lernstandes
+
+  previewCode="<!DOCTYPE HTML>\n" +
+    "<html>\n" +
+    "<meta charset=\"utf-8\">\n" +
+    "<head>\n" +
+    "Testschnieselei\n" +
+    "</head>\n" +
+    "\n" +
+    "</html>";
+
+  // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
+
+  function update(event){
+
+    // Umwandlung des workspace zu HTML-Code via HTMLGenerator
     var code = HtmlGenerator.workspaceToCode(workspace);
     document.getElementById('HTMLCodeDiv').innerText = code;
 
+    // Erstellung des IFrame aus dem erzeugten HTML-Code
     const ifr = document.preview;
-    const html = code;
+    html = code;
     ifr.document.write(html);
     ifr.document.close();
+
+    // Speichern des Zustandes des workspace in der localStorage des Browsers
+
+    var xml = Blockly.Xml.workspaceToDom(workspace);
+    var xml_text = Blockly.Xml.domToText(xml);
+    localStorage.setItem("blockly-html-code-learning", xml_text);
 
   }
 
@@ -107,6 +143,23 @@
   //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
 
   workspace.addChangeListener(update);
+
+  //function, die den Code im IFrame zwischen der erwünschten Vorschau und dem Ist-Stand des Users wechselt
+
+  function switchPreview(){
+    if(!previewFlag || previewFlag===0) {
+      html=previewCode;
+      const ifr = document.preview;
+      ifr.document.write(html);
+      ifr.document.close();
+      previewFlag=1;
+    }
+    else {
+      update();
+      previewFlag=0;
+    }
+
+  }
 
 </script>
 
