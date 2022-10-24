@@ -1,0 +1,61 @@
+/* grid für die Aufteilung der Hilfestellung-Page */
+
+.element1 {grid-area: bildSekretaerin;}
+.element2 {grid-area: sprechblase;}
+.element3 {grid-area: hilfestellungButtons;}
+
+.grid-container1{
+  display: grid;
+  grid-template-areas:
+    'bildSekretaerin sprechblase'
+    'hilfestellungButtons hilfestellungButtons' ;
+  gap: 10px;
+}
+
+#bildSekretaerin {
+
+  width: 2vw;
+  display: grid;
+}
+
+#sprechblase{
+  height: 2vh;
+  width: 80vw;
+  display: grid;
+}
+
+#hilfestellungButtons{
+  position: relative;
+  width: 99vw;
+  height: 5vh;
+  <!-- background-color: lightskyblue; -->
+  margin-bottom: 20px;
+}
+
+/*
+.hilfestellung1 {
+  border: none;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 24px;
+  background-color: lightskyblue;
+}
+-->
+.hilfestellung2 {
+  border: none;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 24px;
+  background-color: lightskyblue;
+}
+*/
+
+
+
+
