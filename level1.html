@@ -15,6 +15,7 @@
   <!-- Laden der benötigten Blockly-Sprachfiles für deutsche Sprache -->
 
   <script src="node_modules/blockly/msg/de.js"></script>
+  <!--
   <script>
 
     var popup;
@@ -31,7 +32,7 @@
       popup.classList.toggle('show');
     }
   </script>
-
+-->
 </head>
 
 <body>
@@ -64,11 +65,19 @@
   </div>
 
   <div class="item4">
-    <div id="HTMLCodeDiv"></div>
+    <iframe name="codePreview" id="HTMLCodeDiv"></iframe>
+  </div>
+
+  <div class="item5">
+    <div id="CodeButtonDiv">
+      <button class="codeButton" onclick=showCode()>Code</button>
+      <button class="codeButton" onclick=showGscheidhaferl()>Gscheidhaferl</button>
+      <button class="codeButton" onclick=showHausl()>Hausl</button>
+    </div>
   </div>
 </div>
 
-
+<!-- Popups, die leider nicht so wollten wie wir
 <div class="popup" onclick="myFunction()">
   <img src="istockphoto-1014757370-612x612.jpg" style="width:100px;height:200px;">
   <span class="popuptext" id="myPopup">Hallo, ich bin Herr Hausl
@@ -86,7 +95,7 @@
     <button class="helpButton" onclick="window.open('HTMLHelp.html','_blank')">Was ist HTML?</button>
     <button class="helpButton">Was soll ich tun?</button> </span>
 </div>
-
+-->
 
 
 <!-- Beginn Skript-Block -->
@@ -106,10 +115,14 @@
 
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
-  //previewFlag=2 bedeutet, dass die Preview noch nie aufgerufen wurde
+  // previewFlag gibt an ob schon Blocks im workspace benutzt wurden
   var previewFlag;
   //previewCode ist die Vorschau der aktuell erwünschten Seite
   var previewCode;
+  //code ist der aktuell aus den Blocks erzeugte Code
+  var code;
+  //codeFlag zeigt an, was gerade in der HTMLCodeDiv angezeigt werden soll
+  var codeFlag
 
   //Setzen von previewCode anhand des aktuellen Lernstandes !!!TO DO!!!
 
@@ -127,8 +140,11 @@
   function update(event){
 
     // Umwandlung des workspace zu HTML-Code via HTMLGenerator
-    var code = HtmlGenerator.workspaceToCode(workspace);
-    document.getElementById('HTMLCodeDiv').innerText = code;
+    code = HtmlGenerator.workspaceToCode(workspace);
+    // Will der User gerade den Code sehen wird dieser aktualisiert in der HTMLCodeDiv
+    if(!codeFlag || codeFlag ===0){
+      showCode();
+    }
 
     // Erstellung des IFrame aus dem erzeugten HTML-Code
     const ifr = document.preview;
@@ -154,9 +170,9 @@
   function switchPreview(){
     if(!previewFlag || previewFlag===0) {
       html=previewCode;
-      const ifr = document.preview;
-      ifr.document.write(html);
-      ifr.document.close();
+      const previewIfr = document.preview;
+      previewIfr.document.write(html);
+      previewIfr.document.close();
       previewFlag=1;
     }
     else {
@@ -164,6 +180,30 @@
       previewFlag=0;
     }
 
+  }
+  //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
+  function showCode(){
+    var htmlCode="<xmp>" + code + "</xmp>";
+    const ifr = document.codePreview;
+    ifr.document.write(htmlCode);
+    ifr.document.close();
+
+    codeFlag=0;
+  }
+
+  //wird aufgerufen, wenn auf den Gscheidhaferl-Knopf gedrückt wird. Zeigt dann die zum Level gehörige Gscheidhaferl-Page
+  function showGscheidhaferl(){
+    const ifr = document.codePreview;
+    ifr.document.write(previewCode);
+    ifr.document.close();
+    codeFlag=1;
+  }
+  //wird aufgerufen, wenn auf den Hausl-Knopf gedrückt wird. Zeigt dann die zum Level gehörige Hausl-Page
+  function showHausl(){
+    const ifr = document.codePreview;
+    ifr.document.write(previewCode);
+    ifr.document.close();
+    codeFlag=2;
   }
 
 </script>
