@@ -374,7 +374,7 @@ const htmlBlocks = [
       {
         "type": "field_colour",
         "name": "TEXTCOLOR",
-        "colour": "#ff0000"
+        "colour": "#ffffff"
       }
     ],
     "output": "style",
