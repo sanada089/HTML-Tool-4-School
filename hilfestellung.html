@@ -29,7 +29,7 @@
 
   <div class="element3">
     <div id="hilfestellungButtons">
-      <button class ="helpButton" onclick="">Was ist HTML?</button>
+      <button class ="helpButton" onclick=showHTML()>Was ist HTML?</button>
       <button class ="helpButton" onclick="">Grundgerüst?</button>
       <button class ="helpButton" onclick="">Textstruktur?</button>
       <button class ="helpButton" onclick="">Gestaltung/Textauszeichnung?</button>
@@ -37,8 +37,17 @@
       <button class ="helpButton" onclick="">Tabelle?</button>
     </div>
   </div>
+  <div class ="">
+    <iframe name="HilfeFrame" id= "HilfeFrame" src=""></iframe>
+  </div>
 </div>
 
 </body>
+
+<script>
+  function showHTML(){
+    document.getElementById("HilfeFrame").src="HTMLHelp.html";
+  }
+</script>
 
 </html>

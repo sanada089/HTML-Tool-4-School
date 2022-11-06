@@ -15,24 +15,7 @@
   <!-- Laden der benötigten Blockly-Sprachfiles für deutsche Sprache -->
 
   <script src="node_modules/blockly/msg/de.js"></script>
-  <!--
-  <script>
 
-    var popup;
-
-    // When the user clicks on <div>, open the popup
-    function myFunction() {
-      popup = document.getElementById('myPopup');
-      popup.classList.toggle('show');
-    }
-
-    // When the user clicks on <div>, open the popup
-    function myFunction1() {
-      popup = document.getElementById('myPopup1');
-      popup.classList.toggle('show');
-    }
-  </script>
--->
 </head>
 
 <body id="learningPageBody">
@@ -47,13 +30,22 @@
 
 <div id="LevelSelectionDiv">
   <!-- Button um zwischen Lern-Sektion und Bastel-Sektion hin und her zu wechseln -->
-  <button class="levelButton" onclick="location.href='index.html'">Bastelecke</button>
+  <button class="levelButton" onclick="location.href='Startseite.html'">Bastelecke</button>
   <button class="levelButton" onclick="location.href='hilfestellung.html'">Hilfestellung</button>
   <button class="switchButton" onclick=switchPreview()>Aufgabenstellung/<br> Vorschau</button>
 
 </div>
 
+<a href="#container" data-reveal-id="exampleModal">POP UP</a>
 
+<div id="container">
+  <div id="exampleModal" class="reveal-modal">
+    <p>
+    Test
+      </p>
+    <a href="#" class="close-reveal-modal">×</a>
+  </div>
+</div>
 
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
 
@@ -80,26 +72,6 @@
     </div>
   </div>
 </div>
-
-<!-- Popups, die leider nicht so wollten wie wir
-<div class="popup" onclick="myFunction()">
-  <img src="istockphoto-1014757370-612x612.jpg" style="width:100px;height:200px;">
-  <span class="popuptext" id="myPopup">Hallo, ich bin Herr Hausl
-  <audio id="audio_with_controls" controls>
-
-    <source src="Hallo.ogg" type="audio/ogg"/>
-
-</audio>
-  </span>
-</div>
-
-<div class="popup" onclick="myFunction1()">
-  <img src="istockphoto-834467010-612x612.jpg" style="width:200px;height:200px;">
-  <span class="popuptext" id="myPopup1">Hallo, ich bin Frau Gscheidhaferl. <br><br> Wie kann ich dir helfen? <br><br>
-    <button class="helpButton" onclick="window.open('HTMLHelp.html','_blank')">Was ist HTML?</button>
-    <button class="helpButton">Was soll ich tun?</button> </span>
-</div>
--->
 
 
 <!-- Beginn Skript-Block -->
@@ -195,7 +167,7 @@
     codeFlag=0;
   }
 
-  //wird aufgerufen, wenn auf den Gscheidhaferl-Knopf gedrückt wird. Zeigt dann die zum Level gehörige Gscheidhaferl-Page
+  //wird aufgerufen, wenn auf den Gscheidhaferl-Knopf gedrückt wird. Zeigt dann die Gscheidhaferl-Page
   function showGscheidhaferl(){
     document.getElementById("HTMLCodeDiv").src="hilfestellung.html";
     codeFlag=1;
