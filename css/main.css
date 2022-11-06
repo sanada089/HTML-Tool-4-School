@@ -1,55 +1,9 @@
 
-.item2 {grid-area: blocklyDiv;}
-.item3 {grid-area: HTMLPage;}
-.item4 {grid-area: HTMLCode;}
-.item5 {grid-area: CodeButton;}
-
-
-.grid-container{
-  display: grid;
-  grid-template-areas:
-        'blocklyDiv HTMLPage'
-        'blocklyDiv CodeButton'
-        'blocklyDiv HTMLCode';
-}
-
-
-
-#blocklyDiv {
-  height: 100vh;
-  width: 59vw;
-  display: grid;
-  background-color: gold;
-}
-
-
-
-#HTMLCodeDiv{
-  height: 45vh;
-  width: 38vw;
-  background-color: whitesmoke;
-  display: grid;
-  overflow: scroll;
-}
-
-#HTMLPageDiv{
-  height: 45vh;
-  width: 38vw;
-  display: grid;
-}
-
-#CodeButtonDiv{
-  height: 5vh;
-  width: 38vw;
-  text-align: center;
-  display: inline-block;
-}
-
 #LevelSelectionDiv{
   position: relative;
   width: 98vw;
   height: 5vh;
-  background-color: lightskyblue;
+  background-color: #faf036;
   margin-bottom: 20px;
 }
 
@@ -61,26 +15,84 @@
   margin-top: 8px;
   cursor: pointer;
   font-size: 24px;
-  background-color: lightskyblue;
+  background-color: #faf441;
 }
 
+
+.item2 {grid-area: blocklyDiv;}
+.item3 {grid-area: HTMLPage;}
+.item4 {grid-area: HTMLCode;}
+.item6 {grid-area: switch;}
+
+
+.grid-container{
+  display: grid;
+  background-color: aqua;
+  grid-template-areas:
+
+    'blocklyDiv HTMLCode'
+    'blocklyDiv switch'
+    'blocklyDiv HTMLPage';
+}
+
+#blocklyDiv {
+  height: 100vh;
+  width: 59vw;
+  display: grid;
+  background-color: gold;
+}
+
+#CodeButtonDiv{
+  height: 5vh;
+  width: 38vw;
+  text-align: center;
+  display: inline-block;
+}
+
+.codeButton{
+  position: center;
+  border: none;
+  color: orange;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#HTMLCodeDiv{
+  height: 45vh;
+  width: 38vw;
+  background-color: whitesmoke;
+  display: grid;
+  overflow: scroll;
+}
+
+#switchDiv{
+  position: relative;
+  height: 5vh;
+  width: 38vw;
+  text-align: center;
+  display: inline-block;
+  background-color: darkblue;
+}
+
+
+
 .switchButton {
-  position: absolute;
+  position: unset;
   border: none;
   color: white;
   text-align: center;
   top: 8px;
   right: 5px;
   cursor: pointer;
-  font-size: 12px;
-  background-color: lightskyblue;
+  font-size: 10px;
+  background-color: darkblue;
 }
 
-.codeButton{
-  border: none;
-  color: orange;
-  display: inline-block;
-  font-size: 16px;
+#HTMLPageDiv{
+  height: 45vh;
+  width: 38vw;
+  background-color: whitesmoke;
+  display: grid;
 }
 
 .helpButton {

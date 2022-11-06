@@ -48,10 +48,11 @@
 <div id="LevelSelectionDiv">
   <!-- Button um zwischen Lern-Sektion und Bastel-Sektion hin und her zu wechseln -->
   <button class="levelButton" onclick="location.href='index.html'">Bastelecke</button>
-  <button class="levelButton" onclick="location.href='hilfestellung.html'">Hilfestellung</button>
-  <button class="switchButton" onclick=switchPreview()>Aufgabenstellung/<br> Vorschau</button>
-
+  <button class="codeButton" onclick=showCode()><img src="img/Code.jpg" /></button>
+  <button class="codeButton" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
+  <button class="codeButton" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
 </div>
+
 
 
 
@@ -72,13 +73,14 @@
     <iframe name="codePreview" id="HTMLCodeDiv"></iframe>
   </div>
 
-  <div class="item5">
-    <div id="CodeButtonDiv">
-      <button class="codeButton" onclick=showCode()><img src="img/Code.jpg" /></button>
-      <button class="codeButton" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
-      <button class="codeButton" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
+
+
+  <div class="item6">
+    <div id="switchDiv">
+      <button class="switchButton" onclick=switchPreview()>Aufgabenstellung/<br> Vorschau</button>
     </div>
   </div>
+
 </div>
 
 <!-- Popups, die leider nicht so wollten wie wir
