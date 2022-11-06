@@ -1,27 +1,8 @@
 
-#LevelSelectionDiv{
-  position: relative;
-  width: 98vw;
-  height: 5vh;
-  background-color: #faf036;
-  margin-bottom: 20px;
-}
-
-.levelButton {
-  border: none;
-  color: white;
-  text-align: center;
-  margin-left: 5px;
-  margin-top: 8px;
-  cursor: pointer;
-  font-size: 24px;
-  background-color: #faf441;
-}
-
-
 .item2 {grid-area: blocklyDiv;}
 .item3 {grid-area: HTMLPage;}
 .item4 {grid-area: HTMLCode;}
+.item5 {grid-area: CodeButton;}
 .item6 {grid-area: switch;}
 
 
@@ -29,11 +10,12 @@
   display: grid;
   background-color: aqua;
   grid-template-areas:
-
-    'blocklyDiv HTMLCode'
-    'blocklyDiv switch'
-    'blocklyDiv HTMLPage';
+        'blocklyDiv HTMLCode'
+        'blocklyDiv switch'
+        'blocklyDiv HTMLPage';
 }
+
+
 
 #blocklyDiv {
   height: 100vh;
@@ -42,20 +24,7 @@
   background-color: gold;
 }
 
-#CodeButtonDiv{
-  height: 5vh;
-  width: 38vw;
-  text-align: center;
-  display: inline-block;
-}
 
-.codeButton{
-  position: center;
-  border: none;
-  color: orange;
-  display: inline-block;
-  font-size: 16px;
-}
 
 #HTMLCodeDiv{
   height: 45vh;
@@ -63,6 +32,23 @@
   background-color: whitesmoke;
   display: grid;
   overflow: scroll;
+}
+
+#HTMLPageDiv{
+  height: 45vh;
+  width: 38vw;
+  background-color: whitesmoke;
+  display: grid;
+}
+
+
+
+#CodeButtonDiv{
+  position: relative;
+  width: 98vw;
+  height: 5vh;
+  background-color: lightskyblue;
+  margin-bottom: 20px;
 }
 
 #switchDiv{
@@ -74,7 +60,16 @@
   background-color: darkblue;
 }
 
-
+.levelButton {
+  border: none;
+  color: white;
+  text-align: center;
+  margin-left: 5px;
+  margin-top: 8px;
+  cursor: pointer;
+  font-size: 24px;
+  background-color: lightskyblue;
+}
 
 .switchButton {
   position: unset;
@@ -88,11 +83,11 @@
   background-color: darkblue;
 }
 
-#HTMLPageDiv{
-  height: 45vh;
-  width: 38vw;
-  background-color: whitesmoke;
-  display: grid;
+.codeButton{
+  border: none;
+  color: orange;
+  display: inline-block;
+  font-size: 16px;
 }
 
 .helpButton {
