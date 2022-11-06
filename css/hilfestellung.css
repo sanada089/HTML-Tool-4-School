@@ -3,17 +3,18 @@
 .element1 {grid-area: bildSekretaerin;}
 .element2 {grid-area: sprechblase;}
 .element3 {grid-area: hilfestellungButtons;}
+.element4 {grid-area: hilfestellung;}
 
 .grid-container1{
   display: grid;
   grid-template-areas:
     'bildSekretaerin sprechblase'
-    'hilfestellungButtons hilfestellungButtons' ;
+    'hilfestellungButtons hilfestellungButtons'
+    'hilfestellung hilfestellung';
   gap: 10px;
 }
 
 #bildSekretaerin {
-
   width: 2vw;
   display: grid;
 }
@@ -30,6 +31,12 @@
   height: 5vh;
   <!-- background-color: lightskyblue; -->
   margin-bottom: 20px;
+}
+
+#hilfestellung{
+  position: relative;
+  display: grid;
+  width: 80vw;
 }
 
 /*
