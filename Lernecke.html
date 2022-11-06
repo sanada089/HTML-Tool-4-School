@@ -39,14 +39,14 @@
   <button class="codeButton" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
 </div>
 
-<a href="#container" data-reveal-id="exampleModal">POP UP</a>
 
 <div id="container">
   <div id="exampleModal" class="reveal-modal">
+    <h2>POP UP</h2>
     <p>
-    Test
-      </p>
-    <a href="#" class="close-reveal-modal">×</a>
+      Hier wäre jetzt im Optimalfall die Einleitung
+    </p>
+    <button onclick="closePopup()">Okay!</button>
   </div>
 </div>
 
@@ -84,8 +84,11 @@
 
 <script>
 
+
+
   // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
   const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
+
 
   //Laden des vorherigen Zustandes des workspace aus der localStorage des Browsers
 
@@ -94,6 +97,9 @@
     var xml = Blockly.Xml.textToDom(xml_text);
     Blockly.Xml.domToWorkspace(xml, workspace);
   }
+
+
+  showPopup();
 
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
@@ -184,6 +190,14 @@
     ifr.document.write(previewCode);
     ifr.document.close();
     codeFlag=2;
+  }
+
+  function showPopup(){
+    document.getElementById("container").style.display="block";
+  }
+
+  function closePopup(){
+    document.getElementById("container").style.display="none";
   }
 
 

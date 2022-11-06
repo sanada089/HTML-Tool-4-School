@@ -107,10 +107,6 @@
   background-color: rgba(22,22,22,0.5);
 }
 
-#container:target {
-  visibility: hidden;
-  display: block;
-}
 .reveal-modal {
   background:#e1e1e1;
   margin: 0 auto;
