@@ -27,13 +27,16 @@
 <script src="js/main.js"></script>
 
 <!-- Leiste zur Auswahl von Leveln -->
-
+<!--
 <div id="LevelSelectionDiv">
-  <!-- Button um zwischen Lern-Sektion und Bastel-Sektion hin und her zu wechseln -->
   <button class="levelButton" onclick="location.href='Startseite.html'">Bastelecke</button>
   <button class="levelButton" onclick="location.href='hilfestellung.html'">Hilfestellung</button>
-  <button class="switchButton" onclick=switchPreview()>Aufgabenstellung/<br> Vorschau</button>
-
+</div>
+-->
+<div id="CodeButtonDiv">
+  <button class="codeButton" onclick=showCode()><img src="img/Code.jpg" /></button>
+  <button class="codeButton" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
+  <button class="codeButton" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
 </div>
 
 <a href="#container" data-reveal-id="exampleModal">POP UP</a>
@@ -65,13 +68,16 @@
   </div>
 
   <div class="item5">
-    <div id="CodeButtonDiv">
-      <button class="codeButton" onclick=showCode()><img src="img/Code.jpg" /></button>
-      <button class="codeButton" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
-      <button class="codeButton" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
+
+  </div>
+
+  <div class="item6">
+    <div id="switchDiv">
+      <button class="switchButton" onclick=switchPreview()>Aufgabenstellung/<br> Vorschau</button>
     </div>
   </div>
 </div>
+
 
 
 <!-- Beginn Skript-Block -->

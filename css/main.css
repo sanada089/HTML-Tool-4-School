@@ -3,14 +3,16 @@
 .item3 {grid-area: HTMLPage;}
 .item4 {grid-area: HTMLCode;}
 .item5 {grid-area: CodeButton;}
+.item6 {grid-area: switch;}
 
 
 .grid-container{
   display: grid;
+  background-color: aqua;
   grid-template-areas:
-        'blocklyDiv HTMLPage'
-        'blocklyDiv CodeButton'
-        'blocklyDiv HTMLCode';
+        'blocklyDiv HTMLCode'
+        'blocklyDiv switch'
+        'blocklyDiv HTMLPage';
 }
 
 
@@ -35,22 +37,27 @@
 #HTMLPageDiv{
   height: 45vh;
   width: 38vw;
+  background-color: whitesmoke;
   display: grid;
 }
 
-#CodeButtonDiv{
-  height: 5vh;
-  width: 38vw;
-  text-align: center;
-  display: inline-block;
-}
 
-#LevelSelectionDiv{
+
+#CodeButtonDiv{
   position: relative;
   width: 98vw;
   height: 5vh;
   background-color: lightskyblue;
   margin-bottom: 20px;
+}
+
+#switchDiv{
+  position: relative;
+  height: 5vh;
+  width: 38vw;
+  text-align: center;
+  display: inline-block;
+  background-color: darkblue;
 }
 
 .levelButton {
@@ -65,15 +72,15 @@
 }
 
 .switchButton {
-  position: absolute;
+  position: unset;
   border: none;
   color: white;
   text-align: center;
   top: 8px;
   right: 5px;
   cursor: pointer;
-  font-size: 12px;
-  background-color: lightskyblue;
+  font-size: 10px;
+  background-color: darkblue;
 }
 
 .codeButton{
