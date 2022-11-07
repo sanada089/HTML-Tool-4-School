@@ -69,7 +69,7 @@
   </div>
 
   <div class="item4">
-    <iframe name="codePreview" id="HTMLCodeDiv" src=""></iframe>
+    <iframe name="buttonPreview" id="HTMLCodeDiv" src=""></iframe>
   </div>
 
   <div class="item5">
@@ -174,8 +174,9 @@
   }
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
   function showCode(){
+    document.getElementById("HTMLCodeDiv").src="";
     var htmlCode="<xmp>" + code + "</xmp>";
-    const ifr = document.codePreview;
+    const ifr = document.buttonPreview;
     ifr.document.write(htmlCode);
     ifr.document.close();
 
@@ -189,7 +190,7 @@
   }
   //wird aufgerufen, wenn auf den Hausl-Knopf gedrückt wird. Zeigt dann die zum Level gehörige Hausl-Page
   function showHausl(){
-    const ifr = document.codePreview;
+    const ifr = document.buttonPreview;
     ifr.document.write(previewCode);
     ifr.document.close();
     codeFlag=2;
