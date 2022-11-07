@@ -33,11 +33,6 @@
   <button class="levelButton" onclick="location.href='hilfestellung.html'">Hilfestellung</button>
 </div>
 -->
-<div id="CodeButtonDiv">
-  <button class="codeButton" onclick=showCode()><img src="img/Code.jpg" /></button>
-  <button class="codeButton" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
-  <button class="codeButton" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
-</div>
 
 
 <div id="container">
@@ -57,6 +52,16 @@
   <div class="item2">
     <div id="blocklyDiv"></div>
   </div>
+<div class="item5">
+  <div id="CodeButtonDiv">
+    <button class="codeButton" onclick=showCode()><img src="img/Code.jpg" /></button>
+    <button class="codeButton" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
+    <button class="codeButton" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
+  </div>
+</div>
+
+
+
 
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3">
@@ -141,7 +146,6 @@
     ifr.document.close();
 
     // Speichern des Zustandes des workspace in der localStorage des Browsers
-
     var xml = Blockly.Xml.workspaceToDom(workspace);
     var xml_text = Blockly.Xml.domToText(xml);
     localStorage.setItem("blockly-html-code-learning", xml_text);
@@ -150,7 +154,6 @@
 
 
   //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
-
   workspace.addChangeListener(update);
 
   //function, die den Code im IFrame zwischen der erwünschten Vorschau und dem Ist-Stand des Users wechselt
