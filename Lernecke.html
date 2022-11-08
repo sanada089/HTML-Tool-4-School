@@ -1,31 +1,20 @@
 <!doctype html>
 <html lang="de">
-
-
 <head>
   <title>HTML-Tool</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/main.css">
-
   <!-- Laden der benötigten Blockly-Module -->
-
   <script src="node_modules/blockly/blockly_compressed.js"></script>
   <script src="node_modules/blockly/blocks_compressed.js"></script>
-
   <!-- Laden der benötigten Blockly-Sprachfiles für deutsche Sprache -->
-
   <script src="node_modules/blockly/msg/de.js"></script>
-
 </head>
-
-<body id="learningPageBody">
-
+<body bgcolor=lightgreen id="learningPageBody">
 <!-- Laden der benötigten Javascript-Files aus dem Unterverzeichnis js -->
-
 <script src="js/html_blocks.js"></script>
 <script src="js/html_generator.js"></script>
 <script src="js/main.js"></script>
-
 <!-- Leiste zur Auswahl von Leveln -->
 <!--
 <div id="LevelSelectionDiv">
@@ -33,8 +22,6 @@
   <button class="levelButton" onclick="location.href='hilfestellung.html'">Hilfestellung</button>
 </div>
 -->
-
-
 <div id="container">
   <div id="exampleModal" class="reveal-modal">
     <h2>POP UP</h2>
@@ -44,25 +31,21 @@
     <button onclick="closePopup()">Okay!</button>
   </div>
 </div>
-
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
-
 <div class="grid-container">
-
   <div class="item2">
     <div id="blocklyDiv"></div>
   </div>
-<div class="item5">
-  <div id="CodeButtonDiv">
-    <button class="codeButton" onclick=showCode()><img src="img/Code.jpg" /></button>
-    <button class="codeButton" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
-    <button class="codeButton" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
+
+
+
+  <div class="item5">
+    <div id="CodeButtonDiv">
+      <button class="button" onclick=showCode()><img src="img/Code.jpg" /></button>
+      <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
+      <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
+    </div>
   </div>
-</div>
-
-
-
-
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3">
     <iframe name="preview" id="HTMLPageDiv"></iframe>
@@ -72,40 +55,25 @@
     <iframe name="buttonPreview" id="HTMLCodeDiv" src=""></iframe>
   </div>
 
-  <div class="item5">
-
-  </div>
-
   <div class="item6">
     <div id="switchDiv">
-      <button class="switchButton" onclick=switchPreview()>Aufgabenstellung/<br> Vorschau</button>
+
+      <button class="button" onclick=switchPreview()><img src="img/Aufgabe.png"/></button>
+      <button class="button" onclick=switchPreview()><img src="img/Vorschau.png"/></button>
     </div>
   </div>
 </div>
-
-
-
 <!-- Beginn Skript-Block -->
-
 <script>
-
-
-
   // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
   const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
-
-
   //Laden des vorherigen Zustandes des workspace aus der localStorage des Browsers
-
   var xml_text = localStorage.getItem("blockly-html-code-learning");
   if (xml_text) {
     var xml = Blockly.Xml.textToDom(xml_text);
     Blockly.Xml.domToWorkspace(xml, workspace);
   }
-
-
   showPopup();
-
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
   // previewFlag gibt an ob schon Blocks im workspace benutzt wurden
@@ -116,9 +84,9 @@
   var code;
   //codeFlag zeigt an, was gerade in der HTMLCodeDiv angezeigt werden soll
   var codeFlag;
+  var buttonPreview;
 
   //Setzen von previewCode anhand des aktuellen Lernstandes !!!TO DO!!!
-
   previewCode="<!DOCTYPE HTML>\n" +
     "<html>\n" +
     "<meta charset=\"utf-8\">\n" +
@@ -129,35 +97,26 @@
     "</html>";
 
   // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
-
   function update(event){
-
     // Umwandlung des workspace zu HTML-Code via HTMLGenerator
     code = HtmlGenerator.workspaceToCode(workspace);
     // Will der User gerade den Code sehen wird dieser aktualisiert in der HTMLCodeDiv
     if(!codeFlag || codeFlag ===0){
       showCode();
     }
-
     // Erstellung des IFrame aus dem erzeugten HTML-Code
     const ifr = document.preview;
     html = code;
     ifr.document.write(html);
     ifr.document.close();
-
     // Speichern des Zustandes des workspace in der localStorage des Browsers
     var xml = Blockly.Xml.workspaceToDom(workspace);
     var xml_text = Blockly.Xml.domToText(xml);
     localStorage.setItem("blockly-html-code-learning", xml_text);
-
   }
-
-
   //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
   workspace.addChangeListener(update);
-
   //function, die den Code im IFrame zwischen der erwünschten Vorschau und dem Ist-Stand des Users wechselt
-
   function switchPreview(){
     if(!previewFlag || previewFlag===0) {
       html=previewCode;
@@ -170,7 +129,6 @@
       update();
       previewFlag=0;
     }
-
   }
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
   function showCode(){
@@ -182,7 +140,6 @@
 
     codeFlag=0;
   }
-
   //wird aufgerufen, wenn auf den Gscheidhaferl-Knopf gedrückt wird. Zeigt dann die Gscheidhaferl-Page
   function showGscheidhaferl(){
     document.getElementById("HTMLCodeDiv").src="hilfestellung.html";
@@ -195,19 +152,12 @@
     ifr.document.close();
     codeFlag=2;
   }
-
   function showPopup(){
     document.getElementById("container").style.display="block";
   }
-
   function closePopup(){
     document.getElementById("container").style.display="none";
   }
-
-
 </script>
-
-
 </body>
-
 </html>
