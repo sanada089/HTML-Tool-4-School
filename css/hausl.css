@@ -1,0 +1,33 @@
+/* grid für die Aufteilung der Aufgabenstellung-Page */
+
+.element1 {grid-area: bildSchuldirektor;}
+.element2 {grid-area: sprechblase;}
+.element3 {grid-area: schreibmaschinenText;}
+
+
+.grid-container1{
+  display: grid;
+  grid-template-areas:
+    'bildSchuldirektor sprechblase'
+    'schreibmaschinenText schreibmaschinenText';
+  gap: 10px;
+}
+
+#bildSchuldirektor {
+  width: 2vw;
+  display: grid;
+}
+
+#sprechblase{
+  height: 2vh;
+  width: 80vw;
+  display: grid;
+}
+
+#schreibmaschinenText{
+  position: relative;
+  width: 99vw;
+  height: 5vh;
+
+  margin-bottom: 20px;
+}
