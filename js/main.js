@@ -80,6 +80,22 @@ var toolbox = {
           "kind": "block",
           "type": "specialtext",
         },
+        {
+          "kind": "block",
+          "type": "image",
+        },
+        {
+          "kind": "block",
+          "type": "imagelink",
+        },
+        {
+          "kind": "block",
+          "type": "book",
+        },
+        {
+          "kind": "block",
+          "type": "flower",
+        },
       ]
     },
     {

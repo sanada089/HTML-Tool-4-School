@@ -113,8 +113,20 @@ HtmlGenerator["listitem"] = function (block) {
 HtmlGenerator["image"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
-  var code = "<img>" + statements_content + "</img>\n";
+  var code = '<img src="'  + statements_content + '"/>\n';
   return code;
+};
+
+HtmlGenerator["flower"] = function(block) {
+  return "img/flower.png";
+};
+
+HtmlGenerator["book"] = function(block) {
+  return "img/book.png";
+};
+
+HtmlGenerator["imagelink"] = function(block) {
+  return block.getFieldValue("IMAGELINK");
 };
 
 HtmlGenerator["style"] = function (block) {
@@ -137,6 +149,8 @@ HtmlGenerator["specialtext"] = function(block) {
     "</span>\n";
   return code;
 };
+
+
 
 HtmlGenerator["link"] = function(block) {
   var text_link = block.getFieldValue("LINK");

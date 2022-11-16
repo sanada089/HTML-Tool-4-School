@@ -49,7 +49,8 @@ const htmlBlocks = [
                   "string",
                   "headline",
                   "orderedlist",
-                  "unorderedlist"],
+                  "unorderedlist",
+                  "image"],
       }
     ],
     "inputsInline": false,
@@ -71,7 +72,8 @@ const htmlBlocks = [
           "string",
           "headline",
           "orderedlist",
-          "unorderedlist"],
+          "unorderedlist",
+          "image"],
       }
     ],
     "inputsInline": false,
@@ -304,6 +306,68 @@ const htmlBlocks = [
       "image",
       "table",
       "orderedlist"],
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "imagelink",
+    "message0": "Bilderlink %1 %2",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "IMAGELINK",
+        "text": ""
+      },
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "String"
+      }
+    ],
+    "previousStatement": "imageblock",
+    "nextStatement": [
+      "nothing"
+    ],
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "book",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_image",
+        "src": "https://cdn.pixabay.com/photo/2017/01/31/00/08/book-2022461_960_720.png",
+        "width": 15,
+        "height": 15,
+        "alt": "*",
+        "flipRtl": false
+      }
+    ],
+    "previousStatement": "imageblock",
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  {
+    "type": "flower",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_image",
+        "src": "https://cdn.pixabay.com/photo/2013/07/13/10/08/flower-156608_960_720.png",
+        "width": 15,
+        "height": 15,
+        "alt": "*",
+        "flipRtl": false
+      }
+    ],
+    "previousStatement": "imageblock",
     "colour": 300,
     "tooltip": "",
     "helpUrl": ""

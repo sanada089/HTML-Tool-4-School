@@ -21,13 +21,13 @@
 
 #sprechblase{
   height: 2vh;
-  width: 80vw;
+  width: 70vw;
   display: grid;
 }
 
 #hilfestellungButtons{
   position: relative;
-  width: 99vw;
+  width: 90vw;
   height: 5vh;
   <!-- background-color: lightskyblue; -->
   margin-bottom: 20px;
