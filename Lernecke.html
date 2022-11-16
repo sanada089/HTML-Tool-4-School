@@ -41,9 +41,9 @@
 
   <div class="item5">
     <div id="CodeButtonDiv">
-      <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Matrix-Code"/></button>
-      <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Gscheidhaferl"/></button>
-      <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" alt="Hausl"/></button>
+      <button class="button" onclick=showCode()><img src="img/Code.jpg" /></button>
+      <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
+      <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
     </div>
   </div>
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
@@ -57,9 +57,8 @@
 
   <div class="item6">
     <div id="switchDiv">
-
-      <button class="button" onclick=switchPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
-      <button class="button" onclick=switchPreview()><img src="img/Vorschau.png" alt="Vorschau"/></button>
+      <button class="button" onclick=switchPreview()><img src="img/Aufgabe.png"/></button>
+      <button class="button" onclick=switchPreview()><img src="img/Vorschau.png"/></button>
     </div>
   </div>
 </div>
@@ -84,6 +83,7 @@
   var code;
   //codeFlag zeigt an, was gerade in der HTMLCodeDiv angezeigt werden soll
   var codeFlag;
+  var buttonPreview;
 
   //Setzen von previewCode anhand des aktuellen Lernstandes !!!TO DO!!!
   previewCode="<!DOCTYPE HTML>\n" +
@@ -136,7 +136,6 @@
     const ifr = document.buttonPreview;
     ifr.document.write(htmlCode);
     ifr.document.close();
-
     codeFlag=0;
   }
   //wird aufgerufen, wenn auf den Gscheidhaferl-Knopf gedrückt wird. Zeigt dann die Gscheidhaferl-Page
@@ -146,9 +145,7 @@
   }
   //wird aufgerufen, wenn auf den Hausl-Knopf gedrückt wird. Zeigt dann die zum Level gehörige Hausl-Page
   function showHausl(){
-    const ifr = document.buttonPreview;
-    ifr.document.write(previewCode);
-    ifr.document.close();
+    document.getElementById("HTMLCodeDiv").src="Aufgabenstellung.html";
     codeFlag=2;
   }
   function showPopup(){
