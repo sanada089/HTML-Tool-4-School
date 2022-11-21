@@ -3,7 +3,11 @@
 <!DOCTYPE HTML>
 <html lang="de">
 <meta charset="utf-8">
-
+<style>
+  body{
+    background-color: lemonchiffon;
+  }
+</style>
 <head>
   <title>Hilfestellung</title>
   <meta charset="utf-8">
@@ -12,11 +16,11 @@
 
 <body>
 
-<div class="grid-container1">
+<div style="background-color: lemonchiffon" class="grid-container1">
 
   <div class="element1">
     <div id="bildSekretaerin"></div>
-    <img src="istockphoto-834467010-612x612.jpg" style="width:150px;height:100px;"/></div>
+    <img src="istockphoto-834467010-612x612.jpg" style="width:150px;height:100px;" alt="gscheidhaferl"/></div>
 
   <div class="element2">
     <div id="sprechblase">
@@ -29,24 +33,30 @@
 
   <div class="element3">
     <div id="hilfestellungButtons">
-      <button class ="helpButton" onclick=showHTML()>Was ist HTML?</button>
-      <button class ="helpButton" onclick="">Grundgerüst?</button>
-      <button class ="helpButton" onclick="">Textstruktur?</button>
-      <button class ="helpButton" onclick="">Gestaltung/Textauszeichnung?</button>
-      <button class ="helpButton" onclick="">Liste?</button>
+      <button class ="helpButton" onclick=showHTML()>Was ist HTML</button> <br>
+      <button class ="helpButton" onclick=showTemplateHelp()>Grundgerüst</button> <br>
+      <button class ="helpButton" onclick="">Textstruktur?</button> <br>
+      <button class ="helpButton" onclick="">Gestaltung/ Textauszeichnung?</button> <br>
+      <button class ="helpButton" onclick="">Liste?</button> <br>
       <button class ="helpButton" onclick="">Tabelle?</button>
     </div>
   </div>
   <div class ="element4">
-    <iframe name="HilfeFrame" id= "HilfeFrame" src=""></iframe>
+    <iframe name="HilfeFrame" id= "HilfeFrame" width="450px" height="250px" src=""></iframe>
   </div>
+
 </div>
+
+
 
 </body>
 
 <script>
   function showHTML(){
     document.getElementById("HilfeFrame").src="HTMLHelp.html";
+  }
+  function showTemplateHelp(){
+    document.getElementById("HilfeFrame").src="HTMLTemplateHelp.html";
   }
 </script>
 
