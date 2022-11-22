@@ -22,12 +22,12 @@
   height: 2vh;
   width: 80vw;
   display: grid;
+
 }
 
 #schreibmaschinenText{
   position: relative;
   width: 99vw;
   height: 5vh;
-
   margin-bottom: 20px;
 }
