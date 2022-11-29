@@ -9,7 +9,7 @@ var toolbox = {
     {
       "kind": "category",
       "name": "Grundgerüst",
-      "colour": "100",
+      "colour": "0",
       "contents": [
         {
           "kind": "block",
@@ -34,7 +34,7 @@ var toolbox = {
     {
       "kind": "category",
       "name": "Textstruktur",
-      "colour": "100",
+      "colour": "50",
       "contents": [
         {
           "kind": "block",
@@ -65,7 +65,7 @@ var toolbox = {
 
     {
       "kind": "category",
-      "name": "Gestaltung/Textauszeichnung",
+      "name": "Design",
       "colour": "100",
       "contents": [
         {
@@ -101,7 +101,7 @@ var toolbox = {
     {
       "kind": "category",
       "name": "Liste",
-      "colour": "100",
+      "colour": "150",
       "contents": [
         {
           "kind": "block",
@@ -124,7 +124,7 @@ var toolbox = {
     {
       "kind": "category",
       "name": "Tabelle",
-      "colour": "100",
+      "colour": "200",
       "contents": [
         {
           "kind": "block",

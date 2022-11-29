@@ -8,9 +8,8 @@
 
 .grid-container{
   display: grid;
-  grid-gap: 1vh;
   grid-area: auto;
-  background-color: lightgreen;
+  background-color: #ffbc70;
   grid-template-areas:
 
     'blocklyDiv HTMLCode CodeButton'
@@ -19,14 +18,14 @@
 
 #blocklyDiv {
   height: 95vh;
-  width: 55vw;
+  width: 45vw;
   display: grid;
   background-color: whitesmoke;
 }
 
 #HTMLCodeDiv{
   height: 45vh;
-  width: 38vw;
+  width: 48vw;
   background-color: whitesmoke;
   display: grid;
   overflow: scroll;
@@ -34,7 +33,7 @@
 
 #HTMLPageDiv{
   height: 45vh;
-  width: 38vw;
+  width: 48vw;
   background-color: whitesmoke;
   display: grid;
   overflow: scroll;
@@ -43,23 +42,24 @@
 #CodeButtonDiv{
   position: relative;
   height: 45vh;
-  width: 5vw;
+  width: 3vw;
   margin-bottom: 3vh;
 }
 
 #switchDiv{
   position: relative;
   height: 45vh;
-  width: 5vw;
+  width: 3vw;
   margin-bottom: 3vh;
 }
 
 .button{
-  border-color: #28913d;
+  border-color: #100cff;
   border-style: solid;
   border-radius: 8px;
+  margin-bottom: 0.5vh;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
 }
 

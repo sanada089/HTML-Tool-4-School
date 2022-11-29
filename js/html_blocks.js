@@ -31,7 +31,7 @@ const htmlBlocks = [
       }
     ],
     "inputsInline": false,
-    "colour": 230,
+    "colour": 0,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -55,7 +55,7 @@ const htmlBlocks = [
     ],
     "inputsInline": false,
     "previousStatement": "head",
-    "colour": 60,
+    "colour": 0,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -78,7 +78,7 @@ const htmlBlocks = [
     ],
     "inputsInline": false,
     "previousStatement": "body",
-    "colour": 60,
+    "colour": 0,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -112,7 +112,7 @@ const htmlBlocks = [
     ],
     "previousStatement": "division",
     "nextStatement": "division",
-    "colour": 60,
+    "colour": 100,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -189,7 +189,7 @@ const htmlBlocks = [
     ],
     "previousStatement": "headline",
     "nextStatement": null,
-    "colour": 90,
+    "colour": 50,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
@@ -206,7 +206,7 @@ const htmlBlocks = [
     ],
     "previousStatement": "paragraph",
     "nextStatement": null,
-    "colour": 90,
+    "colour": 50,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
@@ -231,7 +231,7 @@ const htmlBlocks = [
     "image",
     "table",
     "orderedlist"],
-    "colour": 180,
+    "colour": 150,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -257,7 +257,7 @@ const htmlBlocks = [
       "image",
       "table",
     "orderedlist"],
-    "colour": 180,
+    "colour": 150,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -280,7 +280,7 @@ const htmlBlocks = [
     ],
     "previousStatement": "listitem",
     "nextStatement": "listitem",
-    "colour": 180,
+    "colour": 150,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -442,7 +442,7 @@ const htmlBlocks = [
       }
     ],
     "output": "style",
-    "colour": 10,
+    "colour": 100,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -517,7 +517,7 @@ const htmlBlocks = [
         "table",
         "orderedlist"
       ],
-    "colour": 0,
+    "colour": 100,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -616,7 +616,7 @@ const htmlBlocks = [
       "table",
       "orderedlist"
     ],
-    "colour": 190,
+    "colour": 200,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -633,7 +633,7 @@ const htmlBlocks = [
       ],
     "previousStatement": null,
     "nextStatement": ["string", "specialtext"],
-    "colour": 190,
+    "colour": 200,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -649,7 +649,7 @@ const htmlBlocks = [
     ],
     "previousStatement": null,
     "nextStatement": ["tabledata"],
-    "colour": 190,
+    "colour": 200,
     "tooltip": "",
     "helpUrl": ""
   },
@@ -665,7 +665,7 @@ const htmlBlocks = [
     ],
     "previousStatement": null,
     "nextStatement": ["string", "specialtext"],
-    "colour": 190,
+    "colour": 200,
     "tooltip": "",
     "helpUrl": ""
   }
