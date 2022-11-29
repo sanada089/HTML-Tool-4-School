@@ -43,14 +43,9 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": ["division",
+        "check": [
                   "title",
-                  "paragraph",
-                  "string",
-                  "headline",
-                  "orderedlist",
-                  "unorderedlist",
-                  "image"],
+                  ],
       }
     ],
     "inputsInline": false,
@@ -124,12 +119,13 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": "string"
+        "check": [
+          "string",
+        ],
       }
     ],
     "inputsInline": false,
     "previousStatement": "title",
-    "nextStatement": null,
     "colour": 0,
     "tooltip": "",
     "helpUrl": ""
