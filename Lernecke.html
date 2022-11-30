@@ -24,11 +24,14 @@
 -->
 <div id="container">
   <div id="exampleModal" class="reveal-modal">
-    <h2>POP UP</h2>
-    <p>
-      Hier wäre jetzt im Optimalfall die Einleitung
-    </p>
-    <button onclick="closePopup()">Okay!</button>
+    <button class="closeButton" onclick="closePopup()"><img src="img/redcross.png" alt="schliessen"></button>
+    <div id="popupFrameContainer">
+      <iframe name="popupFrame" id="popupFrame" width="100%" height="550" src="popup/popup1.html"></iframe>
+    </div>
+    <div class="popup-container">
+      <div class="left-arrow"><button class="arrow-button" onclick="showPreviousPopup()"><img src="img/arrow-left.png" alt="zurück"></button></div>
+      <div class="right-arrow"><button class="arrow-button" onclick="showNextPopup()"><img src="img/arrow-right.png" alt="weiter"></button></div>
+    </div>
   </div>
 </div>
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
@@ -41,9 +44,9 @@
 
   <div class="item5">
     <div id="CodeButtonDiv">
-      <button class="button" onclick=showCode()><img src="img/Code.jpg" /></button>
-      <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" /></button>
-      <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" /></button>
+      <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Code" /></button>
+      <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
+      <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" alt="Ausrufezeichen" /></button>
     </div>
   </div>
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
@@ -57,8 +60,8 @@
 
   <div class="item6">
     <div id="switchDiv">
-      <button class="button" onclick=switchPreview()><img src="img/Aufgabe.png"/></button>
-      <button class="button" onclick=switchPreview()><img src="img/Vorschau.png"/></button>
+      <button class="button" onclick=switchPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
+      <button class="button" onclick=switchPreview()><img src="img/Vorschau.png" alt="Vorschau"/></button>
     </div>
   </div>
 </div>
@@ -83,7 +86,8 @@
   var code;
   //codeFlag zeigt an, was gerade in der HTMLCodeDiv angezeigt werden soll
   var codeFlag;
-  var buttonPreview;
+  //popupFlag zeigt, bei welchem Popup sich der User befindet
+  var popupFlag=1;
 
   //Setzen von previewCode anhand des aktuellen Lernstandes !!!TO DO!!!
   previewCode="<!DOCTYPE HTML>\n" +
@@ -151,6 +155,55 @@
   function showPopup(){
     document.getElementById("container").style.display="block";
   }
+
+  function showPreviousPopup(){
+    if (!popupFlag || popupFlag === 1){
+    }
+    else {
+      popupFlag = popupFlag-1
+      if(popupFlag===1){
+        document.getElementById("popupFrame").src="popup/popup1.html"
+      }
+      if(popupFlag===2){
+        document.getElementById("popupFrame").src="popup/popup2.html"
+      }
+      if(popupFlag===3){
+        document.getElementById("popupFrame").src="popup/popup3.html"
+      }
+      if(popupFlag===4){
+        document.getElementById("popupFrame").src="popup/popup4.html"
+      }
+      if(popupFlag===5){
+        document.getElementById("popupFrame").src="popup/popup5.html"
+      }
+    }
+  }
+
+  function showNextPopup(){
+    if (popupFlag === 5){
+    }
+    else {
+      popupFlag = popupFlag+1
+      if(popupFlag===1){
+        document.getElementById("popupFrame").src="popup/popup1.html"
+      }
+      if(popupFlag===2){
+        document.getElementById("popupFrame").src="popup/popup2.html"
+      }
+      if(popupFlag===3){
+        document.getElementById("popupFrame").src="popup/popup3.html"
+      }
+      if(popupFlag===4){
+        document.getElementById("popupFrame").src="popup/popup4.html"
+      }
+      if(popupFlag===5){
+        document.getElementById("popupFrame").src="popup/popup5.html"
+      }
+    }
+  }
+
+
+
   function closePopup(){
     document.getElementById("container").style.display="none";
   }

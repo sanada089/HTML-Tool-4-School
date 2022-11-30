@@ -1,9 +1,19 @@
 
-.item2 {grid-area: blocklyDiv;}
-.item3 {grid-area: HTMLPage;}
-.item4 {grid-area: HTMLCode;}
-.item5 {grid-area: CodeButton;}
-.item6 {grid-area: switch;}
+.item2 {
+  grid-area: blocklyDiv;
+}
+.item3 {
+  grid-area: HTMLPage;
+}
+.item4 {
+  grid-area: HTMLCode;
+}
+.item5 {
+  grid-area: CodeButton;
+}
+.item6 {
+  grid-area: switch;
+}
 
 
 .grid-container{
@@ -15,6 +25,63 @@
     'blocklyDiv HTMLCode CodeButton'
     'blocklyDiv HTMLPage switch';
 }
+
+.button{
+  border-color: #100cff;
+  border-style: solid;
+  border-radius: 8px;
+  margin-bottom: 0.5vh;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.closeButton{
+  position: absolute;
+  top: 2px;
+  right: 0;
+  border: none;
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+
+
+.reveal-modal {
+  background:#e1e1e1;
+  margin: 0 auto;
+  width:40vw;
+  height:66vh;
+  position:relative;
+  z-index:41;
+  top: 10%;
+  padding:30px;
+  -webkit-box-shadow:0 0 10px rgba(0,0,0,0.4);
+  -moz-box-shadow:0 0 10px rgba(0,0,0,0.4);
+  box-shadow:0 0 10px rgba(0,0,0,0.4);
+}
+
+.popup-container{
+  display:grid;
+  grid-template-columns: 10vw 6vw 5vw 6vw 10vw;
+}
+
+.left-arrow{
+  grid-column: 2 / 3;
+  align-content: center;
+}
+
+.right-arrow{
+  grid-column: 5 / 6;
+  align-content: center;
+}
+
+.arrow-button{
+  border: none;
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+
+
 
 #blocklyDiv {
   height: 95vh;
@@ -63,26 +130,3 @@
   background-color: rgba(22,22,22,0.5);
 }
 
-.button{
-  border-color: #100cff;
-  border-style: solid;
-  border-radius: 8px;
-  margin-bottom: 0.5vh;
-  display: inline-block;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-
-.reveal-modal {
-  background:#e1e1e1;
-  margin: 0 auto;
-  width:160px;
-  position:relative;
-  z-index:41;
-  top: 25%;
-  padding:30px;
-  -webkit-box-shadow:0 0 10px rgba(0,0,0,0.4);
-  -moz-box-shadow:0 0 10px rgba(0,0,0,0.4);
-  box-shadow:0 0 10px rgba(0,0,0,0.4);
-}
