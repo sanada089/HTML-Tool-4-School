@@ -23,7 +23,7 @@
   <div class="buttonleiste" id="hilfestellungButtons">
       <button class ="helpButton" onclick=showHTML()>Was ist HTML</button>
       <button class ="helpButton" onclick=showTemplateHelp()>Grundgerüst</button>
-      <button class ="helpButton" onclick="">Textstruktur?</button>
+      <button class ="helpButton" onclick=showTextstruktur()>Textstruktur</button>
       <button class ="helpButton" onclick="">Gestaltung/ Textauszeichnung?</button>
       <button class ="helpButton" onclick="">Liste?</button>
       <button class ="helpButton" onclick="">Tabelle?</button>
@@ -45,6 +45,11 @@
   function showTemplateHelp(){
     document.getElementById("HilfeFrame").src="Button_Grundgeruest.html";
   }
+
+  function showTextstruktur() {
+    document.getElementById("HilfeFrame").src="Button_Textstruktur.html";
+      }
+
 </script>
 
 </html>
