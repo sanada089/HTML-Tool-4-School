@@ -1,52 +1,49 @@
 
 /* grid für die Aufteilung der Hilfestellung-Page */
 
-.element1 {grid-area: bildSekretaerin;}
-.element2 {grid-area: sprechblase;}
-.element3 {grid-area: hilfestellungButtons;}
-.element4 {grid-area: hilfestellung}
-
 .grid-container1{
   background-color: lemonchiffon;
   display: grid;
-  grid-template-areas:
-    'bildSekretaerin sprechblase sprechblase'
-    'hilfestellungButtons hilfestellung hilfestellung';
-    'hilfestellungButtons hilfestellung hilfestellung';
-    'hilfestellungButtons hilfestellung hilfestellung';
-    'hilfestellungButtons hilfestellung hilfestellung';
-  gap: 10px;
+  grid-area: auto;
+  grid-gap: 5px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 5fr);
+  grid-template-rows: repeat(4, 100px);
+}
+
+.bild {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.buttonleiste {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: -1;
+}
+.iframe {
+  grid-column-start: 2;
+  grid-column-end: -1;
+  grid-row-start: 1;
+  grid-row-end: -1;
 }
 
 #bildSekretaerin {
-  width: 2vw;
-  display: grid;
-}
-
-#sprechblase{
-  height: 2vh;
-  width: 70vw;
   display: grid;
 }
 
 #hilfestellungButtons{
-  position: relative;
-  width: 8vw;
-  height: 5vh;
-  <!-- background-color: lightskyblue; -->
-  margin-bottom: 20px;
+  display: grid;
 }
 
 #hilfestellung{
   background-color: lemonchiffon;
-  position: relative;
-  display: block;
-  margin-top: 10px;
+  display: grid;
 }
 
 .helpButton{
-  background-color: lightgreen;
-  margin-bottom: 2px;
+  background-color: #ffbc70;
   width: 150px;
   height: 40px;
 }
