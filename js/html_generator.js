@@ -159,7 +159,7 @@ HtmlGenerator["link"] = function(block) {
 HtmlGenerator["linkdescription"] = function(block) {
   var text_link = block.getFieldValue("LINK");
   var text_linkdescription = block.getFieldValue("LINKDESCRIPTION");
-  var code = "<a href= '" + text_link + "'>"
+  var code = "<a href= '\n" + text_link + "'>\n"
     + text_linkdescription +
     "</a>\n";
   return code;
