@@ -38,13 +38,13 @@ const htmlBlocks = [
 
   {
     "type": "head",
-    "message0": "Kopf %1",
+    "message0": "Kopf %1 Titel ",
     "args0": [
       {
         "type": "input_statement",
         "name": "CONTENT",
         "check": [
-                  "title",
+                  "string",
                   ],
       }
     ],
@@ -112,24 +112,8 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
-  {
-    "type": "title",
-    "message0": "Titel %1",
-    "args0": [
-      {
-        "type": "input_statement",
-        "name": "CONTENT",
-        "check": [
-          "string",
-        ],
-      }
-    ],
-    "inputsInline": false,
-    "previousStatement": "title",
-    "colour": 0,
-    "tooltip": "",
-    "helpUrl": ""
-  },
+
+
   {
     "type": "string",
     "message0": "Text %1",

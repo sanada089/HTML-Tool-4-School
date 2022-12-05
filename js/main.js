@@ -23,11 +23,6 @@ var toolbox = {
           "kind": "block",
           "type": "body",
         },
-
-        {
-          "kind": "block",
-          "type": "title",
-        },
       ]
     },
 

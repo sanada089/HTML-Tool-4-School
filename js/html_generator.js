@@ -33,7 +33,7 @@ HtmlGenerator["html_page"] = function (block) {
 
 HtmlGenerator["head"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<head>\n" + statements_content + "</head>\n";
+  var code = "<head>\n<title>\n" + statements_content + "</title>\n</head>\n";
   return code;
 };
 
@@ -56,12 +56,7 @@ HtmlGenerator["division"] = function (block) {
   return code;
 };
 
-HtmlGenerator["title"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
-  var code = "<title>" + statements_content + "</title>\n";
-  return code;
-};
 
 HtmlGenerator["string"] = function (block) {
   var text_content = block.getFieldValue("CONTENT");
