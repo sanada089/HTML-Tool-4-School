@@ -51,10 +51,6 @@ var toolbox = {
           "kind": "block",
           "type": "linkdescription",
         },
-        {
-          "kind": "block",
-          "type": "image",
-        },
         ]
     },
 

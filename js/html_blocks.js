@@ -149,12 +149,12 @@ const htmlBlocks = [
         "type": "field_dropdown",
         "name": "LEVEL",
         "options": [
-          ["Größe 6", "h1"],
-          ["Größe 5", "h2"],
-          ["Größe 4", "h2"],
-          ["Größe 3", "h4"],
-          ["Größe 2", "h5"],
-          ["Größe 1", "h6"]
+          ["Ebene 1", "h1"],
+          ["Ebene 2", "h2"],
+          ["Ebene 3", "h3"],
+          ["Ebene 4", "h4"],
+          ["Ebene 5", "h5"],
+          ["Ebene 6", "h6"]
         ]
       },
       {
