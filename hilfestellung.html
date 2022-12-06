@@ -29,8 +29,8 @@
       </tr>
       <tr>
         <td><button class ="helpButton" onclick=showDesign()>Design</button></td>
-        <td><button class ="helpButton" onclick="">Liste</button></td>
-        <td><button class ="helpButton" onclick="">Tabelle</button></td>
+        <td><button class ="helpButton" onclick=showListe()>Liste</button></td>
+        <td><button class ="helpButton" onclick=showTabelle()>Tabelle</button></td>
       </tr>
     </table>
 
@@ -62,6 +62,13 @@
     document.getElementById("HilfeFrame").src="Button_Design.html";
   }
 
+  function showListe(){
+    document.getElementById("HilfeFrame").src="Button_Liste.html";
+  }
+
+  function showTabelle(){
+    document.getElementById("HilfeFrame").src="Button_Tabelle.html";
+  }
 </script>
 
 </html>
