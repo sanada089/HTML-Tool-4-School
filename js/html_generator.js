@@ -92,9 +92,13 @@ HtmlGenerator["orderedlist"] = function (block) {
 };
 
 HtmlGenerator["unorderedlist"] = function (block) {
+  var dropdown_type = block.getFieldValue("TYPE");
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-
-  var code = "<ul>" + statements_content + "</ul>\n";
+  var code = "<ul type=" +
+    dropdown_type +
+    ">\n" +
+    statements_content +
+    "</ul>\n";
   return code;
 };
 

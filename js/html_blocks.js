@@ -160,7 +160,6 @@ const htmlBlocks = [
       {
         "type": "input_dummy"
       },
-
       {
         "type": "input_statement",
         "name": "CONTENT",
@@ -216,10 +215,24 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
+
   {
     "type": "unorderedlist",
-    "message0": "Unnummerierte Liste %1",
+    "message0": "Unnummerierte Liste %1 %2 %3",
     "args0": [
+
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "TYPE",
+        "options": [
+          ["Type circle", "circle"],
+          ["Type square", "square"],
+          ["Type disc", "disc"]
+        ]
+      },
       {
         "type": "input_statement",
         "name": "CONTENT",
