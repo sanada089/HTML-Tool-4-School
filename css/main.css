@@ -21,7 +21,6 @@
   grid-area: auto;
   background-color: #ffbc70;
   grid-template-areas:
-
     'blocklyDiv HTMLCode CodeButton'
     'blocklyDiv HTMLPage switch';
 }

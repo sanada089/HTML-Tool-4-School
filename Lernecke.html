@@ -40,8 +40,6 @@
     <div id="blocklyDiv"></div>
   </div>
 
-
-
   <div class="item5">
     <div id="CodeButtonDiv">
       <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Code" /></button>
@@ -133,15 +131,35 @@
       previewFlag=0;
     }
   }
+
+/*
+    function showCode(){
+    const ifr = buttonPreview;
+    document.getElementById("HTMLCodeDiv").src="";
+    ifr.contentWindow.postMessage(nachricht, HilfeFrame)
+    var htmlCode="<xmp>" + code + "</xmp>";
+
+    window.addEventListener('message', event => {
+      if(event.origin === htmlCode) {
+        console.log(event.data);
+      }else{
+          return;
+        }
+    });
+  }*/
+
+
+
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
   function showCode(){
     document.getElementById("HTMLCodeDiv").src="";
     var htmlCode="<xmp>" + code + "</xmp>";
     const ifr = document.buttonPreview;
-    ifr.document.write(htmlCode);
-    ifr.document.close();
+   ifr.document.write(htmlCode);
+   ifr.document.close();
     codeFlag=0;
   }
+
   //wird aufgerufen, wenn auf den Gscheidhaferl-Knopf gedrückt wird. Zeigt dann die Gscheidhaferl-Page
   function showGscheidhaferl(){
     document.getElementById("HTMLCodeDiv").src="hilfestellung.html";

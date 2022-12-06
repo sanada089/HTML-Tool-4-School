@@ -1,15 +1,31 @@
 
 /* grid für die Aufteilung der Hilfestellung-Page */
 
+.item1 {
+  grid-area: bildSekretaerin;
+}
+
+.item2{
+  grid-area: hilfestellungButtons;
+}
+
+.item3{
+  grid-area: hilfestellung;
+}
+
 .grid-container1{
   background-color: lemonchiffon;
   display: grid;
   grid-area: auto;
-  grid-gap: 5px;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 5fr);
-  grid-template-rows: repeat(4, 100px);
+  grid-template-areas:
+  'bildSekretaerin hilfestellungButtons'
+  'hilfestellung hilfestellung';
+
+ /* grid-template-columns: minmax(0, 1fr) minmax(0, 5fr);
+  grid-template-rows: repeat(4, 100px);*/
 }
 
+/*
 .bild {
   grid-column-start: 1;
   grid-column-end: 2;
@@ -27,14 +43,17 @@
   grid-column-end: -1;
   grid-row-start: 1;
   grid-row-end: -1;
-}
+}*/
 
 #bildSekretaerin {
   display: grid;
+  height: 0.5vh;
+  width: 15vw;
 }
 
 #hilfestellungButtons{
   display: grid;
+
 }
 
 #hilfestellung{
@@ -44,10 +63,18 @@
 
 .helpButton{
   background-color: #ffbc70;
-  width: 150px;
-  height: 40px;
+ // border-color: #100cff;
+  //border-style: solid;
+  //padding: 8px 25px;
+  width: 20vw;
+  height: 10vh;
+  text-align: center;
+  border-radius: 8px;
+  //margin-bottom: 0.5vh;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
-
 
 
 

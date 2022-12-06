@@ -17,18 +17,25 @@
 <body>
 
 <div  class="grid-container1">
-  <div class="bild" id="bildSekretaerin">
-    <img src="istockphoto-834467010-612x612.jpg" alt="gscheidhaferl"/>
+  <div class="item1" id="bildSekretaerin">
+    <img src="img/Gscheidhaferl.jpg" alt="Gscheidhaferl"/>
   </div>
-  <div class="buttonleiste" id="hilfestellungButtons">
-      <button class ="helpButton" onclick=showHTML()>Was ist HTML</button>
-      <button class ="helpButton" onclick=showTemplateHelp()>Grundgerüst</button>
-      <button class ="helpButton" onclick=showTextstruktur()>Textstruktur</button>
-      <button class ="helpButton" onclick="">Gestaltung/ Textauszeichnung?</button>
-      <button class ="helpButton" onclick="">Liste?</button>
-      <button class ="helpButton" onclick="">Tabelle?</button>
+  <div class="item2" id="hilfestellungButtons">
+    <table>
+      <tr>
+        <td><button class ="helpButton" onclick=showHTML()>HTML</button></td>
+        <td><button class ="helpButton" onclick=showTemplateHelp()>Grundgerüst</button></td>
+        <td><button class ="helpButton" onclick=showTextstruktur()>Textstruktur</button></td>
+      </tr>
+      <tr>
+        <td><button class ="helpButton" onclick=showDesign()>Design</button></td>
+        <td><button class ="helpButton" onclick="">Liste</button></td>
+        <td><button class ="helpButton" onclick="">Tabelle</button></td>
+      </tr>
+    </table>
+
   </div>
-  <div class ="iframe" id="hilfestellung">
+  <div class ="item3" id="hilfestellung">
     <iframe name="HilfeFrame" id= "HilfeFrame" width="640px" height="400px" src=""></iframe>
   </div>
 
@@ -42,13 +49,18 @@
   function showHTML(){
     document.getElementById("HilfeFrame").src="Button_Was_ist.html";
   }
+
   function showTemplateHelp(){
     document.getElementById("HilfeFrame").src="Button_Grundgeruest.html";
   }
 
   function showTextstruktur() {
     document.getElementById("HilfeFrame").src="Button_Textstruktur.html";
-      }
+  }
+
+  function showDesign(){
+    document.getElementById("HilfeFrame").src="Button_Design.html";
+  }
 
 </script>
 
