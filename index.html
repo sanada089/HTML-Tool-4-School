@@ -15,18 +15,15 @@
 <script src="js/html_blocks.js"></script>
 <script src="js/html_generator.js"></script>
 <script src="js/main.js"></script>
-<!-- Leiste zur Auswahl von Leveln -->
-<!--
-<div id="LevelSelectionDiv">
-  <button class="levelButton" onclick="location.href='Startseite.html'">Bastelecke</button>
-  <button class="levelButton" onclick="location.href='hilfestellung.html'">Hilfestellung</button>
-</div>
--->
+
+
+<!-- Anfangspopup, in dem die ersten Schritte erklärt werden -->
+
 <div id="container">
   <div id="exampleModal" class="reveal-modal">
     <button class="closeButton" onclick="closePopup()"><img src="img/redcross.png" alt="schliessen"></button>
     <div id="popupFrameContainer">
-      <iframe name="popupFrame" id="popupFrame" width="100%" height="550" src="popup/popup1.html"></iframe>
+      <iframe name="popupFrame" id="popupFrame" width="" height="" src="popup/popup1.html"></iframe>
     </div>
     <div class="popup-container">
       <div class="left-arrow"><button class="arrow-button" onclick="showPreviousPopup()"><img src="img/arrow-left.png" alt="zurück"></button></div>
@@ -34,6 +31,7 @@
     </div>
   </div>
 </div>
+
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
 <div class="grid-container">
   <div class="item2">
@@ -73,6 +71,10 @@
     var xml = Blockly.Xml.textToDom(xml_text);
     Blockly.Xml.domToWorkspace(xml, workspace);
   }
+
+  //Popup auf die richtige größe des Bildschirms resizen und anschließend anzeigen
+  document.getElementById("popupFrame").width=Math.round(screen.availWidth*0.40);
+  document.getElementById("popupFrame").height=Math.round(screen.availHeight*0.55);
   showPopup();
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
