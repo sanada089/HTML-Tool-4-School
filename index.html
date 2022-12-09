@@ -73,8 +73,8 @@
   }
 
   //Popup auf die richtige größe des Bildschirms resizen und anschließend anzeigen
-  document.getElementById("popupFrame").width=Math.round(screen.availWidth*0.40);
-  document.getElementById("popupFrame").height=Math.round(screen.availHeight*0.55);
+  document.getElementById("popupFrame").width=Math.round(window.innerWidth*0.40);
+  document.getElementById("popupFrame").height=Math.round(window.innerHeight*0.60);
   showPopup();
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
