@@ -58,8 +58,8 @@
 
   <div class="item6">
     <div id="switchDiv">
-      <button class="button" onclick=switchPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
-      <button class="button" onclick=switchPreview()><img src="img/Vorschau.png" alt="Vorschau"/></button>
+      <button class="button" onclick=update()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
+      <button class="button" onclick=switchToPreview()><img src="img/Vorschau.png" alt="Vorschau"/></button>
     </div>
   </div>
 </div>
@@ -68,16 +68,14 @@
   // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
   const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
   //Laden des vorherigen Zustandes des workspace aus der localStorage des Browsers
-  var xml_text = localStorage.getItem("blockly-html-code-learning");
-  if (xml_text) {
+  if (localStorage.getItem("blockly-html-code-learning")) {
+    var xml_text = localStorage.getItem("blockly-html-code-learning");
     var xml = Blockly.Xml.textToDom(xml_text);
     Blockly.Xml.domToWorkspace(xml, workspace);
   }
   showPopup();
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
-  // previewFlag gibt an ob schon Blocks im workspace benutzt wurden
-  var previewFlag;
   //previewCode ist die Vorschau der aktuell erwünschten Seite
   var previewCode;
   //code ist der aktuell aus den Blocks erzeugte Code
@@ -118,18 +116,11 @@
   //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
   workspace.addChangeListener(update);
   //function, die den Code im IFrame zwischen der erwünschten Vorschau und dem Ist-Stand des Users wechselt
-  function switchPreview(){
-    if(!previewFlag || previewFlag===0) {
+  function switchToPreview(){
       html=previewCode;
       const previewIfr = document.preview;
       previewIfr.document.write(html);
       previewIfr.document.close();
-      previewFlag=1;
-    }
-    else {
-      update();
-      previewFlag=0;
-    }
   }
 
 /*
