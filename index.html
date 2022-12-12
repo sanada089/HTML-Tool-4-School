@@ -10,7 +10,7 @@
   <!-- Laden der benötigten Blockly-Sprachfiles für deutsche Sprache -->
   <script src="node_modules/blockly/msg/de.js"></script>
 </head>
-<body bgcolor="#ffbc70" id="learningPageBody">
+<body id="learningPageBody">
 <!-- Laden der benötigten Javascript-Files aus dem Unterverzeichnis js -->
 <script src="js/html_blocks.js"></script>
 <script src="js/html_generator.js"></script>
@@ -117,6 +117,7 @@
   }
   //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
   workspace.addChangeListener(update);
+
   //function, die den Code im IFrame zwischen der erwünschten Vorschau und dem Ist-Stand des Users wechselt
   function switchToPreview(){
       html=previewCode;
@@ -124,23 +125,6 @@
       previewIfr.document.write(html);
       previewIfr.document.close();
   }
-
-/*
-    function showCode(){
-    const ifr = buttonPreview;
-    document.getElementById("HTMLCodeDiv").src="";
-    ifr.contentWindow.postMessage(nachricht, HilfeFrame)
-    var htmlCode="<xmp>" + code + "</xmp>";
-
-    window.addEventListener('message', event => {
-      if(event.origin === htmlCode) {
-        console.log(event.data);
-      }else{
-          return;
-        }
-    });
-  }*/
-
 
 
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
