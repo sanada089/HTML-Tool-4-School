@@ -36,16 +36,33 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
+  //Head-Block
+
   {
     "type": "head",
-    "message0": "Kopf %1 Titel ",
+    "message0": "Titel %1 %2 Kopf %3 ",
     "args0": [
+      {
+        "type": "field_input",
+        "name": "TITLE",
+        "text": ""
+      },
+      {
+        "type": "input_dummy"
+      },
       {
         "type": "input_statement",
         "name": "CONTENT",
         "check": [
-                  "string",
-                  ],
+          "division",
+          "title",
+          "paragraph",
+          "string",
+          "headline",
+          "orderedlist",
+          "unorderedlist",
+          "image",
+        ],
       }
     ],
     "inputsInline": false,

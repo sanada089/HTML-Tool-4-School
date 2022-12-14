@@ -22,52 +22,46 @@ HtmlGenerator["html_page"] = function (block) {
   var statements_head = HtmlGenerator.statementToCode(block, "HEAD");
   var statements_body = HtmlGenerator.statementToCode(block, "BODY");
 
-  var code =
-    '<!DOCTYPE HTML>\n<html>\n<meta charset="utf-8">\n' +
+  return code =
+    '<!DOCTYPE HTML>\n<html lang="de">\n<meta charset="utf-8">\n' +
     statements_head +
     statements_body +
     "\n</html>\n";
-
-  return code;
 };
 
 HtmlGenerator["head"] = function (block) {
+  var title_content = block.getFieldValue("TITLE");
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<head>\n<title>\n" + statements_content + "</title>\n</head>\n";
-  return code;
+  return code = "<head>\n<title>\n" + title_content + "\n</title>\n" + statements_content +"</head>\n";
 };
 
 HtmlGenerator["body"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<body>\n" + statements_content + "</body>\n";
-  return code;
+  return code = "<body>\n" + statements_content + "</body>\n";
 };
 
 HtmlGenerator["division"] = function (block) {
   var statements_style = HtmlGenerator.statementToCode(block, "STYLE");
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
-  var code =
+  return code =
     '<div style=' +
     statements_style + ">\n" +
     statements_content +
     "<div>\n";
-
-  return code;
 };
 
 
 
 HtmlGenerator["string"] = function (block) {
   var text_content = block.getFieldValue("CONTENT");
-  var code = text_content + "\n";
-  return code;
+  return code = text_content + "\n";
 };
 
 HtmlGenerator["headline"] = function (block) {
   var dropdown_level = block.getFieldValue("LEVEL");
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code =
+  return code =
     "<" +
     dropdown_level +
     ">" +
@@ -75,52 +69,46 @@ HtmlGenerator["headline"] = function (block) {
     "</" +
     dropdown_level +
     ">\n";
-  return code;
 };
 
 HtmlGenerator["paragraph"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<p>" + statements_content + "</p> \n";
-  return code;
+  return code = "<p>" + statements_content + "</p> \n";
 };
 
 HtmlGenerator["orderedlist"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
-  var code = "<ol>\n" + statements_content + "</ol>\n";
-  return code;
+  return code = "<ol>\n" + statements_content + "</ol>\n";
 };
 
 HtmlGenerator["unorderedlist"] = function (block) {
   var dropdown_type = block.getFieldValue("TYPE");
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<ul type=" +
+  return code = "<ul type=" +
     dropdown_type +
     ">\n" +
     statements_content +
     "</ul>\n";
-  return code;
 };
 
 HtmlGenerator["listitem"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
-  var code = "<li>" + statements_content + "</li>\n";
-  return code;
+  return code = "<li>" + statements_content + "</li>\n";
 };
 
 HtmlGenerator["image"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
-  var code = '<img src="'  + statements_content + '"/>\n';
-  return code;
+  return code = '<img src="'  + statements_content + '" alt="default"/>\n';
 };
 
-HtmlGenerator["flower"] = function(block) {
+HtmlGenerator["flower"] = function() {
   return "img/flower.png";
 };
 
-HtmlGenerator["book"] = function(block) {
+HtmlGenerator["book"] = function() {
   return "img/book.png";
 };
 
@@ -132,8 +120,7 @@ HtmlGenerator["style"] = function (block) {
   var font = block.getFieldValue("FONT");
   var backgroundcolor = block.getFieldValue("BACKGROUND");
   var textcolor = block.getFieldValue("TEXTCOLOR");
-  var code = "'font-family: " + font + ";background-color: " + backgroundcolor + ";color: " + textcolor + ";'";
-  return code;
+  return code = "'font-family: " + font + ";background-color: " + backgroundcolor + ";color: " + textcolor + ";'";
 };
 
 HtmlGenerator["specialtext"] = function(block) {
@@ -141,58 +128,51 @@ HtmlGenerator["specialtext"] = function(block) {
   var dropdown_schriftart = block.getFieldValue("FONT");
   var dropdown_schriftgroesse = block.getFieldValue("FONTSIZE");
   var colour_name = block.getFieldValue("TEXTCOLOR");
-  var code = "<span style = 'color: " + colour_name + "'" +
+  return code = "<span style = 'color: " + colour_name + "'" +
     "'font-family: " + dropdown_schriftart + "'" +
     "'font-size: " + dropdown_schriftgroesse + "'>" +
     text_specialtext +
     "</span>\n";
-  return code;
 };
 
 
 
 HtmlGenerator["link"] = function(block) {
   var text_link = block.getFieldValue("LINK");
-  var code = "<a href= '" + text_link + "'>"
+  return code = "<a href= '" + text_link + "'>"
     + text_link +
     "</a>\n";
-  return code;
 };
 
 
 HtmlGenerator["linkdescription"] = function(block) {
   var text_link = block.getFieldValue("LINK");
   var text_linkdescription = block.getFieldValue("LINKDESCRIPTION");
-  var code = "<a href= '\n" + text_link + "'>\n"
+  return code = "<a href= '\n" + text_link + "'>\n"
     + text_linkdescription +
     "</a>\n";
-  return code;
 };
 
 HtmlGenerator["table"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<table border = 1>" + statements_content + "</table>\n";
-  return code;
+  return code = "<table border = 1>" + statements_content + "</table>\n";
 };
 
 
 
 HtmlGenerator["tablehead"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<th>" + statements_content + "</th>\n";
-  return code;
+  return code = "<th>" + statements_content + "</th>\n";
 };
 
 HtmlGenerator["tablerow"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<tr>" + statements_content + "</tr>\n";
-  return code;
+  return code = "<tr>" + statements_content + "</tr>\n";
 };
 
 HtmlGenerator["tabledata"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var code = "<td>" + statements_content + "</td>\n";
-  return code;
+  return code = "<td>" + statements_content + "</td>\n";
 }
 
 

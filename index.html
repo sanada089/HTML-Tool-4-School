@@ -4,6 +4,7 @@
   <title>HTML-Tool</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
   <!-- Laden der benötigten Blockly-Module -->
   <script src="node_modules/blockly/blockly_compressed.js"></script>
   <script src="node_modules/blockly/blocks_compressed.js"></script>
@@ -60,7 +61,7 @@
       <button class="button" onclick=switchToPreview()><img src="img/Vorschau.png" alt="Vorschau"/></button>
     </div>
   </div>
-  <div><a href="/Impressum.html">Impressum & Datenschutz</a></div>
+  <div><a href="Impressum.html">Impressum & Datenschutz</a></div>
 </div>
 
 <!-- Beginn Skript-Block -->
@@ -100,7 +101,7 @@
     "</html>";
 
   // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
-  function update(event){
+  function update(){
     // Umwandlung des workspace zu HTML-Code via HTMLGenerator
     code = HtmlGenerator.workspaceToCode(workspace);
     // Will der User gerade den Code sehen wird dieser aktualisiert in der HTMLCodeDiv
