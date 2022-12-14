@@ -3,6 +3,8 @@
 
 .item1 {
   grid-area: bildSekretaerin;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .item2{
