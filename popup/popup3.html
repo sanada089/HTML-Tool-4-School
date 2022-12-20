@@ -4,7 +4,43 @@
   <meta charset="UTF-8">
   <title>popup3</title>
 </head>
-<body>
-3
+<body style="font-family: Cambria">
+<p>Der zweite Teil hat verschiedene Funktionen.</p>
+<table>
+  <colgroup>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+  </colgroup>
+  <tr>
+    <td colspan="7"><img src="../img/popup/code_click.gif" id="Bild1" alt="code_click" width="240" height="135"></td>
+    <td colspan="3">Wenn du neu auf die Seite kommst, oder auf den obersten Button klickst wird dir der aktuelle Code, den deine Blöcke erzeugen, angezeigt (jeder Block hat eine Entsprechung in HTML-Code). <br>
+      Ziehst du einen neuen Block in das weiße Feld ändert sich sofort der Code.</td>
+  </tr>
+  <tr>
+    <td colspan="7"><img src="../img/popup/help_click.gif" id="Bild2" alt="help_click" width="240" height="135"></td>
+    <td colspan="3">Klickst du auf die Sprechblase mit dem Fragezeichen, gelangst du zu Frau Gscheidhaferl, die dir bei allen Problemen weiterhilft.</td>
+  </tr>
+  <tr>
+    <td colspan="7"><img src="../img/popup/hausl_click.gif" id="Bild3" alt="hausl_click" width="240" height="135"></td>
+    <td colspan="3">Klickst du auf die Sprechblase mit Ausrufezeichen, siehst du noch einmal die aktuelle Aufgabenstellung.</td>
+  </tr>
+</table>
+
 </body>
+<script>
+  document.getElementById("Bild1").width=Math.round(window.innerWidth*0.35);
+  document.getElementById("Bild1").height=Math.round(window.innerHeight*0.27);
+  document.getElementById("Bild2").width=Math.round(window.innerWidth*0.35);
+  document.getElementById("Bild2").height=Math.round(window.innerHeight*0.27);
+  document.getElementById("Bild3").width=Math.round(window.innerWidth*0.35);
+  document.getElementById("Bild3").height=Math.round(window.innerHeight*0.27);
+</script>
 </html>
