@@ -62,7 +62,11 @@
     </div>
   </div>
   <div><a href="Impressum.html">Impressum & Datenschutz</a></div>
+  <div id="infoButtonDiv">
+    <button class="button" onclick=showPopup()><img src="img/info.png" alt="info"/></button>
+  </div>
 </div>
+
 
 <!-- Beginn Skript-Block -->
 <script>
@@ -151,6 +155,8 @@
     codeFlag=2;
   }
   function showPopup(){
+    document.getElementById("popupFrame").src="popup/popup1.html";
+    popupFlag=1;
     document.getElementById("container").style.display="block";
   }
 

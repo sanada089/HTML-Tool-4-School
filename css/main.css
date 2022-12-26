@@ -118,6 +118,12 @@
   margin-bottom: 3vh;
 }
 
+#infoButtonDiv{
+  position: fixed;
+  bottom: 3vh;
+  right: 2vw;
+}
+
 
 #container {
   width: 100%;

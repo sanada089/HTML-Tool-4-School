@@ -73,8 +73,16 @@ const htmlBlocks = [
   },
   {
     "type": "body",
-    "message0": "Körper %1",
+    "message0": "Körper %1 Style %2 Inhalt %3",
     "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "input_value",
+        "name": "STYLE",
+        "check": "style"
+      },
       {
         "type": "input_statement",
         "name": "CONTENT",

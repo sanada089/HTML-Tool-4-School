@@ -36,8 +36,12 @@ HtmlGenerator["head"] = function (block) {
 };
 
 HtmlGenerator["body"] = function (block) {
+  var statements_style = HtmlGenerator.statementToCode(block, "STYLE");
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  return code = "<body>\n" + statements_content + "</body>\n";
+  return code = '<body style=' +
+    statements_style + ">\n" +
+    statements_content +
+    "</body>\n";
 };
 
 HtmlGenerator["division"] = function (block) {
@@ -48,7 +52,7 @@ HtmlGenerator["division"] = function (block) {
     '<div style=' +
     statements_style + ">\n" +
     statements_content +
-    "<div>\n";
+    "</div>\n";
 };
 
 
