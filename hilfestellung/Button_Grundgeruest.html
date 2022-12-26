@@ -4,29 +4,116 @@
   <meta charset="UTF-8">
   <title>Html Grundgeruest Hilfe</title>
 </head>
-<body>
-<div><table>
+<body style="font-family: Cambria">
+<h1>Das Grundgerüst</h1>
+<table>
+  <colgroup>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+  </colgroup>
   <tr>
-    <th><img src="../img/hilfestellung/Block_html_page.jpeg" alt="html_page_Block"></th>
-    <th><img src="../img/hilfestellung/Code_html_page.jpeg" alt="html_page_Code"></th>
+    <td colspan="1"><img src="../img/hilfestellung/Block_html_page.jpeg" alt="html_page_Block"></td>
+    <td colspan="2"><img src="../img/hilfestellung/Code_html_page.jpeg" alt="html_page_Code"></td>
+    <td colspan="7">Am Anfang jeder HTML-Seite wird erst einmal mitgeteilt, dass es sich um eine HTML-Seite handelt. Das passiert mit dem Tag <b>< !doctype html></b> <br> <br>
+      Anschließend beginnt jede HTML-Seite mit dem Tag <b> < html> </b> und endet mit dem Schlusstag <b>< /html></b> <br>
+      So weiß der Computer, wann die Seite fertig beschrieben ist und geladen werden kann. <br> <br>
+      Zwischen diesen beiden Tags befindet sich dann immer etwas anderes. Jedoch ist der grundsätzliche Aufbau erst einmal gleich. <br></td>
   </tr>
 </table>
-</div>
+<br>
 
-Am Anfang jeder HTML-Seite wird erst einmal mitgeteilt, dass es sich um eine HTML-Seite handelt. Das passiert mit dem Tag <b>< !doctype html></b> <br> <br>
-Anschließend beginnt jede HTML-Seite mit dem Tag <b> < html> </b> und endet mit dem Schlusstag <b>< /html></b> <br>
-So weiß der Computer, wann die Seite fertig beschrieben ist und geladen werden kann. <br> <br>
-Zwischen diesen beiden Tags befindet sich dann immer etwas anderes. Jedoch ist der grundsätzliche Aufbau erst einmal gleich. <br>
-Eine HTML-Seite besteht grundsätzlich aus einem <b>Kopf</b> (head) und einem <b>Körper</b> (body). <br>
-Dabei stehen im Kopf Informationen über das, was im Körper dargestellt wird. <br>
-Eine der wichtigsten Informationen, die im Kopf steht und auch zwingend angegeben werden muss ist der Titel der Seite <br>
-Er wird mit dem Tag <b>< title> < /title></b> angegeben. <br>
-Die Informationen im head sind auch das, was von Suchmaschinen wie z.B. google ausgewertet wird. <br>
-Wenn du zum Beispiel eine Seite für Sammelkarten bastelst und willst, dass andere Menschen diese in Suchmaschinen finden können, solltest du Stichworte wie "Sammelkarte" <br>
-"sammeln", "tauschen", "Kartenspiel" oder ähnliches in den Head schreiben. <br>
-Außerdem stehen hier noch technische Dinge wie <a href="https://www.w3.org/International/questions/qa-what-is-encoding.de" target="_blank">Zeichencodierung</a>, oder <a href="https://www.seobility.net/de/wiki/Viewport" target="_blank">Viewportangaben</a>. <br> <br>
-Im Body befindet sich dann das, was auf deiner Seite dargestellt werden soll. Beim Sammelkartenbeispiel also vielleicht Bilder von Sammelkarten, links zu Einkaufsmöglichkeiten, interessante Artikel oder ähnliches. <br>
-Wenn du mehr über das Grundgerüst einer HTML-Seite erfahren willst gibt es <a href="https://www.youtube.com/watch?v=pfUkC0UIIl0" target="_blank">hier</a> ein Video in dem der Aufbau Stück für Stück erklärt wird, oder du kannst es dir <a href="https://wiki.selfhtml.org/wiki/HTML/Tutorials/Grundger%C3%BCst" target="_blank"> hier</a> noch einmal ausführlich durchlesen.
+
+Eine HTML-Seite besteht grundsätzlich aus einem <b>Kopf</b> (head) und einem <b>Körper</b> (body). <br><br>
+<h1>Der Kopf (head)</h1>
+<table>
+  <colgroup>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+  </colgroup>
+  <tr>
+    <td colspan="3"><img id="title_gif" src="../img/hilfestellung/title.gif" alt="title" width="" height=""></td>
+    <td colspan="7">Dabei stehen im Kopf Informationen über das, was im Körper bzw. auf der Website dargestellt wird. <br>
+      Eine der wichtigsten Informationen, die im Kopf steht und auch zwingend angegeben werden muss ist der Titel der Seite <br>
+      Er wird mit dem Tag <b>< title> < /title></b> angegeben. <br>
+      </td>
+  </tr>
+  <tr>
+    <td colspan="3"><img id="title_code_gif" src="../img/hilfestellung/title_code.gif" alt="title_code" width="" height=""></td>
+    <td colspan="7">Die Informationen im title sind auch das, was von Suchmaschinen wie z.B. google ausgewertet wird. <br>
+      Außerdem stehen hier noch technische Dinge wie <a href="https://www.w3.org/International/questions/qa-what-is-encoding.de" target="_blank">Zeichencodierung</a>, oder <a href="https://www.seobility.net/de/wiki/Viewport" target="_blank">Viewportangaben</a>.
+    </td>
+  </tr>
+</table>
+
+<h1>Der Körper (body)</h1>
+<table>
+  <colgroup>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+    <col>
+  </colgroup>
+  <tr>
+    <td colspan="3"><img id="body" src="../img/hilfestellung/body.jpeg" alt="body" width="" height=""></td>
+    <td colspan="7">Im Body oder auch Körper befindet sich dann das, was auf deiner Seite dargestellt werden soll.
+      Auf einer Schulwebsite vielleicht Bilder der Schule, Kollegium, Jahresbericht, usw. Bei einem Sammelkartenshop Bilder von Sammelkarten, Links zu Einkaufsmöglichkeiten, interessante Artikel oder ähnliches.<br>
+    </td>
+     </tr>
+  <tr>
+
+    <td colspan="3"><img id="body_code" src="../img/hilfestellung/body_code.jpeg" alt="body_code" width="" height=""></td>
+    <td colspan="7">Bei deiner HTML-Seite kannst du dir natürlich außerdem aussuchen, wie sie aussehen soll. Du kannst zum Beispiel die Hintergrundfarbe, oder die Schriftart im Body schon angeben. <br>
+      Das tust du, indem du im < body>-Tag zusätzlich noch einen "style" definierst, indem du zum Beispiel die Schriftart (font-family), die Hintergrundfarbe (background-color) oder die Schriftfarbe (color) mit angibst.
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3"><img id="body_preview" src="../img/hilfestellung/body_preview.jpeg" alt="body_preview" width="" height=""></td>
+<td colspan="7">Der Körper nimmt den Großteil einer HTML-Seite ein. Er ist häufig in verschiedene Abschnitte unterteilt, die teilweise auch wieder unterschiedlich aussehen.<br>
+  Alle Blöcke, die du nach dem Grundgerüst kennenlernst, werden zumeist im Körper eingesetzt.
+</td>
+    </tr>
+</table>
+<br>
+<h1>Mehr über das Grundgerüst</h1>
+Wenn du mehr über das Grundgerüst einer HTML-Seite erfahren willst kannst du dir entweder das untenstehende Video ansehen oder du kannst es dir <a href="https://wiki.selfhtml.org/wiki/HTML/Tutorials/Grundger%C3%BCst" target="_blank"> hier</a> noch einmal ausführlich durchlesen. <br> <br><br>
+<iframe id="youtube_grundgerüst" width="" height= "" src="https://www.youtube.com/embed/pfUkC0UIIl0" title="HTML Grundgerüst erstellen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </body>
+<script>
+  document.getElementById("title_gif").width=Math.round(window.innerWidth*0.30);
+  document.getElementById("title_gif").height=Math.round(window.innerHeight*0.45);
+  document.getElementById("title_code_gif").width=Math.round(window.innerWidth*0.30);
+  document.getElementById("title_code_gif").height=Math.round(window.innerHeight*0.45);
+  document.getElementById("youtube_grundgerüst").width=Math.round(window.innerWidth*0.95);
+  document.getElementById("youtube_grundgerüst").height=Math.round(window.innerHeight*0.95);
+  document.getElementById("body").width=Math.round(window.innerWidth*0.30);
+  document.getElementById("body").height=Math.round(window.innerHeight*0.60);
+  document.getElementById("body_code").width=Math.round(window.innerWidth*0.45);
+  document.getElementById("body_code").height=Math.round(window.innerHeight*0.45);
+  document.getElementById("body_preview").width=Math.round(window.innerWidth*0.30);
+  document.getElementById("body_preview").height=Math.round(window.innerHeight*0.45);
+
+</script>
 </html>
