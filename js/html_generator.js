@@ -129,15 +129,66 @@ HtmlGenerator["style"] = function (block) {
 
 HtmlGenerator["specialtext"] = function(block) {
   var text_specialtext = block.getFieldValue('CONTENT');
-  var dropdown_schriftart = block.getFieldValue("FONT");
-  var dropdown_schriftgroesse = block.getFieldValue("FONTSIZE");
   var colour_name = block.getFieldValue("TEXTCOLOR");
-  return code = "<span style = 'color: " + colour_name + "'" +
-    "'font-family: " + dropdown_schriftart + "'" +
-    "'font-size: " + dropdown_schriftgroesse + "'>" +
-    text_specialtext +
-    "</span>\n";
+  var dropdown_schriftgroesse = block.getFieldValue("FONTSIZE");
+  var checkbox_fett = block.getFieldValue("FETT") === 'TRUE';
+  var checkbox_kursiv = block.getFieldValue("KURSIV") === 'TRUE';
+  var checkbox_unterstrichen = block.getFieldValue("UNTERSTRICHEN") === 'TRUE';
+
+  if(checkbox_fett){
+    return code = "<span style = 'color: " + colour_name + "'" +
+      "'font-family: " + dropdown_schriftart + "'" +
+      "'font-size: " + dropdown_schriftgroesse + "'>" +
+      "<b>" +
+      text_specialtext +
+      "</b>" +
+      "</span>\n";
+  } else if(checkbox_kursiv){
+    return code = "<span style = 'color: " + colour_name + "'" +
+      "'font-family: " + dropdown_schriftart + "'" +
+      "'font-size: " + dropdown_schriftgroesse + "'>" +
+      "<i>" +
+      text_specialtext +
+      "</i>" +
+      "</span>\n";
+  } else if (checkbox_unterstrichen){
+    return code = "<span style = 'color: " + colour_name + "'" +
+      "'font-family: " + dropdown_schriftart + "'" +
+      "'font-size: " + dropdown_schriftgroesse + "'>" +
+      "<u>" +
+      text_specialtext +
+      "</u>" +
+      "</span>\n";
+  }  else if(checkbox_fett && checkbox_kursiv){
+    return code = "<span style = 'color: " + colour_name + "'" +
+      "'font-family: " + dropdown_schriftart + "'" +
+      "'font-size: " + dropdown_schriftgroesse + "'>" +
+      "<b><i>" +
+      text_specialtext +
+      "</b></i>" +
+      "</span>\n";
+  }else if (checkbox_kursiv && checkbox_unterstrichen ){
+    return code = "<span style = 'color: " + colour_name + "'" +
+      "'font-family: " + dropdown_schriftart + "'" +
+      "'font-size: " + dropdown_schriftgroesse + "'>" +
+      "<i><u>" +
+      text_specialtext +
+      "</i></u>" +
+      "</span>\n";
+  }
+  else if (checkbox_fett && checkbox_kursiv  && checkbox_unterstrichen){
+    return code = "<span style = 'color: " + colour_name + "'" +
+      "'font-family: " + dropdown_schriftart + "'" +
+      "'font-size: " + dropdown_schriftgroesse + "'>" +
+      "<b><i><u>" +
+      text_specialtext +
+      "</b></i></u>" +
+      "</span>\n";
+  }
+
 };
+
+
 
 
 
@@ -159,7 +210,8 @@ HtmlGenerator["linkdescription"] = function(block) {
 
 HtmlGenerator["table"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  return code = "<table border = 1>" + statements_content + "</table>\n";
+  var border_groesse = block.getFieldValue("BORDER");
+  return code = "<table border =" + border_groesse +  ">" + statements_content + "</table>\n";
 };
 
 

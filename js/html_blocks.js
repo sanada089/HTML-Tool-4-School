@@ -1,12 +1,7 @@
 "use script"
-
-
 //Speziell definierte HTML-Blöcke und ihre Eigenschaften
-
 const htmlBlocks = [
-
   //HTML-Page Block
-
   {
     "type": "html_page",
     "message0": "HTML-Seite %1 %2 %3 %4",
@@ -15,7 +10,6 @@ const htmlBlocks = [
         "type": "input_dummy",
         "align": "CENTRE"
       },
-
       {
         "type": "input_statement",
         "name": "HEAD",
@@ -35,9 +29,7 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
   //Head-Block
-
   {
     "type": "head",
     "message0": "Titel %1 %2 Kopf %3 ",
@@ -102,7 +94,6 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
   {
     "type": "division",
     "message0": "Division %1 Style %2 Inhalt %3",
@@ -136,9 +127,6 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
-
-
   {
     "type": "string",
     "message0": "Text %1",
@@ -205,7 +193,7 @@ const htmlBlocks = [
         "type": "input_statement",
         "name": "CONTENT",
         "check": ["string",
-                  "headline"]
+          "headline"]
       }
     ],
     "previousStatement": "paragraph",
@@ -227,25 +215,22 @@ const htmlBlocks = [
     "previousStatement": "orderedlist",
     "nextStatement": ["string",
       "headline",
-    "paragraph",
-    "specialtext",
-    "unorderedlist",
-    "division",
-    "link",
-    "image",
-    "table",
-    "orderedlist"],
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+      "orderedlist"],
     "colour": 150,
     "tooltip": "",
     "helpUrl": ""
   },
-
-
   {
     "type": "unorderedlist",
     "message0": "Unnummerierte Liste %1 %2 %3",
     "args0": [
-
       {
         "type": "input_dummy"
       },
@@ -274,12 +259,11 @@ const htmlBlocks = [
       "link",
       "image",
       "table",
-    "orderedlist"],
+      "orderedlist"],
     "colour": 150,
     "tooltip": "",
     "helpUrl": ""
   },
-
   {
     "type": "listitem",
     "message0": "Listeneintrag %1",
@@ -302,7 +286,6 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
   {
     "type": "image",
     "message0": "Bild %1",
@@ -328,7 +311,6 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
   {
     "type": "imagelink",
     "message0": "Bilderlink %1 %2",
@@ -352,7 +334,6 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
   {
     "type": "book",
     "message0": "%1",
@@ -371,7 +352,6 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
   {
     "type": "flower",
     "message0": "%1",
@@ -390,8 +370,6 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
-
   {
     "type": "style",
     "message0": "Schriftart %1 %2 Hintergrundfarbe %3 %4 Schriftfarbe %5",
@@ -465,10 +443,9 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
-
   {
     "type": "specialtext",
-    "message0": "Specialtext %1 %2 Schriftart %3 %4 Schriftgröße %5 %6 Textfarbe %7",
+    "message0": "Specialtext %1 %2 Textfarbe %3 Schriftgröße %4 %5 fett %6 kursiv %7 unterstrichen %8",
     "args0": [
       {
         "type": "field_input",
@@ -479,23 +456,9 @@ const htmlBlocks = [
         "type": "input_dummy"
       },
       {
-        "type": "field_dropdown",
-        "name": "FONT",
-        "options": [
-          ["Arial", "Arial"],
-          ["Brush Script MT", "Brush Script MT"],
-          ["Courier New", "Courier New"],
-          ["Garamond", "Garamond"],
-          ["Georgia", "Georgia"],
-          ["Helvetica", "Helvetica"],
-          ["Tahoma", "Tahoma"],
-          ["Times New Roman", "Times New Roman"],
-          ["Trebuchet MS", "Trebuchet MS"],
-          ["Verdana", "Verdana"]
-        ]
-      },
-      {
-        "type": "input_dummy"
+        "type": "field_colour",
+        "name": "TEXTCOLOR",
+        "colour": "#ff0000"
       },
       {
         "type": "field_dropdown",
@@ -517,24 +480,34 @@ const htmlBlocks = [
         "type": "input_dummy"
       },
       {
-        "type": "field_colour",
-        "name": "TEXTCOLOR",
-        "colour": "#ff0000"
+        "type": "field_checkbox",
+        "name": "FETT",
+        "checked": true
+      },
+      {
+        "type": "field_checkbox",
+        "name": "KURSIV",
+        "checked": true
+      },
+      {
+        "type": "field_checkbox",
+        "name": "UNTERSTRICHEN",
+        "checked": true
       }
     ],
     "previousStatement": "string",
-      "nextStatement": [
-        "string",
-        "headline",
-        "paragraph",
-        "specialtext",
-        "unorderedlist",
-        "division",
-        "link",
-        "image",
-        "table",
-        "orderedlist"
-      ],
+    "nextStatement": [
+      "string",
+      "headline",
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+      "orderedlist"
+    ],
     "colour": 100,
     "tooltip": "",
     "helpUrl": ""
@@ -572,54 +545,68 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
-{
-  "type": "linkdescription",
-  "message0": "Link %1 Linkbeschreibung %2 %3",
-  "args0": [
   {
-    "type": "field_input",
-    "name": "LINK",
-    "text": ""
+    "type": "linkdescription",
+    "message0": "Link %1 Linkbeschreibung %2 %3",
+    "args0": [
+      {
+        "type": "field_input",
+        "name": "LINK",
+        "text": ""
+      },
+      {
+        "type": "field_input",
+        "name": "LINKDESCRIPTION",
+        "text": ""
+      },
+      {
+        "type": "input_value",
+        "name": "NAME",
+        "check": "String"
+      }
+    ],
+    "previousStatement": null,
+    "nextStatement": [
+      "string",
+      "headline",
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+      "orderedlist"
+    ],
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
   },
-  {
-    "type": "field_input",
-    "name": "LINKDESCRIPTION",
-    "text": ""
-  },
-  {
-    "type": "input_value",
-    "name": "NAME",
-    "check": "String"
-  }
-],
-  "previousStatement": null,
-  "nextStatement": [
-    "string",
-    "headline",
-    "paragraph",
-    "specialtext",
-    "unorderedlist",
-    "division",
-    "link",
-    "image",
-    "table",
-    "orderedlist"
-  ],
-  "colour": 300,
-  "tooltip": "",
-  "helpUrl": ""
-},
 
   {
     "type": "table",
-    "message0": "Tabelle %1",
+    "message0": "Tabelle %1 Rand %2 %3",
     "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "BORDER",
+        "options": [
+          ["1", "1"],
+          ["2", "2"],
+          ["3", "3"],
+          ["4", "4"],
+          ["5", "5"],
+          ["6", "6"],
+        ]
+      },
       {
         "type": "input_statement",
         "name": "CONTENT",
         "check": "tablerow"
-      }
+      },
     ],
     "previousStatement": null,
     "nextStatement": [
@@ -639,7 +626,6 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
-
   {
     "type": "tablehead",
     "message0": "Tabellenkopf %1",
@@ -648,14 +634,13 @@ const htmlBlocks = [
         "type": "input_statement",
         "name": "CONTENT",
       }
-      ],
+    ],
     "previousStatement": null,
     "nextStatement": ["string", "specialtext"],
     "colour": 200,
     "tooltip": "",
     "helpUrl": ""
   },
-
   {
     "type": "tablerow",
     "message0": "Tabellenreihe %1",
@@ -671,7 +656,6 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-
   {
     "type": "tabledata",
     "message0": "Datenzelle %1",
@@ -687,11 +671,8 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   }
-
 ]
-
 //Initialisierung der oben definierten Blöcke
-
 for (var iBlock in htmlBlocks) {
   function makeBlock(json) {
     Blockly.Blocks[json.type] = {

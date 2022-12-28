@@ -106,7 +106,7 @@
     "</html>";
 
   // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
-  function update(){
+  function update(event){
     // Umwandlung des workspace zu HTML-Code via HTMLGenerator
     code = HtmlGenerator.workspaceToCode(workspace);
     // Will der User gerade den Code sehen wird dieser aktualisiert in der HTMLCodeDiv
@@ -207,11 +207,10 @@
     }
   }
 
-
-
   function closePopup(){
     document.getElementById("container").style.display="none";
   }
+
 </script>
 </body>
 </html>

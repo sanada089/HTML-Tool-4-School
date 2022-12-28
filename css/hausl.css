@@ -12,7 +12,7 @@
     'bildSchuldirektor sprechblase'
     'schreibmaschinenText schreibmaschinenText'
     'aufgabenstellung aufgabenstellung';
-  gap: 10px;
+  gap: 20px;
 }
 
 #bildSchuldirektor {
@@ -21,14 +21,14 @@
 }
 
 #sprechblase{
-  height: 2vh;
   width: 80vw;
   display: grid;
+  margin-bottom: 2px;
+  position: page;
 }
 
 #schreibmaschinenText{
-  position: relative;
-  width: 99vw;
+  width: 90vw;
   margin-bottom: 20px;
 }
 
