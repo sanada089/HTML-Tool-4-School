@@ -134,42 +134,38 @@ HtmlGenerator["specialtext"] = function(block) {
   var checkbox_fett = block.getFieldValue("FETT") === 'TRUE';
   var checkbox_kursiv = block.getFieldValue("KURSIV") === 'TRUE';
   var checkbox_unterstrichen = block.getFieldValue("UNTERSTRICHEN") === 'TRUE';
+  code = "Ich kann gar nichts";
 
-  if(checkbox_fett){
-    return code = "<span style = 'color: " + colour_name + "'" +
-      "'font-family: " + dropdown_schriftart + "'" +
+  if(checkbox_fett && !checkbox_kursiv && !checkbox_unterstrichen){
+    code = "<span style = 'color: " + colour_name + "'" +
       "'font-size: " + dropdown_schriftgroesse + "'>" +
       "<b>" +
       text_specialtext +
       "</b>" +
       "</span>\n";
-  } else if(checkbox_kursiv){
-    return code = "<span style = 'color: " + colour_name + "'" +
-      "'font-family: " + dropdown_schriftart + "'" +
+  } else if(checkbox_kursiv && !checkbox_fett && !checkbox_unterstrichen){
+    code = "<span style = 'color: " + colour_name + "'" +
       "'font-size: " + dropdown_schriftgroesse + "'>" +
       "<i>" +
       text_specialtext +
       "</i>" +
       "</span>\n";
-  } else if (checkbox_unterstrichen){
-    return code = "<span style = 'color: " + colour_name + "'" +
-      "'font-family: " + dropdown_schriftart + "'" +
+  } else if (checkbox_unterstrichen && !checkbox_fett && !checkbox_kursiv){
+    code = "<span style = 'color: " + colour_name + "'" +
       "'font-size: " + dropdown_schriftgroesse + "'>" +
       "<u>" +
       text_specialtext +
       "</u>" +
       "</span>\n";
-  }  else if(checkbox_fett && checkbox_kursiv){
-    return code = "<span style = 'color: " + colour_name + "'" +
-      "'font-family: " + dropdown_schriftart + "'" +
+  }  else if(checkbox_fett && checkbox_kursiv && !checkbox_unterstrichen){
+    code = "<span style = 'color: " + colour_name + "'" +
       "'font-size: " + dropdown_schriftgroesse + "'>" +
       "<b><i>" +
       text_specialtext +
       "</b></i>" +
       "</span>\n";
-  }else if (checkbox_kursiv && checkbox_unterstrichen ){
-    return code = "<span style = 'color: " + colour_name + "'" +
-      "'font-family: " + dropdown_schriftart + "'" +
+  }else if (checkbox_kursiv && checkbox_unterstrichen && !checkbox_fett){
+    code = "<span style = 'color: " + colour_name + "'" +
       "'font-size: " + dropdown_schriftgroesse + "'>" +
       "<i><u>" +
       text_specialtext +
@@ -177,14 +173,14 @@ HtmlGenerator["specialtext"] = function(block) {
       "</span>\n";
   }
   else if (checkbox_fett && checkbox_kursiv  && checkbox_unterstrichen){
-    return code = "<span style = 'color: " + colour_name + "'" +
-      "'font-family: " + dropdown_schriftart + "'" +
+    code = "<span style = 'color: " + colour_name + "'" +
       "'font-size: " + dropdown_schriftgroesse + "'>" +
       "<b><i><u>" +
       text_specialtext +
       "</b></i></u>" +
       "</span>\n";
   }
+  return code;
 
 };
 
