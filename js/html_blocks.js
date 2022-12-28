@@ -372,7 +372,7 @@ const htmlBlocks = [
   },
   {
     "type": "style",
-    "message0": "Schriftart %1 %2 Hintergrundfarbe %3 %4 Schriftfarbe %5",
+    "message0": "Schriftart %1 %2 Hintergrundfarbe %3 %4 Textfarbe %5",
     "args0": [
       {
         "type": "field_dropdown",

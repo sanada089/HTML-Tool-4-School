@@ -134,7 +134,6 @@ HtmlGenerator["specialtext"] = function(block) {
   var checkbox_fett = block.getFieldValue("FETT") === 'TRUE';
   var checkbox_kursiv = block.getFieldValue("KURSIV") === 'TRUE';
   var checkbox_unterstrichen = block.getFieldValue("UNTERSTRICHEN") === 'TRUE';
-  code = "Ich kann gar nichts";
 
   if(checkbox_fett && !checkbox_kursiv && !checkbox_unterstrichen){
     code = "<span style = 'color: " + colour_name + "'" +
@@ -170,6 +169,14 @@ HtmlGenerator["specialtext"] = function(block) {
       "<i><u>" +
       text_specialtext +
       "</i></u>" +
+      "</span>\n";
+  }
+  else if (!checkbox_kursiv && checkbox_unterstrichen && checkbox_fett){
+    code = "<span style = 'color: " + colour_name + "'" +
+      "'font-size: " + dropdown_schriftgroesse + "'>" +
+      "<b><u>" +
+      text_specialtext +
+      "</b></u>" +
       "</span>\n";
   }
   else if (checkbox_fett && checkbox_kursiv  && checkbox_unterstrichen){
