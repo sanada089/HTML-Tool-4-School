@@ -62,14 +62,16 @@ HtmlGenerator["string"] = function (block) {
   return code = text_content + "\n";
 };
 
+//Überschrift-Block
+
 HtmlGenerator["headline"] = function (block) {
   var dropdown_level = block.getFieldValue("LEVEL");
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  var text_content = block.getFieldValue("CONTENT");
   return code =
     "<" +
     dropdown_level +
     ">" +
-    statements_content.trim() +
+    text_content +
     "</" +
     dropdown_level +
     ">\n";
@@ -106,15 +108,23 @@ HtmlGenerator["listitem"] = function (block) {
   return code = "<li>" + statements_content + "</li>\n";
 };
 
+//Bild-Block
+
 HtmlGenerator["image"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  var statements_width = block.getFieldValue("WIDTH")
+  var statements_height = block.getFieldValue("HEIGHT")
 
-  return code = '<img src="'  + statements_content + '" alt="default"/>\n';
+  return code = '<img src="'  + statements_content + '" width="'+ statements_width + '" height="'+ statements_height +'alt="default"/>\n';
 };
+
+//Beispielbild Blume
 
 HtmlGenerator["flower"] = function() {
   return "img/flower.png";
 };
+
+//Beispielbild Buch
 
 HtmlGenerator["book"] = function() {
   return "img/book.png";

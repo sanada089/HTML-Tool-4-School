@@ -174,9 +174,9 @@ const htmlBlocks = [
         "type": "input_dummy"
       },
       {
-        "type": "input_statement",
+        "type": "field_input",
         "name": "CONTENT",
-        "check": "string"
+        "text": "Hier Überschrift einfügen"
       }
     ],
     "previousStatement": "headline",
@@ -314,13 +314,27 @@ const htmlBlocks = [
   },
   {
     "type": "image",
-    "message0": "Bild %1",
+    "message0": "Bild %1 Breite %2 Höhe %3",
     "args0": [
       {
         "type": "input_statement",
         "name": "CONTENT",
         "check": "imageblock"
-      }
+      },
+      {
+        "type": "field_number",
+        "name": "WIDTH",
+        "value": 240,
+        "min": 1,
+        "max": 2400
+      },
+      {
+        "type": "field_number",
+        "name": "HEIGHT",
+        "value": 150,
+        "min": 1,
+        "max": 2400
+      },
     ],
     "previousStatement": "image",
     "nextStatement": ["string",
