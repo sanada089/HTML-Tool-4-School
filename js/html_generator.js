@@ -80,6 +80,10 @@ HtmlGenerator["paragraph"] = function (block) {
   return code = "<p>" + statements_content + "</p> \n";
 };
 
+HtmlGenerator["zeilenumbruch"] = function (block){
+  return code = "<br>"
+}
+
 HtmlGenerator["orderedlist"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 

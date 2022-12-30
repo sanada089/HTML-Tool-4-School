@@ -203,6 +203,32 @@ const htmlBlocks = [
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
   {
+    "type": "zeilenumbruch",
+    "message0": "Zeilenumbruch %1",
+    "args0": [
+      {
+        "type": "input_dummy",
+      }
+    ],
+    "previousStatement": "string",
+    "nextStatement": [
+      "string",
+      "headline",
+      "paragraph",
+      "specialtext",
+      "unorderedlist",
+      "division",
+      "link",
+      "image",
+      "table",
+      "orderedlist"
+    ],
+    "colour": 50,
+  },
+
+
+
+  {
     "type": "orderedlist",
     "message0": "Nummerierte Liste %1",
     "args0": [

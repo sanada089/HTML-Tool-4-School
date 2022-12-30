@@ -45,6 +45,10 @@ var toolbox = {
         },
         {
           "kind": "block",
+          "type": "zeilenumbruch",
+        },
+        {
+          "kind": "block",
           "type": "link",
         },
         {
