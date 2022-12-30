@@ -187,6 +187,12 @@ HtmlGenerator["specialtext"] = function(block) {
       "</b></i></u>" +
       "</span>\n";
   }
+  else if (!checkbox_fett && !checkbox_kursiv  && !checkbox_unterstrichen){
+    code = "<span style = 'color: " + colour_name + "'" +
+      "'font-size: " + dropdown_schriftgroesse + "'>" +
+      text_specialtext +
+      "</span>\n";
+  }
   return code;
 
 };
