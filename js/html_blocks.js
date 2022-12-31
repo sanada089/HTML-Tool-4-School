@@ -627,17 +627,12 @@ const htmlBlocks = [
 
   {
     "type": "link",
-    "message0": "Link %1 %2",
+    "message0": "Link %1",
     "args0": [
       {
         "type": "field_input",
         "name": "LINK",
         "text": ""
-      },
-      {
-        "type": "input_value",
-        "name": "NAME",
-        "check": "String"
       }
     ],
     "previousStatement": "link",
