@@ -1,7 +1,9 @@
 "use script"
 //Speziell definierte HTML-Blöcke und ihre Eigenschaften
 const htmlBlocks = [
-  //HTML-Page Block
+
+  //Grundgerüst-Block
+
   {
     "type": "html_page",
     "message0": "HTML-Seite %1 %2 %3 %4",
@@ -29,33 +31,21 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
-  //Head-Block
+
+  //Kopf-Block
+
   {
     "type": "head",
-    "message0": "Titel %1 %2 Kopf %3 ",
+    "message0": "Kopf %1 Titel %2",
     "args0": [
+      {
+        "type": "input_dummy"
+      },
       {
         "type": "field_input",
         "name": "TITLE",
         "text": ""
       },
-      {
-        "type": "input_dummy"
-      },
-      {
-        "type": "input_statement",
-        "name": "CONTENT",
-        "check": [
-          "division",
-          "title",
-          "paragraph",
-          "string",
-          "headline",
-          "orderedlist",
-          "unorderedlist",
-          "image",
-        ],
-      }
     ],
     "inputsInline": false,
     "previousStatement": "head",
@@ -63,6 +53,9 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Body-Block
+
   {
     "type": "body",
     "message0": "Körper %1 Style %2 Inhalt %3",
@@ -79,13 +72,17 @@ const htmlBlocks = [
         "type": "input_statement",
         "name": "CONTENT",
         "check": ["division",
-          "title",
-          "paragraph",
           "string",
           "headline",
+          "paragraph",
+          "break",
           "orderedlist",
           "unorderedlist",
-          "image"],
+          "image",
+          "specialtext",
+          "link",
+          "linkdescription",
+          "table"],
       }
     ],
     "inputsInline": false,
@@ -94,6 +91,9 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Division-Block
+
   {
     "type": "division",
     "message0": "Division %1 Style %2 Inhalt %3",
@@ -112,21 +112,37 @@ const htmlBlocks = [
         "check": ["string",
           "headline",
           "paragraph",
-          "specialtext",
+          "break",
+          "orderedlist",
           "unorderedlist",
-          "division",
-          "link",
           "image",
-          "table",
-          "orderedlist"],
+          "specialtext",
+          "link",
+          "linkdescription",
+          "table"],
       }
     ],
     "previousStatement": "division",
-    "nextStatement": "division",
+    "nextStatement":
+      ["division",
+      "string",
+      "headline",
+      "paragraph",
+      "break",
+      "orderedlist",
+      "unorderedlist",
+      "image",
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 100,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Text-Block
+
   {
     "type": "string",
     "message0": "Text %1",
@@ -138,22 +154,25 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "string",
-    "nextStatement": [
+    "nextStatement": ["division",
       "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"
-    ],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 0,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
+
+  //Überschrift-Block
+
   {
     "type": "headline",
     "message0": "Überschrift %1 %2 %3",
@@ -180,11 +199,25 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "headline",
-    "nextStatement": null,
+    "nextStatement": ["division",
+      "string",
+      "headline",
+      "paragraph",
+      "break",
+      "orderedlist",
+      "unorderedlist",
+      "image",
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 50,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
+
+  //Absatz-Block
+
   {
     "type": "paragraph",
     "message0": "Absatz %1",
@@ -197,36 +230,50 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "paragraph",
-    "nextStatement": null,
+    "nextStatement": ["division",
+      "string",
+      "headline",
+      "paragraph",
+      "break",
+      "orderedlist",
+      "unorderedlist",
+      "image",
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 50,
     "tooltip": "",
     "helpUrl": "https://www.w3schools.com/tags/tag_html.asp"
   },
+
+  //Zeilenumbruch-Block
+
   {
-    "type": "zeilenumbruch",
+    "type": "break",
     "message0": "Zeilenumbruch %1",
     "args0": [
       {
         "type": "input_dummy",
       }
     ],
-    "previousStatement": "string",
-    "nextStatement": [
+    "nextStatement": ["division",
       "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"
-    ],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
+    "previousStatement": "break",
     "colour": 50,
   },
 
-
+//Nummerierte Liste
 
   {
     "type": "orderedlist",
@@ -239,20 +286,25 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "orderedlist",
-    "nextStatement": ["string",
+    "nextStatement": ["division",
+      "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 150,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //unnummerierte List
+
   {
     "type": "unorderedlist",
     "message0": "Unnummerierte Liste %1 %2 %3",
@@ -276,20 +328,25 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "unorderedlist",
-    "nextStatement": ["string",
+    "nextStatement": ["division",
+      "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 150,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Listeneintrag
+
   {
     "type": "listitem",
     "message0": "Listeneintrag %1",
@@ -302,7 +359,9 @@ const htmlBlocks = [
           "specialtext",
           "image",
           "link",
-          "table"
+          "linkdescription",
+          "table",
+          "break"
         ]
       }
     ],
@@ -312,6 +371,9 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Bild-Block
+
   {
     "type": "image",
     "message0": "Bild %1 Breite %2 Höhe %3",
@@ -337,43 +399,43 @@ const htmlBlocks = [
       },
     ],
     "previousStatement": "image",
-    "nextStatement": ["string",
+    "nextStatement": ["division",
+      "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 300,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Bildlink-Block, in den der Link des Bildes geschrieben wird um ihn dann in den zugehörigen Bild-Block einzusetzen
+
   {
     "type": "imagelink",
-    "message0": "Bilderlink %1 %2",
+    "message0": "Bilderlink %1",
     "args0": [
       {
         "type": "field_input",
         "name": "IMAGELINK",
         "text": ""
       },
-      {
-        "type": "input_value",
-        "name": "NAME",
-        "check": "String"
-      }
     ],
     "previousStatement": "imageblock",
-    "nextStatement": [
-      "nothing"
-    ],
     "colour": 300,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Beispielbild Buch
+
   {
     "type": "book",
     "message0": "%1",
@@ -392,6 +454,9 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Beispielbild Blume
+
   {
     "type": "flower",
     "message0": "%1",
@@ -410,6 +475,9 @@ const htmlBlocks = [
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Style-Block, der in Division oder Body eingesetzt werden kann um Schriftart, Hintergrundfarbe und Textfarbe zu bestimmen
+
   {
     "type": "style",
     "message0": "Schriftart %1 %2 Hintergrundfarbe %3 %4 Textfarbe %5",
@@ -483,6 +551,8 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
+  //Special-Text-Block, der Texthervorhebung durch Schriftgröße, unterstreichen, fett oder kursiv erlaubt
+
   {
     "type": "specialtext",
     "message0": "Specialtext %1 %2 Textfarbe %3 Schriftgröße %4 %5 fett %6 kursiv %7 unterstrichen %8",
@@ -536,22 +606,24 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "string",
-    "nextStatement": [
+    "nextStatement": ["division",
       "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"
-    ],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 100,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Link-Block, mit dem Links erzeugt werden können
 
   {
     "type": "link",
@@ -568,23 +640,26 @@ const htmlBlocks = [
         "check": "String"
       }
     ],
-    "previousStatement": null,
-    "nextStatement": [
+    "previousStatement": "link",
+    "nextStatement": ["division",
       "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"
-    ],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 300,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Link-Block, der zusätzlich eine Anzeige der Linkbeschreibung, anstelle der URL erlaubt
+
   {
     "type": "linkdescription",
     "message0": "Link %1 Linkbeschreibung %2 %3",
@@ -605,23 +680,25 @@ const htmlBlocks = [
         "check": "String"
       }
     ],
-    "previousStatement": null,
-    "nextStatement": [
+    "previousStatement": "link",
+    "nextStatement": ["division",
       "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"
-    ],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 300,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Tabelle
 
   {
     "type": "table",
@@ -645,42 +722,49 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": "tablerow"
+        "check": ["tablerow",
+          "tablehead"]
       },
     ],
-    "previousStatement": null,
-    "nextStatement": [
+    "previousStatement": "table",
+    "nextStatement": ["division",
       "string",
       "headline",
       "paragraph",
-      "specialtext",
+      "break",
+      "orderedlist",
       "unorderedlist",
-      "division",
-      "link",
       "image",
-      "table",
-      "orderedlist"
-    ],
+      "specialtext",
+      "link",
+      "linkdescription",
+      "table"],
     "colour": 200,
     "tooltip": "",
     "helpUrl": ""
   },
 
+  //Tabellen-Überschrift
+
   {
     "type": "tablehead",
-    "message0": "Tabellenkopf %1",
+    "message0": "Tabellenüberschrift %1",
     "args0": [
       {
-        "type": "input_statement",
+        "type": "field_input",
         "name": "CONTENT",
+        "text": "Hier Überschrift einfügen"
       }
     ],
-    "previousStatement": null,
-    "nextStatement": ["string", "specialtext"],
+    "previousStatement": "tablehead",
+    "nextStatement": "tablerow",
     "colour": 200,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Tabellenreihe
+
   {
     "type": "tablerow",
     "message0": "Tabellenreihe %1",
@@ -688,14 +772,18 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
+        "check": "tabledata"
       }
     ],
-    "previousStatement": null,
-    "nextStatement": ["tabledata"],
+    "previousStatement": "tablerow",
+    "nextStatement": "tablerow",
     "colour": 200,
     "tooltip": "",
     "helpUrl": ""
   },
+
+  //Tabellenzelle
+
   {
     "type": "tabledata",
     "message0": "Datenzelle %1",
@@ -703,10 +791,18 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
+        "check":["string",
+          "break",
+          "orderedlist",
+          "unorderedlist",
+          "image",
+          "specialtext",
+          "link",
+          "linkdescription"]
       }
     ],
-    "previousStatement": null,
-    "nextStatement": ["string", "specialtext"],
+    "previousStatement": "tabledata",
+    "nextStatement": "tabledata",
     "colour": 200,
     "tooltip": "",
     "helpUrl": ""

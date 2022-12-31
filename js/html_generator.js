@@ -31,8 +31,7 @@ HtmlGenerator["html_page"] = function (block) {
 
 HtmlGenerator["head"] = function (block) {
   var title_content = block.getFieldValue("TITLE");
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  return code = "<head>\n<title>\n" + title_content + "\n</title>\n" + statements_content +"</head>\n";
+  return code = "<head>\n<title>\n" + title_content + "\n</title>\n </head>\n";
 };
 
 HtmlGenerator["body"] = function (block) {
@@ -82,7 +81,7 @@ HtmlGenerator["paragraph"] = function (block) {
   return code = "<p>" + statements_content + "</p> \n";
 };
 
-HtmlGenerator["zeilenumbruch"] = function (block){
+HtmlGenerator["break"] = function (block){
   return code = "<br>"
 }
 
@@ -217,7 +216,7 @@ HtmlGenerator["specialtext"] = function(block) {
 
 HtmlGenerator["link"] = function(block) {
   var text_link = block.getFieldValue("LINK");
-  return code = "<a href= '" + text_link + "'>"
+  return code = "<a href= '" + text_link + "' target=_blank>"
     + text_link +
     "</a>\n";
 };
@@ -226,7 +225,7 @@ HtmlGenerator["link"] = function(block) {
 HtmlGenerator["linkdescription"] = function(block) {
   var text_link = block.getFieldValue("LINK");
   var text_linkdescription = block.getFieldValue("LINKDESCRIPTION");
-  return code = "<a href= '\n" + text_link + "'>\n"
+  return code = "<a href= '\n" + text_link + "' target=_blank>\n"
     + text_linkdescription +
     "</a>\n";
 };
@@ -240,8 +239,8 @@ HtmlGenerator["table"] = function (block) {
 
 
 HtmlGenerator["tablehead"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  return code = "<th>" + statements_content + "</th>\n";
+  var field_content = block.getFieldValue("CONTENT");
+  return code = "<th>" + field_content + "</th>\n";
 };
 
 HtmlGenerator["tablerow"] = function (block) {
