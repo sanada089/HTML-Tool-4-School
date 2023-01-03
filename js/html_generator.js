@@ -141,77 +141,32 @@ HtmlGenerator["style"] = function (block) {
 };
 
 HtmlGenerator["specialtext"] = function(block) {
-  var text_specialtext = block.getFieldValue('CONTENT');
-  var colour_name = block.getFieldValue("TEXTCOLOR");
-  var dropdown_schriftgroesse = block.getFieldValue("FONTSIZE");
-  var checkbox_fett = block.getFieldValue("FETT") === 'TRUE';
-  var checkbox_kursiv = block.getFieldValue("KURSIV") === 'TRUE';
-  var checkbox_unterstrichen = block.getFieldValue("UNTERSTRICHEN") === 'TRUE';
+  let text_specialtext = block.getFieldValue('CONTENT');
+  let colour_name = block.getFieldValue("TEXTCOLOR");
+  let dropdown_schriftgroesse = block.getFieldValue("FONTSIZE");
+  let checkbox_fett = block.getFieldValue("FETT") === 'TRUE';
+  let checkbox_kursiv = block.getFieldValue("KURSIV") === 'TRUE';
+  let checkbox_unterstrichen = block.getFieldValue("UNTERSTRICHEN") === 'TRUE';
 
-  if(checkbox_fett && !checkbox_kursiv && !checkbox_unterstrichen){
-    code = "<span style = 'color: " + colour_name + "'" +
-      "'font-size: " + dropdown_schriftgroesse + "'>" +
-      "<b>" +
-      text_specialtext +
-      "</b>" +
-      "</span>\n";
-  } else if(checkbox_kursiv && !checkbox_fett && !checkbox_unterstrichen){
-    code = "<span style = 'color: " + colour_name + "'" +
-      "'font-size: " + dropdown_schriftgroesse + "'>" +
-      "<i>" +
-      text_specialtext +
-      "</i>" +
-      "</span>\n";
-  } else if (checkbox_unterstrichen && !checkbox_fett && !checkbox_kursiv){
-    code = "<span style = 'color: " + colour_name + "'" +
-      "'font-size: " + dropdown_schriftgroesse + "'>" +
-      "<u>" +
-      text_specialtext +
-      "</u>" +
-      "</span>\n";
-  }  else if(checkbox_fett && checkbox_kursiv && !checkbox_unterstrichen){
-    code = "<span style = 'color: " + colour_name + "'" +
-      "'font-size: " + dropdown_schriftgroesse + "'>" +
-      "<b><i>" +
-      text_specialtext +
-      "</b></i>" +
-      "</span>\n";
-  }else if (checkbox_kursiv && checkbox_unterstrichen && !checkbox_fett){
-    code = "<span style = 'color: " + colour_name + "'" +
-      "'font-size: " + dropdown_schriftgroesse + "'>" +
-      "<i><u>" +
-      text_specialtext +
-      "</i></u>" +
-      "</span>\n";
+  let code = text_specialtext;
+
+  if(checkbox_fett){
+    code = "<b>" + code + "</b>";
   }
-  else if (!checkbox_kursiv && checkbox_unterstrichen && checkbox_fett){
-    code = "<span style = 'color: " + colour_name + "'" +
-      "'font-size: " + dropdown_schriftgroesse + "'>" +
-      "<b><u>" +
-      text_specialtext +
-      "</b></u>" +
-      "</span>\n";
+  if(checkbox_kursiv){
+    code= "<i>" + code + "</i>";
   }
-  else if (checkbox_fett && checkbox_kursiv  && checkbox_unterstrichen){
-    code = "<span style = 'color: " + colour_name + "'" +
-      "'font-size: " + dropdown_schriftgroesse + "'>" +
-      "<b><i><u>" +
-      text_specialtext +
-      "</b></i></u>" +
-      "</span>\n";
+  if(checkbox_unterstrichen){
+    code= "<u>" + code + "</u>";
   }
-  else if (!checkbox_fett && !checkbox_kursiv  && !checkbox_unterstrichen){
-    code = "<span style = 'color: " + colour_name + "'" +
-      "'font-size: " + dropdown_schriftgroesse + "'>" +
-      text_specialtext +
+
+    code = "<span style = 'color: " + colour_name  +
+      "; font-size: " + dropdown_schriftgroesse + "pt'>" + code +
       "</span>\n";
-  }
+
   return code;
 
 };
-
-
-
 
 
 HtmlGenerator["link"] = function(block) {
