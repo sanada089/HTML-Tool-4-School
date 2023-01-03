@@ -18,7 +18,7 @@
 
 <div  class="grid-container1">
   <div class="item1" id="bildSekretaerin">
-    <img src="img/hilfestellung/Gscheidhaferl.png" alt="Gscheidhaferl"/>
+    <img id="Gscheidhaferl" src="img/hilfestellung/Gscheidhaferl2.png" width="" height="" alt="Gscheidhaferl"/>
   </div>
   <div class="item2" id="hilfestellungButtons">
     <table>
@@ -48,6 +48,8 @@
 <script>
   document.getElementById("HilfeFrame").width=Math.round(window.innerWidth*0.95);
   document.getElementById("HilfeFrame").height=Math.round(window.innerHeight*0.65);
+  document.getElementById("Gscheidhaferl").width=Math.round(window.innerWidth*0.15);
+  document.getElementById("Gscheidhaferl").height=Math.round(window.innerHeight*0.25);
 
   function showHTML(){
     document.getElementById("HilfeFrame").src="hilfestellung/Button_Was_ist.html";
