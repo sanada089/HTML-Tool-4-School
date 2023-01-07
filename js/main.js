@@ -91,6 +91,26 @@ var toolbox = {
           "kind": "block",
           "type": "flower",
         },
+        {
+          "kind": "block",
+          "type": "rainer",
+        },
+        {
+          "kind": "block",
+          "type": "rimpfl",
+        },
+        {
+          "kind": "block",
+          "type": "scott",
+        },
+        {
+          "kind": "block",
+          "type": "smith",
+        },
+        {
+          "kind": "block",
+          "type": "winter",
+        },
       ]
     },
     {

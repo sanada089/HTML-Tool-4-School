@@ -417,7 +417,6 @@ const htmlBlocks = [
   },
 
   //Bildlink-Block, in den der Link des Bildes geschrieben wird um ihn dann in den zugehörigen Bild-Block einzusetzen
-
   {
     "type": "imagelink",
     "message0": "Bilderlink %1",
@@ -435,7 +434,6 @@ const htmlBlocks = [
   },
 
   //Beispielbild Buch
-
   {
     "type": "book",
     "message0": "%1",
@@ -456,7 +454,6 @@ const htmlBlocks = [
   },
 
   //Beispielbild Blume
-
   {
     "type": "flower",
     "message0": "%1",
@@ -476,8 +473,107 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
-  //Style-Block, der in Division oder Body eingesetzt werden kann um Schriftart, Hintergrundfarbe und Textfarbe zu bestimmen
+  //Bild Lehrkraft Herr Rainer
+  {
+    "type": "rainer",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_image",
+        "src": "https://de.freepik.com/vektoren-kostenlos/illustration-des-webinar-konzepts_12079894.htm#query=lehrer&position=43&from_view=search&track=sph",
+        "width": 15,
+        "height": 15,
+        "alt": "*",
+        "flipRtl": false
+      }
+    ],
+    "previousStatement": "imageblock",
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
 
+//Bild Lehrkraft Frau Rimpfl
+  {
+    "type": "rimpfl",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_image",
+        "src": "https://de.freepik.com/vektoren-premium/eine-yong-lehrerin-im-klassenzimmer_31200740.htm#query=lehrer&from_query=lehrkraft&position=23&from_view=search&track=sph",
+        "width": 15,
+        "height": 15,
+        "alt": "*",
+        "flipRtl": false
+      }
+    ],
+    "previousStatement": "imageblock",
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Bild Lehrkraft Frau Scott
+  {
+    "type": "scott",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_image",
+        "src": "https://de.freepik.com/vektoren-kostenlos/junge-lehrerin-mit-tafel-zurueck-zur-schule_4985041.htm#page=2&query=lehrer&position=45&from_view=search&track=sph",
+        "width": 15,
+        "height": 15,
+        "alt": "*",
+        "flipRtl": false
+      }
+    ],
+    "previousStatement": "imageblock",
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Bild Lehrkraft Frau Smith
+  {
+    "type": "smith",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_image",
+        "src": "https://de.freepik.com/vektoren-premium/lehrerin-im-klassenzimmer-afrikanische-frau-die-auf-eine-tafel-zeigt-schul-und-lernkonzept_32995190.htm#page=2&query=lehrerin%20jung&position=44&from_view=search&track=sph",
+        "width": 15,
+        "height": 15,
+        "alt": "*",
+        "flipRtl": false
+      }
+    ],
+    "previousStatement": "imageblock",
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Bild Lehrkraft Herr Winter
+  {
+    "type": "winter",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_image",
+        "src": "https://de.freepik.com/vektoren-kostenlos/professor-konzept-illustration_11119939.htm#query=lehrer&from_query=lehrkraft&position=2&from_view=search&track=sph",
+        "width": 15,
+        "height": 15,
+        "alt": "*",
+        "flipRtl": false
+      }
+    ],
+    "previousStatement": "imageblock",
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
+  //Style-Block, der in Division oder Body eingesetzt werden kann um Schriftart, Hintergrundfarbe und Textfarbe zu bestimmen
   {
     "type": "style",
     "message0": "Schriftart %1 %2 Hintergrundfarbe %3 %4 Textfarbe %5",

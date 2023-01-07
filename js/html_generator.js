@@ -129,6 +129,26 @@ HtmlGenerator["book"] = function() {
   return "img/book.png";
 };
 
+HtmlGenerator["rainer"] = function(){
+  return "img/rainer.png";
+};
+
+HtmlGenerator["rimpfl"] = function(){
+  return "img/rimpfl.png";
+};
+
+HtmlGenerator["scott"] = function(){
+  return "img/scott.png";
+};
+
+HtmlGenerator["smith"] = function(){
+  return "img/smith.png";
+};
+
+HtmlGenerator["winter"] = function(){
+  return "img/winter.png";
+};
+
 HtmlGenerator["imagelink"] = function(block) {
   return block.getFieldValue("IMAGELINK");
 };
