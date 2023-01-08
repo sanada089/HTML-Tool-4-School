@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Textstruktur Hilfe</title>
 </head>
-<body>
-<p>
-  Nun kümmern wir uns um den <b>Körper (= body)</b>, also den Inhalt der auf unserer Webseite zu <br>
-  sehen sein wird und wie dieser aussehen soll. <br>
-  Wird etwas innerhalb des Body-Elements geschrieben, wird dies auf unserer Webseite angezeigt. <br>
+<body style="font-family: Cambria">
+<h1>Textstruktur</h1>
 
-  &#9656; Hier müssen alle auf der Webseite sichtbaren Informationen eingefügt werden! <br>
+<p>
+  Nun kümmern wir uns um den <b>Körper (= body)</b>, also den Inhalt, der auf unserer Webseite zu sehen sein wird und wie dieser aussehen soll.
+  Wird etwas innerhalb des Body-Elements geschrieben, wird dies auf unserer Webseite angezeigt.<br>
+
+  &#9656; Hier müssen alle auf der Webseite sichtbaren Informationen eingefügt werden!
 </p>
 <p>
   < body><br>
@@ -22,11 +23,10 @@
 </p>
 
 <p>
-  <b>Überschriften</b><br>
-  Beginnen wir, wie auch ein gewöhnlicher Text, mit der Überschrift. <br>
+  <h1>Überschriften</h1>
+  Beginnen wir, wie auch bei einem gewöhnlichen Text, mit der Überschrift. <br>
   Eine Überschrift dient zur Strukturierung eines Dokuments und hilft dem Leser, sich im Dokument zurechtzufinden. <br>
 </p>
-
 
 <p>
   Für eine Überschrift benötigen wir den Tag
@@ -44,69 +44,98 @@
 
 <p>
   Es gibt 6 Überschriftenebenen, um Hierarchieebenen im Dokument abzubilden. <br>
-<div style="text-align: center;">
-  < h1>1 Überschrift< /h1> <br>
-  < h2>1.1 Überschrift< /h2> <br>
-  < h3>1.1.1 Überschrift< /h3> <br>
-  < h4>1.1.1.1 Überschrift< /h4> <br>
-  < h5>1.1.1.1.1 Überschrift< /h5> <br>
-  < h6>1.1.1.1.1.1 Überschrift< /h6> <br>
-</div><br>
   Die jeweilige Zahl steht für die Überschriftenebene (1 ist die höchste und 6 die niedrigste Ebene).
 </p>
 
-<p>
-  <b>Absätze</b><br>
-  Herr Hausl hat in seiner Vorlage Leerzeilen gemacht und dadurch Absätze gebildet. <br>
-  Um mit HTML Absätze zu setzen, benötigen wir das < p>-Tag <br>
-  <p>
-    <div style="text-align: center;">
-      < p> Mein erster Absatz < /p> <br>
-    </div>
-  </p>
-  Der Tag wird aus dem Englischen abgeleitet, denn das Wort für „Absatz“ lautet <i> paragraph </i>.
-</p>
 
-<div><table>
-  <tr>
-    <tr><img src="../img/hilfestellung/Absatz_Blöcke.png" alt="Absatz_Blöcke"/></tr>
-    <tr>
-      <img src="../img/hilfestellung/Absatz_Code.png" alt="Absatz_Code"/>
-  </tr>
-  <tr>
-    <img src="../img/hilfestellung/Absatz_Vorschau.png" alt="Absatz_Vorschau"/>
-  </tr>
-</table>
-</div>
+  <h1>Zeilenumbruch und Absätze</h1>
 
-<p>
-  <b>Hyperlinks</b><br>
-  Mit einem Hyperlink kann man auf eine andere Seite oder ein anderes Dokument verweisen. <br>
-  Hierfür benötigen wir das < a>-Tag
-
-<div style="text-align: center;">
-  < a href="https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/"> Klick < /a><br>
-</div>
-</p>
-<p>
-Das a-Element liefert den Verweis auf die Zieldatei, die nach dem Klicken angezeigt werden soll.
-Auch dieser Tag kommt aus dem Englischen: <i>anchor</i> - dt. Verbindung, Verknüpfung<br>
-Im href-Attribut (englisch: hyper reference = Hyper[text]-Referenz) innerhalb der spitzen Klammern
-wird die URL (= die "Adresse" der Datei), zu der man gelangen soll, eingefügt. <br>
-<p>Damit nicht die gesamte URL sichtbar ist, kann zwischen den a-Tags ein Linktext eingefügt werden. </p>
+<p>Herr Hausl hat in seiner Vorlage Leerzeilen gemacht und dadurch einen Zeilenumbruch bzw. Absätze gebildet.
 </p>
 
 <div>
   <table>
-    <tr><img src="../img/hilfestellung/Link_Block.png" alt="Link_Block"/></tr>
+    <tr>
+      <th><img src="../img/hilfestellung/Zeilenumbruch_Blöcke.png" alt="Zeilenumbruch_Blöcke"/></th>
+      <th><img src="../img/hilfestellung/Zeilenumbruch_Code.png" alt="Zeilenumbruch_Code"/> </th>
+      <th><img src="../img/hilfestellung/Zeilenumbruch_Vorschau.png" alt="Zeilenumbruch_Vorschau"/></th>
+      <td>
+        In HTML benötigen wir für einen Zeilenumbruch <b>< br></b> an der Stelle, an dem der Zeilenumbruch stattfinden soll.
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div>
+
+  <table>
     <tr>
       <td>
-        <img src="../img/hilfestellung/Link_Code.png" alt="Link_Code"/>
+        <b> Zum Vergleich: </b><br>
+        Wird das < br>-Tag weggelassen, wird der eingegebene Text in der Vorschau hintereinander geschrieben.
+      </td>
+      <th><img src="../img/hilfestellung/ohneZU_Blöcke.png"/></th>
+      <th><img src="../img/hilfestellung/ohneZU_Code.png"/></th>
+      <th><img src="../img/hilfestellung/ohneZU_Vorschau.png"/></th>
+    </tr>
+  </table>
+</div>
+
+<p>
+  Um mit HTML <b>Absätze</b> zu setzen, benötigen wir das <b>< p>-Tag</b>. Dies wird aus dem Englischen abgeleitet, denn das Wort für „Absatz“ lautet <i> paragraph </i>.
+  Absätze sind besonders hilfreich, wenn es längere Textabschnitte gibt, deren Inhalt einen Sinnabschnitt bildet.
+</p>
+<div><table>
+  <tr>
+    <th><img src="../img/hilfestellung/Absatz_Blöcke.png" alt="Absatz_Blöcke"/></th>
+    <th><img src="../img/hilfestellung/Absatz_Code.png" alt="Absatz_Code"/></th>
+    <th><img src="../img/hilfestellung/Absatz_Vorschau.png" alt="Absatz_Vorschau"/></th>
+  </tr>
+</table>
+</div>
+
+
+  <h1>Hyperlinks</h1>
+
+<p>
+  Mit einem Hyperlink kann man auf eine andere Seite oder ein anderes Dokument <i>verweisen</i>.
+  Hierfür benötigen wir das <b>< a>-Tag: </b>
+</p>
+<p>
+<div style="text-align: center;">
+  <b>< a href=" </b> https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/" <b>></b> Klick <b>< /a></b><br>
+</div>
+</p>
+
+<p>
+  Das a-Element liefert den <i>Verweis</i> auf die Zieldatei, die nach dem Klicken angezeigt werden soll.
+Auch dieser Tag kommt aus dem Englischen: <b><i>anchor</i></b> - dt. Verbindung, Verknüpfung
+Im href-Attribut (englisch: hyper reference = Hyper[text]-Referenz) innerhalb der spitzen Klammern
+wird die URL (= die "Adresse" der Datei), zu der man gelangen soll, eingefügt.
+
+</p>
+
+<div>
+  <table>
+    <tr>
+      <td>
+        <img src="../img/hilfestellung/Link_Block.png" alt="Link_Block"/>
       </td>
       <td>
-        <img src="../img/hilfestellung/Link_Vorschau.png" alt="Link_Vorschau"/></td>
-    </tr>
-
+        Damit nicht die gesamte URL sichtbar ist, kann zwischen den a-Tags ein Linktext (z. B. Klick) eingefügt werden.
+      </td>
+  </table>
+  <img src="../img/hilfestellung/Link_Code.png" alt="Link_Code"/>
+  <table>
+    <tr>
+        <td>
+          <img src="../img/hilfestellung/Link_Vorschau.png" alt="Link_Vorschau"/>
+        </td>
+      <td>
+        In der Vorschau würde das so aussehen. <br>
+        Beide Varianten verlinken zu der gleichen Seite!
+      </td>
+      </tr>
   </table>
 </div>
 </body>
