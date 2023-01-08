@@ -480,9 +480,9 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "field_image",
-        "src": "https://de.freepik.com/vektoren-kostenlos/illustration-des-webinar-konzepts_12079894.htm#query=lehrer&position=43&from_view=search&track=sph",
-        "width": 15,
-        "height": 15,
+        "src": "img/rainer.png",
+        "width": 100,
+        "height": 70,
         "alt": "*",
         "flipRtl": false
       }
@@ -500,9 +500,9 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "field_image",
-        "src": "https://de.freepik.com/vektoren-premium/eine-yong-lehrerin-im-klassenzimmer_31200740.htm#query=lehrer&from_query=lehrkraft&position=23&from_view=search&track=sph",
-        "width": 15,
-        "height": 15,
+        "src": "img/rimpfl.png",
+        "width": 100,
+        "height": 70,
         "alt": "*",
         "flipRtl": false
       }
@@ -520,9 +520,9 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "field_image",
-        "src": "https://de.freepik.com/vektoren-kostenlos/junge-lehrerin-mit-tafel-zurueck-zur-schule_4985041.htm#page=2&query=lehrer&position=45&from_view=search&track=sph",
-        "width": 15,
-        "height": 15,
+        "src": "img/scott.png",
+        "width": 100,
+        "height": 70,
         "alt": "*",
         "flipRtl": false
       }
@@ -540,9 +540,9 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "field_image",
-        "src": "https://de.freepik.com/vektoren-premium/lehrerin-im-klassenzimmer-afrikanische-frau-die-auf-eine-tafel-zeigt-schul-und-lernkonzept_32995190.htm#page=2&query=lehrerin%20jung&position=44&from_view=search&track=sph",
-        "width": 15,
-        "height": 15,
+        "src": "img/smith.png",
+        "width": 100,
+        "height": 70,
         "alt": "*",
         "flipRtl": false
       }
@@ -560,9 +560,9 @@ const htmlBlocks = [
     "args0": [
       {
         "type": "field_image",
-        "src": "https://de.freepik.com/vektoren-kostenlos/professor-konzept-illustration_11119939.htm#query=lehrer&from_query=lehrkraft&position=2&from_view=search&track=sph",
-        "width": 15,
-        "height": 15,
+        "src": "img/winter.png",
+        "width": 100,
+        "height": 70,
         "alt": "*",
         "flipRtl": false
       }
@@ -836,7 +836,6 @@ const htmlBlocks = [
   },
 
   //Tabellen-Überschrift
-
   {
     "type": "tablehead",
     "message0": "Tabellenüberschrift %1",
@@ -874,7 +873,6 @@ const htmlBlocks = [
   },
 
   //Tabellenzelle
-
   {
     "type": "tabledata",
     "message0": "Datenzelle %1",
