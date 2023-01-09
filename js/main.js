@@ -111,6 +111,10 @@ var toolbox = {
           "kind": "block",
           "type": "winter",
         },
+        {
+          "kind": "block",
+          "type": "hausl",
+        },
       ]
     },
     {

@@ -108,13 +108,12 @@ HtmlGenerator["listitem"] = function (block) {
 };
 
 //Bild-Block
-
 HtmlGenerator["image"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
   var statements_width = block.getFieldValue("WIDTH")
   var statements_height = block.getFieldValue("HEIGHT")
 
-  return code = '<img src="'  + statements_content + '" width="'+ statements_width + '" height="'+ statements_height +'alt="default"/>\n';
+  return code = '<img src="'  + statements_content + '" width="'+ statements_width + '" height="'+ statements_height + '"' + 'alt="default"/>\n';
 };
 
 //Beispielbild Blume
@@ -147,6 +146,10 @@ HtmlGenerator["smith"] = function(){
 
 HtmlGenerator["winter"] = function(){
   return "img/winter.png";
+};
+
+HtmlGenerator["hausl"] = function(){
+  return "img/Hausl2.png";
 };
 
 HtmlGenerator["imagelink"] = function(block) {

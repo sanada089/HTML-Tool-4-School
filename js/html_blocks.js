@@ -573,6 +573,27 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
+
+  //Bild Schulleiter Herr Hausl
+  {
+    "type": "hausl",
+    "message0": "%1",
+    "args0": [
+      {
+        "type": "field_image",
+        "src": "img/Hausl2.png",
+        "width": 100,
+        "height": 70,
+        "alt": "*",
+        "flipRtl": false
+      }
+    ],
+    "previousStatement": "imageblock",
+    "colour": 300,
+    "tooltip": "",
+    "helpUrl": ""
+  },
+
   //Style-Block, der in Division oder Body eingesetzt werden kann um Schriftart, Hintergrundfarbe und Textfarbe zu bestimmen
   {
     "type": "style",
