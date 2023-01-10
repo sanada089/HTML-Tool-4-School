@@ -14,7 +14,9 @@
 .item6 {
   grid-area: switch;
 }
-
+.item7 {
+  grid-area: nextLevelButton;
+}
 
 .grid-container{
   display: grid;
@@ -22,6 +24,8 @@
   background-color: #ffbc70;
   grid-template-areas:
     'blocklyDiv HTMLCode CodeButton'
+    'blocklyDiv HTMLCode nextLevelButton'
+    'blocklyDiv HTMLPage nextLevelButton'
     'blocklyDiv HTMLPage switch';
 }
 
@@ -29,6 +33,16 @@
   border-color: #100cff;
   border-style: solid;
   border-radius: 8px;
+  margin-bottom: 0.5vh;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.buttonNextLevel{
+  border-color: #dc4129;
+  border-style: dotted;
+  border-radius: 15px;
   margin-bottom: 0.5vh;
   display: inline-block;
   font-size: 12px;
@@ -107,15 +121,19 @@
 }
 
 #CodeButtonDiv{
-  height: 47vh;
+  height: 45vh;
   width: 3vw;
 }
 
 #switchDiv{
-
-  height: 47.5vh;
+  height: 45vh;
   width: 3vw;
   margin-bottom: 3vh;
+}
+
+#nextLevelButtonDiv{
+  height: 5vw;
+  width: 3vw;
 }
 
 #infoButtonDiv{

@@ -58,22 +58,28 @@
   <div class="item2">
     <div id="blocklyDiv"></div>
   </div>
+
+  <!-- Die Buttons neben dem Iframe oben rechts-->
   <div class="item5">
     <div id="CodeButtonDiv">
 
       <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
       <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" alt="Ausrufezeichen" /></button>
-      <button class="button" onclick=nextLevel()><img src="img/Pfeil.png" alt="Pfeil"/></button>
-
       <label for="aufgabenauswahl">Aufgaben:</label>
       <select name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
         <option value="1">A1</option>
         <option value="2">A2</option>
         <option value="3">A3</option>
       </select>
-
     </div>
   </div>
+
+  <div class="item7">
+    <div id="nextLevelButtonDiv">
+      <button class="buttonNextLevel" onclick=nextLevel()><img src="img/Pfeil.png" alt="Pfeil"/></button>
+    </div>
+  </div>
+
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3">
     <iframe name="preview" id="HTMLPageDiv"></iframe>
@@ -90,6 +96,7 @@
       <button class="button" onclick=showIstZustand()><img src="img/Vorschau.png" alt="Vorschau"/></button>
     </div>
   </div>
+
   <!-- InfoButton-->
   <div id="infoButtonDiv">
     <button class="button" onclick=showStartPopup()><img src="img/info.png" alt="info"/></button>
