@@ -21,12 +21,15 @@
 <script src="js/html_blocks.js"></script>
 <script src="js/html_generator.js"></script>
 <script src="js/main.js"></script>
-<!-- Anfangspopup, in dem die ersten Schritte erklärt werden -->
-<div id="container">
-  <div id="exampleModal" class="reveal-modal">
-    <button class="closeButton" onclick="closePopup()"><img src="img/redcross.png" alt="schliessen"></button>
-    <div id="popupFrameContainer">
-      <iframe name="popupFrame" id="popupFrame" width="" height="" src="popup/popup1.html"></iframe>
+
+<!-- Einleitungs-Popup, in dem die ersten Schritte erklärt werden -->
+
+<div id="startPopup">
+  <div id="startPopupFläche" class="reveal-modal">
+    <button class="closeButton" onclick="closeStartPopup()"><img src="img/redcross.png" alt="schliessen"></button>
+    <!-- Inneres des Startpopups in das die einzelnen popupx.html-files geladen werden-->
+    <div id="startPopupFrameContainer">
+      <iframe name="popupFrame" id="startPopupFrame" width="" height="" src="popup/popup1.html"></iframe>
     </div>
     <div class="popup-container">
       <div class="left-arrow"><button class="arrow-button" onclick="showPreviousPopup()"><img src="img/arrow-left.png" alt="zurück"></button></div>
@@ -34,7 +37,23 @@
     </div>
   </div>
 </div>
+
+<!-- Levelpopup, in dem die aktuelle Aufgabe erklärt wird -->
+
+<div id="levelPopup">
+  <div id="levelPopupFläche" class="reveal-modal">
+    <button class="closeButton" onclick="closeLevelPopup()"><img src="img/redcross.png" alt="schliessen"></button>
+    <!-- Inneres des Startpopups in das die einzelnen popupx.html-files geladen werden-->
+    <div id="levelPopupFrameContainer">
+      <iframe name="popupFrame" id="levelPopupFrame" width="" height="" src=""></iframe>
+    </div>
+    <div class="popup-container">
+    </div>
+  </div>
+</div>
+
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
+
 <div class="grid-container">
   <div class="item2">
     <div id="blocklyDiv"></div>
@@ -44,32 +63,26 @@
 
       <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
       <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" alt="Ausrufezeichen" /></button>
-
+      <button class="button" onclick=nextLevel()><img src="img/Pfeil.png" alt="Pfeil"/></button>
 
       <label for="aufgabenauswahl">Aufgaben:</label>
-      <select name="aufgabenauswahl" id="aufgabenauswahl">
-        <option value="a1">A1</option>
-        <option value="a2">A2</option>
-        <option value="a3">A3</option>
+      <select name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
+        <option value="1">A1</option>
+        <option value="2">A2</option>
+        <option value="3">A3</option>
       </select>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <button class="button" onclick=showAufgabenstellung()><img src="img/Pfeil.png" alt="Pfeil"/></button>
+
     </div>
   </div>
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3">
     <iframe name="preview" id="HTMLPageDiv"></iframe>
   </div>
+  <!-- Iframe oben rechts in dem default-mäßig die Hilfeseite von Frau Gscheidhaferl angezeigt wird-->
   <div class="item4">
     <iframe name="buttonPreview" id="HTMLCodeDiv" src="hilfestellung.html"></iframe>
   </div>
+  <!-- Die Buttons neben dem Iframe unten rechts-->
   <div class="item6">
     <div id="switchDiv">
       <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Code" /></button>
@@ -77,9 +90,11 @@
       <button class="button" onclick=showIstZustand()><img src="img/Vorschau.png" alt="Vorschau"/></button>
     </div>
   </div>
+  <!-- InfoButton-->
   <div id="infoButtonDiv">
-    <button class="button" onclick=showPopup()><img src="img/info.png" alt="info"/></button>
+    <button class="button" onclick=showStartPopup()><img src="img/info.png" alt="info"/></button>
   </div>
+  <!-- Impressum und Datenschutz Link-->
   <div id="impressumDiv"><a href="Impressum.html">Impressum & Datenschutz</a></div>
 </div>
 <!-- Beginn Skript-Block -->
@@ -92,10 +107,11 @@
     var xml = Blockly.Xml.textToDom(xml_text);
     Blockly.Xml.domToWorkspace(xml, workspace);
   }
+
   //Popup auf die richtige größe des Bildschirms resizen und anschließend anzeigen
-  document.getElementById("popupFrame").width=Math.round(window.innerWidth*0.40);
-  document.getElementById("popupFrame").height=Math.round(window.innerHeight*0.60);
-  showPopup();
+  document.getElementById("startPopupFrame").width=Math.round(window.innerWidth*0.40);
+  document.getElementById("startPopupFrame").height=Math.round(window.innerHeight*0.60);
+  showStartPopup();
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
   //previewCode ist die Vorschau der aktuell erwünschten Seite
@@ -106,6 +122,8 @@
   var codeFlag;
   //popupFlag zeigt, bei welchem Popup sich der User befindet
   var popupFlag=1;
+  //level zeigt an in welchem level sich der User aktuell befindet
+  var level;
   //Setzen von previewCode anhand des aktuellen Lernstandes !!!TO DO!!!
   previewCode="<!DOCTYPE HTML>\n" +
     "<html>\n" +
@@ -115,6 +133,16 @@
     "</head>\n" +
     "\n" +
     "</html>";
+
+  //Laden des Levels, bei dem sich der User aktuell befindet. Sollte kein gespeichertes Level vorhanden sein wird das Level auf 1 gesetzt
+
+  if (localStorage.getItem("level")){
+    level=localStorage.getItem("level");
+  }
+  else{
+    level = 1;
+  }
+
   // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
   function update(event){
     // Umwandlung des workspace zu HTML-Code via HTMLGenerator
@@ -164,18 +192,70 @@
     document.getElementById("HTMLCodeDiv").src="Aufgabenstellung.html";
     codeFlag=2;
   }
-  function showPopup(){
-    document.getElementById("popupFrame").src="popup/popup1.html";
+
+  //function die das Einleitungspopup aufruft
+
+  function showStartPopup(){
+    document.getElementById("startPopupFrame").src="popup/popup1.html";
     popupFlag=1;
-    document.getElementById("container").style.display="block";
+    document.getElementById("startPopup").style.display="block";
   }
 
-  function showAufgabenstellung(){
+  //function die das Einleitungspopup schließt (rotes X)
 
+  function closeStartPopup(){
+    document.getElementById("startPopup").style.display="none";
+  }
+
+  //function die aufgerufen wird, wenn auf den Nächstes-Level-Button geklickt wird
+
+  function nextLevel(){
+    switchLevel(level+1);
+  }
+
+  //function die aufgerufen wird, wenn der User im Dropdown das Level ändert
+
+  function chooseLevel(selectedValue){
+    switchLevel(selectedValue+1);
+  }
+
+  //function die level-Variable, Level-Popup und Aufgabenstellung an das gewünschte Level newLevel anpasst
+  //so wie das aktuelle Level in der localStorage speichert. Anschließend wird showLevelPopup aufgerufen, um den User im neuen Level willkommen zu heißen.
+
+  function switchLevel(newLevel){
+    level=parseInt(newLevel);
+    if(level>3){
+      level=3;
+    }
+    localStorage.setItem("level", level);
+    switch(level){
+      case 1:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup1.html";
+        break;
+      case 2:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup2.html";
+        break;
+      case 3:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup3.html";
+        break;
+    }
+    showLevelPopup();
+  }
+
+  //function die das Popup zu Beginn jeden Levels anzeigt
+
+  function showLevelPopup(){
+    document.getElementById("levelPopup").style.display="block";
+  }
+
+  //function die das Popup zu Beginn jeden Levels schließt
+
+  function closeLevelPopup(){
+    document.getElementById("levelPopup").style.display="none";
   }
 
 
-
+  //function die im Startpopup wenn auf den Pfeil nach links geklickt wird, das vorherige Popup (popupx.html) als Quelle lädt
 
   function showPreviousPopup(){
     if (!popupFlag || popupFlag === 1){
@@ -183,22 +263,19 @@
     else {
       popupFlag = popupFlag-1
       if(popupFlag===1){
-        document.getElementById("popupFrame").src="popup/popup1.html"
+        document.getElementById("startPopupFrame").src="popup/popup1.html"
       }
       if(popupFlag===2){
-        document.getElementById("popupFrame").src="popup/popup2.html"
+        document.getElementById("startPopupFrame").src="popup/popup2.html"
       }
       if(popupFlag===3){
-        document.getElementById("popupFrame").src="popup/popup3.html"
+        document.getElementById("startPopupFrame").src="popup/popup3.html"
       }
       if(popupFlag===4){
-        document.getElementById("popupFrame").src="popup/popup4.html"
+        document.getElementById("startPopupFrame").src="popup/popup4.html"
       }
       if(popupFlag===5){
-        document.getElementById("popupFrame").src="popup/popup5.html"
-      }
-      if(popupFlag===6){
-        document.getElementById("popupFrame").src="popup/popup6.html"
+        document.getElementById("startPopupFrame").src="popup/popup5.html"
       }
     }
   }
@@ -227,9 +304,10 @@
       }
     }
   }
-  function closePopup(){
-    document.getElementById("container").style.display="none";
-  }
+
+
 </script>
 </body>
 </html>
+
+
