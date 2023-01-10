@@ -868,7 +868,8 @@ const htmlBlocks = [
       }
     ],
     "previousStatement": "tablehead",
-    "nextStatement": "tablerow",
+    "nextStatement": ["tablerow",
+      "tablehead"],
     "colour": 200,
     "tooltip": "",
     "helpUrl": ""
@@ -883,7 +884,10 @@ const htmlBlocks = [
       {
         "type": "input_statement",
         "name": "CONTENT",
-        "check": "tabledata"
+        "check": [
+          "tabledata",
+          "tablehead"
+        ]
       }
     ],
     "previousStatement": "tablerow",
