@@ -433,46 +433,6 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
-  //Beispielbild Buch
-  {
-    "type": "book",
-    "message0": "%1",
-    "args0": [
-      {
-        "type": "field_image",
-        "src": "https://cdn.pixabay.com/photo/2017/01/31/00/08/book-2022461_960_720.png",
-        "width": 15,
-        "height": 15,
-        "alt": "*",
-        "flipRtl": false
-      }
-    ],
-    "previousStatement": "imageblock",
-    "colour": 300,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-
-  //Beispielbild Blume
-  {
-    "type": "flower",
-    "message0": "%1",
-    "args0": [
-      {
-        "type": "field_image",
-        "src": "https://cdn.pixabay.com/photo/2013/07/13/10/08/flower-156608_960_720.png",
-        "width": 15,
-        "height": 15,
-        "alt": "*",
-        "flipRtl": false
-      }
-    ],
-    "previousStatement": "imageblock",
-    "colour": 300,
-    "tooltip": "",
-    "helpUrl": ""
-  },
-
   //Bild Lehrkraft Herr Rainer
   {
     "type": "rainer",

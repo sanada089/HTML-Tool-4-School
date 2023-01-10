@@ -85,14 +85,6 @@ var toolbox = {
         },
         {
           "kind": "block",
-          "type": "book",
-        },
-        {
-          "kind": "block",
-          "type": "flower",
-        },
-        {
-          "kind": "block",
           "type": "rainer",
         },
         {

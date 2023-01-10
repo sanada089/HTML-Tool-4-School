@@ -116,17 +116,7 @@ HtmlGenerator["image"] = function (block) {
   return code = '<img src="'  + statements_content + '" width="'+ statements_width + '" height="'+ statements_height + '"' + 'alt="default"/>\n';
 };
 
-//Beispielbild Blume
-
-HtmlGenerator["flower"] = function() {
-  return "img/flower.png";
-};
-
-//Beispielbild Buch
-
-HtmlGenerator["book"] = function() {
-  return "img/book.png";
-};
+//Bilder Lehrkräfte
 
 HtmlGenerator["rainer"] = function(){
   return "img/rainer.png";
