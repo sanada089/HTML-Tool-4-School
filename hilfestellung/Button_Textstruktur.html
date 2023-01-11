@@ -8,19 +8,15 @@
 <h1>Textstruktur</h1>
 
 <p>
-  Nun kümmern wir uns um den <b>Körper (= body)</b>, also den Inhalt, der auf unserer Webseite zu sehen sein wird und wie dieser aussehen soll.
+  Nun kümmern wir uns um den <b>Körper (= body)</b>, also den Inhalt, der auf unserer Webseite zu sehen sein wird, und wie dieser aussehen soll.
   Wird etwas innerhalb des Body-Elements geschrieben, wird dies auf unserer Webseite angezeigt.<br>
 
-  &#9656; Hier müssen alle auf der Webseite sichtbaren Informationen eingefügt werden!
+  &#10140; Hier müssen alle auf der Webseite sichtbaren Informationen eingefügt werden!
 </p>
-<p>
-  < body><br>
-<div style="text-indent:30px;">
-     <i>< !—Inhalt deiner Seite --></i><br>
-</div>
-  < /body>
 
-</p>
+<div style="text-indent:45px;"><b>< body></b><br></div>
+<div style="text-indent:60px;"> <i>Inhalt deiner Seite </i><br></div>
+<div style="text-indent:45px;"> <b>< /body></b></div>
 
 <p>
   <h1>Überschriften</h1>
@@ -30,7 +26,7 @@
 
 <p>
   Für eine Überschrift benötigen wir den Tag
-  <b>< h1></b> Hier steht die Überschrift<b> < /h1></b>
+  <b>< h1></b><i>Hier steht die Überschrift</i><b> < /h1></b>
 </p>
 
 <div><table>
@@ -43,14 +39,14 @@
 </div>
 
 <p>
-  Es gibt 6 Überschriftenebenen, um Hierarchieebenen im Dokument abzubilden. <br>
-  Die jeweilige Zahl steht für die Überschriftenebene (1 ist die höchste und 6 die niedrigste Ebene).
+  Es gibt <b>6 Überschriftenebenen</b>, um Hierarchieebenen im Dokument abzubilden.
+  Die jeweilige Zahl steht für die Überschriftenebene (1 ist die höchste und 6 die niedrigste Ebene) - sie helfen beim Gliedern des Seitenaufbaus.
 </p>
 
 
   <h1>Zeilenumbruch und Absätze</h1>
 
-<p>Herr Hausl hat in seiner Vorlage Leerzeilen gemacht und dadurch einen Zeilenumbruch bzw. Absätze gebildet.
+<p>Herr Hausl hat in seiner Vorlage Leerzeilen gemacht und dadurch einen Zeilenumbruch eingefügt bzw. verschiedene Absätze gebildet.
 </p>
 
 <div>
@@ -60,7 +56,7 @@
       <th><img src="../img/hilfestellung/Zeilenumbruch_Code.png" alt="Zeilenumbruch_Code"/> </th>
       <th><img src="../img/hilfestellung/Zeilenumbruch_Vorschau.png" alt="Zeilenumbruch_Vorschau"/></th>
       <td>
-        In HTML benötigen wir für einen Zeilenumbruch <b>< br></b> an der Stelle, an dem der Zeilenumbruch stattfinden soll.
+        In HTML benötigen wir für einen <b>Zeilenumbruch</b> das Tag <b>< br></b> an der Stelle, an der er stattfinden soll.
       </td>
     </tr>
   </table>
@@ -72,7 +68,7 @@
     <tr>
       <td>
         <b> Zum Vergleich: </b><br>
-        Wird das < br>-Tag weggelassen, wird der eingegebene Text in der Vorschau hintereinander geschrieben.
+        Wird das <b>< br>-Tag</b> weggelassen, wird der eingegebene Text in der Vorschau hintereinander geschrieben.
       </td>
       <th><img src="../img/hilfestellung/ohneZU_Blöcke.png"/></th>
       <th><img src="../img/hilfestellung/ohneZU_Code.png"/></th>
@@ -82,8 +78,8 @@
 </div>
 
 <p>
-  Um mit HTML <b>Absätze</b> zu setzen, benötigen wir das <b>< p>-Tag</b>. Dies wird aus dem Englischen abgeleitet, denn das Wort für „Absatz“ lautet <i> paragraph </i>.
-  Absätze sind besonders hilfreich, wenn es längere Textabschnitte gibt, deren Inhalt einen Sinnabschnitt bildet.
+  Um mit HTML <b>Absätze</b> zu bilden, benötigen wir das <b>< p>-Tag</b>. Dies wird aus dem Englischen abgeleitet, denn das Wort für „Absatz“ lautet <i> paragraph </i>.
+  Absätze sind bei längeren Texten besonders hilfreich. Sie gliedern den Text und teilen ihn in Sinnabschnitte ein, wodurch der Leser sich besser im Text zurechtfindet.
 </p>
 <div><table>
   <tr>
@@ -103,15 +99,15 @@
 </p>
 <p>
 <div style="text-align: center;">
-  <b>< a href=" </b> https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/" <b>></b> Klick <b>< /a></b><br>
+  <b>< a href=" </b> https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/" <b>></b> <i>Klick </i><b>< /a></b><br>
 </div>
 </p>
 
 <p>
   Das a-Element liefert den <i>Verweis</i> auf die Zieldatei, die nach dem Klicken angezeigt werden soll.
-Auch dieser Tag kommt aus dem Englischen: <b><i>anchor</i></b> - dt. Verbindung, Verknüpfung
-Im href-Attribut (englisch: hyper reference = Hyper[text]-Referenz) innerhalb der spitzen Klammern
-wird die URL (= die "Adresse" der Datei), zu der man gelangen soll, eingefügt.
+  Auch dieser Tag kommt aus dem Englischen: <b><i>anchor</i></b> - <i>dt. Verbindung, Verknüpfung</i> <br>
+  Im href-Attribut (englisch: <i><b>hyper reference</b> = Hyper[text]-Referenz</i>) innerhalb der spitzen Klammern
+wird die URL (= die <i>Adresse</i> der Datei), zu der man gelangen soll, eingefügt.
 
 </p>
 
@@ -122,21 +118,26 @@ wird die URL (= die "Adresse" der Datei), zu der man gelangen soll, eingefügt.
         <img src="../img/hilfestellung/Link_Block.png" alt="Link_Block"/>
       </td>
       <td>
-        Damit nicht die gesamte URL sichtbar ist, kann zwischen den a-Tags ein Linktext (z. B. Klick) eingefügt werden.
+        Damit nicht die gesamte URL sichtbar ist, kann zwischen den a-Tags ein <b>Linktext</b> (z. B. Klick) eingefügt werden.
       </td>
   </table>
   <img src="../img/hilfestellung/Link_Code.png" alt="Link_Code"/>
   <table>
     <tr>
+      <td>
+        In der Vorschau sieht das so aus: <br><br>
+      </td>
         <td>
           <img src="../img/hilfestellung/Link_Vorschau.png" alt="Link_Vorschau"/>
         </td>
-      <td>
-        In der Vorschau würde das so aussehen. <br>
-        Beide Varianten verlinken zu der gleichen Seite!
-      </td>
       </tr>
+
   </table>
+
+  <div style="text-indent:20px;">
+
+    &#10140; <b>Achtung:</b> Beide Varianten verlinken zu der gleichen Seite!
+  </div>
 </div>
 </body>
 </html>
