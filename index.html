@@ -39,13 +39,12 @@
 </div>
 
 <!-- Levelpopup, in dem die aktuelle Aufgabe erklärt wird -->
-
 <div id="levelPopup">
   <div id="levelPopupFläche" class="reveal-modal">
     <button class="closeButton" onclick="closeLevelPopup()"><img src="img/redcross.png" alt="schliessen"></button>
     <!-- Inneres des Startpopups in das die einzelnen popupx.html-files geladen werden-->
     <div id="levelPopupFrameContainer">
-      <iframe name="popupFrame" id="levelPopupFrame" width="" height="" src=""></iframe>
+      <iframe name="popupFrame" id="levelPopupFrame" width="600" height="450" src=""></iframe>
     </div>
     <div class="popup-container">
     </div>
@@ -70,6 +69,17 @@
         <option value="1">A1</option>
         <option value="2">A2</option>
         <option value="3">A3</option>
+        <option value="4">A4</option>
+        <option value="5">A5</option>
+        <option value="6">A6</option>
+        <option value="7">A7</option>
+        <option value="8">A8</option>
+        <option value="9">A9</option>
+        <option value="10">A10</option>
+        <option value="11">A11</option>
+        <option value="12">A12</option>
+        <option value="13">A13</option>
+        <option value="14">A14</option>
       </select>
     </div>
   </div>
@@ -215,24 +225,21 @@
   }
 
   //function die aufgerufen wird, wenn auf den Nächstes-Level-Button geklickt wird
-
   function nextLevel(){
     switchLevel(level+1);
   }
 
   //function die aufgerufen wird, wenn der User im Dropdown das Level ändert
-
   function chooseLevel(selectedValue){
     switchLevel(selectedValue+1);
   }
 
   //function die level-Variable, Level-Popup und Aufgabenstellung an das gewünschte Level newLevel anpasst
   //so wie das aktuelle Level in der localStorage speichert. Anschließend wird showLevelPopup aufgerufen, um den User im neuen Level willkommen zu heißen.
-
   function switchLevel(newLevel){
     level=parseInt(newLevel);
-    if(level>3){
-      level=3;
+    if(level>14){
+      level=14;
     }
     localStorage.setItem("level", level);
     switch(level){
@@ -245,25 +252,55 @@
       case 3:
         document.getElementById("levelPopupFrame").src="levelPopup/levelPopup3.html";
         break;
+      case 4:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup4.html";
+        break;
+      case 5:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup5.html";
+        break;
+      case 6:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup6.html";
+        break;
+      case 7:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup7.html";
+        break;
+      case 8:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup8.html";
+        break;
+      case 9:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup9.html";
+        break;
+      case 10:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup10.html";
+        break;
+      case 11:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup11.html";
+        break;
+      case 12:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup12.html";
+        break;
+      case 13:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup13.html";
+        break;
+      case 14:
+        document.getElementById("levelPopupFrame").src="levelPopup/levelPopup14.html";
+        break;
     }
     showLevelPopup();
   }
 
   //function die das Popup zu Beginn jeden Levels anzeigt
-
   function showLevelPopup(){
     document.getElementById("levelPopup").style.display="block";
   }
 
   //function die das Popup zu Beginn jeden Levels schließt
-
   function closeLevelPopup(){
     document.getElementById("levelPopup").style.display="none";
   }
 
 
   //function die im Startpopup wenn auf den Pfeil nach links geklickt wird, das vorherige Popup (popupx.html) als Quelle lädt
-
   function showPreviousPopup(){
     if (!popupFlag || popupFlag === 1){
     }
