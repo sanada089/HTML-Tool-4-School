@@ -1,5 +1,4 @@
-<!-- Aufgabenstellung-Page -> so hätte Herr Hausl gerne seine Webseite -->
-
+<!-- Aufgabenstellung-Page -->
 <!DOCTYPE HTML>
 <html lang="de">
 <meta charset="utf-8">
@@ -11,18 +10,94 @@
 <head>
   <title>Aufgabenstellung</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="css/hausl.css">
+  <link rel="stylesheet" href="css/aufgabenstellung.css">
 </head>
+<body style="font-family: Cambria">
+<div  class="grid-container1">
+  <div class="item1" id="bildSchulleiter">
+    <img id="Hausl" src="img/aufgabenstellung/Hausl2.png" width="" height=""/>
+  </div>
+  <div class="item2" id="aufgabenstellungButtons">
+    <table>
+      <tr>
+        <td><button class ="aufgabenstellungButton" onclick=showA1()>Aufgabe 1</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA2()>Aufgabe 2</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA3()>Aufgabe 3</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA4()>Aufgabe 4</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA5()>Aufgabe 5</button></td>
+      </tr>
+      <tr>
+        <td><button class ="aufgabenstellungButton" onclick=showA6()>Aufgabe 6</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA7()>Aufgabe 7</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA8()>Aufgabe 8</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA9()>Aufgabe 9</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA10()>Aufgabe 10</button></td>
+      </tr>
+      <tr>
+        <td><button class ="aufgabenstellungButton" onclick=showA11()>Aufgabe 11</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA12()>Aufgabe 12</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA13()>Aufgabe 13</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA14()>Aufgabe 14</button></td>
+        <td><button class ="aufgabenstellungButton" onclick=showA15()>Aufgabe 15</button></td>
+      </tr>
+    </table>
 
-<body style=  'font-family: Bradley Hand ITC'>
-
-<div class="grid-container1">
-
-  <div class="element1">
-    <div id="bildSchuldirektor"></div>
-    <img src="img/aufgabenstellung/Hausl2.png" style="width:200px;height:150px;" alt="Hausl"/></div>
+  </div>
+  <div class ="item3" id="aufgabenstellung">
+    <iframe name="AufgabenFrame" id= "AufgabenFrame" width="" height="" src=""></iframe>
+  </div>
 
 </div>
-
 </body>
+
+<script>
+  document.getElementById("AufgabenFrame").width=Math.round(window.innerWidth*0.95);
+  document.getElementById("AufgabenFrame").height=Math.round(window.innerHeight*0.65);
+  document.getElementById("Hausl").width=Math.round(window.innerWidth*0.15);
+  document.getElementById("Hausl").height=Math.round(window.innerHeight*0.25);
+
+  function showA1(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A1.html";
+  }
+  function showA2(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A2.html";
+  }
+  function showA3(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A3.html";
+  }
+  function showA4(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A4.html";
+  }
+  function showA5(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A5.html";
+  }
+  function showA6(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A6.html";
+  }
+  function showA7(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A7.html";
+  }
+  function showA8(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A8.html";
+  }
+  function showA9(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A9.html";
+  }
+  function showA10(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A10.html";
+  }
+  function showA11(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A11.html";
+  }
+  function showA12(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A12.html";
+  }
+  function showA13(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A13.html";
+  }
+  function showA14(){
+    document.getElementById("AufgabenFrame").src="aufgabenstellung/button_A14.html";
+  }
+
+</script>
 </html>
