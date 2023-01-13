@@ -9,7 +9,7 @@
   <table>
     <tr>
       <th>
-        <img src="../img/Hausl2.png" width="90" height="70"/></th>
+        <img id="Hausl" src="../img/Hausl2.png" alt="Hausl" width="" height=""/></th>
       <td>
         Der folgende <b>Absatz</b>, in dem ich kurz unsere Schule beschreiben möchte, soll als einfacher Text dargestellt werden.
       </td>
@@ -23,4 +23,8 @@
   </div>
 </div>
 </body>
+<script>
+  document.getElementById("Hausl").width=Math.round(innerWidth*0.25);
+  document.getElementById("Hausl").height=Math.round(innerHeight*0.30);
+</script>
 </html>

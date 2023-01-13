@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <title>Popup Level 13</title>
@@ -9,7 +9,7 @@
   <table>
     <tr>
       <th>
-        <img src="../img/Hausl2.png" width="90" height="70"/></th>
+        <img id="Hausl" src="../img/Hausl2.png" alt="Hausl" width="" height=""/></th>
       <td>
         Jetzt schaut unsere Webseite für die Realschule Schöndorf doch schon ganz gut aus, aber mir fehlt noch etwas
         Farbe und die Schriftart könnte ich mir auch etwas moderner vorstellen…
@@ -18,4 +18,8 @@
   </table>
 </div>
 </body>
+<script>
+  document.getElementById("Hausl").width=Math.round(innerWidth*0.25);
+  document.getElementById("Hausl").height=Math.round(innerHeight*0.30);
+</script>
 </html>

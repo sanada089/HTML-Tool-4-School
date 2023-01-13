@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:width="http://www.w3.org/1999/xhtml">
+<html lang="de">
 <head>
   <meta charset="UTF-8">
   <title>Popup Level 14</title>
@@ -9,7 +9,7 @@
   <table>
     <tr>
       <th>
-        <img src="../img/Hausl2.png" width="90" height="70"/></th>
+        <img id="Hausl" src="../img/Hausl2.png" alt="Hausl" width="" height=""/></th>
       <td>
         Irgendwie fällt der wichtigste Teil mit der Anmeldung für das neue Schuljahr noch zu wenig auf …
         Mir würde eine orangefarbene Hervorhebung, eine graue Textfarbe und eine andere Schriftart gefallen.<br>
@@ -19,4 +19,8 @@
   </table>
 </div>
 </body>
+<script>
+  document.getElementById("Hausl").width=Math.round(innerWidth*0.25);
+  document.getElementById("Hausl").height=Math.round(innerHeight*0.30);
+</script>
 </html>

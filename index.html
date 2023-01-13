@@ -65,26 +65,26 @@
       <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
     </div>
   </div>
-
+<!-- Dropdown in dem der User das gewünschte Level auswählen kann-->
   <div class="item7">
     <div id="nextLevelButtonDiv">
       <button class="buttonNextLevel" onclick=nextLevel()><img src="img/Pfeil.png" alt="Pfeil"/></button>
     </div>
-    <select name="aufgabenauswahl"  id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
-      <option value="1">A 1</option>
-      <option value="2">A 2</option>
-      <option value="3">A 3</option>
-      <option value="4">A 4</option>
-      <option value="5">A 5</option>
-      <option value="6">A 6</option>
-      <option value="7">A 7</option>
-      <option value="8">A 8</option>
-      <option value="9">A 9</option>
-      <option value="10">A 10</option>
-      <option value="11">A 11</option>
-      <option value="12">A 12</option>
-      <option value="13">A 13</option>
-      <option value="14">A 14</option>
+    <label for="aufgabenauswahl"></label><select name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
+      <option value="1">Level 1</option>
+      <option value="2">Level 2</option>
+      <option value="3">Level 3</option>
+      <option value="4">Level 4</option>
+      <option value="5">Level 5</option>
+      <option value="6">Level 6</option>
+      <option value="7">Level 7</option>
+      <option value="8">Level 8</option>
+      <option value="9">Level 9</option>
+      <option value="10">Level 10</option>
+      <option value="11">Level 11</option>
+      <option value="12">Level 12</option>
+      <option value="13">Level 13</option>
+      <option value="14">Level 14</option>
     </select>
   </div>
 
@@ -92,9 +92,9 @@
   <div class="item3">
     <iframe name="preview" id="HTMLPageDiv"></iframe>
   </div>
-  <!-- Iframe oben rechts in dem default-mäßig die Hilfeseite von Frau Gscheidhaferl angezeigt wird-->
+  <!-- Iframe oben rechts-->
   <div class="item4">
-    <iframe name="buttonPreview" id="HTMLCodeDiv" src="hilfestellung.html"></iframe>
+    <iframe name="buttonPreview" id="HTMLCodeDiv" src=""></iframe>
   </div>
 
   <!-- Die Buttons neben dem Iframe unten rechts-->
@@ -113,7 +113,10 @@
   <!-- Impressum und Datenschutz Link-->
   <div id="impressumDiv"><a href="Impressum.html">Impressum & Datenschutz</a></div>
 </div>
+
+
 <!-- Beginn Skript-Block -->
+
 <script>
   // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
   const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
@@ -124,10 +127,6 @@
     Blockly.Xml.domToWorkspace(xml, workspace);
   }
 
-  //Popup auf die richtige größe des Bildschirms resizen und anschließend anzeigen
-  document.getElementById("startPopupFrame").width=Math.round(window.innerWidth*0.40);
-  document.getElementById("startPopupFrame").height=Math.round(window.innerHeight*0.60);
-  showStartPopup();
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
   //previewCode ist die Vorschau der aktuell erwünschten Seite
@@ -140,6 +139,17 @@
   var popupFlag=1;
   //level zeigt an in welchem level sich der User aktuell befindet
   var level;
+
+  //Popup auf die richtige größe des Bildschirms resizen und anschließend anzeigen
+  document.getElementById("startPopupFrame").width=Math.round(window.innerWidth*0.40);
+  document.getElementById("startPopupFrame").height=Math.round(window.innerHeight*0.60);
+  showStartPopup();
+
+  //LevelPopup auf die richtige Größe resizen
+
+  document.getElementById("levelPopupFrame").width=Math.round(window.innerWidth*0.40);
+  document.getElementById("levelPopupFrame").height=Math.round(window.innerHeight*0.60);
+
   //Setzen von previewCode anhand des aktuellen Lernstandes !!!TO DO!!!
   previewCode="<!DOCTYPE HTML>\n" +
     "<html>\n" +
@@ -159,6 +169,11 @@
   else{
     level = 1;
   }
+
+  //Aufrufen der aktuellen Aufgabenstellung in den Iframe oben rechts
+  showHausl();
+
+  //Ab hier beginnen die Functions
 
   // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
   function update(event){
