@@ -37,7 +37,7 @@ HtmlGenerator["head"] = function (block) {
 HtmlGenerator["body"] = function (block) {
   var statements_style = HtmlGenerator.statementToCode(block, "STYLE");
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  return code = '<body style=' +
+  return code = '<body' +
     statements_style + ">\n" +
     statements_content +
     "</body>\n";
@@ -48,7 +48,7 @@ HtmlGenerator["division"] = function (block) {
   var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
   return code =
-    '<div style=' +
+    '<div' +
     statements_style + ">\n" +
     statements_content +
     "</div>\n";
@@ -81,7 +81,7 @@ HtmlGenerator["paragraph"] = function (block) {
   return code = "<p>" + statements_content + "</p> \n";
 };
 
-HtmlGenerator["break"] = function (block){
+HtmlGenerator["break"] = function (){
   return code = "<br>"
 }
 
@@ -113,7 +113,7 @@ HtmlGenerator["image"] = function (block) {
   var statements_width = block.getFieldValue("WIDTH")
   var statements_height = block.getFieldValue("HEIGHT")
 
-  return code = '<img src="'  + statements_content + '" width="'+ statements_width + '" height="'+ statements_height + '"' + 'alt="default"/>\n';
+  return code = '<img src="'  + statements_content + '" width="'+ statements_width + '" height="'+ statements_height + '"' + ' alt="default"/>\n';
 };
 
 //Bilder Lehrkräfte
@@ -150,7 +150,7 @@ HtmlGenerator["style"] = function (block) {
   var font = block.getFieldValue("FONT");
   var backgroundcolor = block.getFieldValue("BACKGROUND");
   var textcolor = block.getFieldValue("TEXTCOLOR");
-  return code = "'font-family: " + font + ";background-color: " + backgroundcolor + ";color: " + textcolor + ";'";
+  return code = " style='font-family: " + font + ";background-color: " + backgroundcolor + ";color: " + textcolor + ";'";
 };
 
 HtmlGenerator["specialtext"] = function(block) {
