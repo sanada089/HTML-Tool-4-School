@@ -61,26 +61,8 @@
   <!-- Die Buttons neben dem Iframe oben rechts-->
   <div class="item5">
     <div id="CodeButtonDiv">
-
-      <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
       <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" alt="Ausrufezeichen" /></button>
-      <label for="aufgabenauswahl">Aufgaben:</label>
-      <select name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
-        <option value="1">A1</option>
-        <option value="2">A2</option>
-        <option value="3">A3</option>
-        <option value="4">A4</option>
-        <option value="5">A5</option>
-        <option value="6">A6</option>
-        <option value="7">A7</option>
-        <option value="8">A8</option>
-        <option value="9">A9</option>
-        <option value="10">A10</option>
-        <option value="11">A11</option>
-        <option value="12">A12</option>
-        <option value="13">A13</option>
-        <option value="14">A14</option>
-      </select>
+      <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
     </div>
   </div>
 
@@ -88,6 +70,22 @@
     <div id="nextLevelButtonDiv">
       <button class="buttonNextLevel" onclick=nextLevel()><img src="img/Pfeil.png" alt="Pfeil"/></button>
     </div>
+    <select name="aufgabenauswahl"  id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
+      <option value="1">A 1</option>
+      <option value="2">A 2</option>
+      <option value="3">A 3</option>
+      <option value="4">A 4</option>
+      <option value="5">A 5</option>
+      <option value="6">A 6</option>
+      <option value="7">A 7</option>
+      <option value="8">A 8</option>
+      <option value="9">A 9</option>
+      <option value="10">A 10</option>
+      <option value="11">A 11</option>
+      <option value="12">A 12</option>
+      <option value="13">A 13</option>
+      <option value="14">A 14</option>
+    </select>
   </div>
 
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->

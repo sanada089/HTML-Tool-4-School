@@ -42,12 +42,14 @@
 .buttonNextLevel{
   border-color: #dc4129;
   border-style: dotted;
+  border-width: medium;
   border-radius: 15px;
   margin-bottom: 0.5vh;
   display: inline-block;
   font-size: 12px;
   cursor: pointer;
 }
+
 
 .closeButton{
   position: absolute;
@@ -121,7 +123,7 @@
 }
 
 #CodeButtonDiv{
-  height: 45vh;
+  height: 40vh;
   width: 3vw;
 }
 
@@ -132,8 +134,9 @@
 }
 
 #nextLevelButtonDiv{
-  height: 5vw;
+  height: 4vw;
   width: 3vw;
+  margin-bottom: 1vh;
 }
 
 #infoButtonDiv{
