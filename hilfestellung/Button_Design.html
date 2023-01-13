@@ -16,16 +16,6 @@ Das Tool bietet dir die Möglichkeit bei dem Körper- oder dem Divisionblock ein
 Haben sowohl Körper als auch Division eine Stylevorgabe, überschreibt die der Division die Vorgabe des Körpers.
 Es gilt also immer, was in der Division vorgegeben ist und erst wenn hier nichts steht wird im Körper geschaut.<br><br>
 <img src="../img/hilfestellung/style_design_body.png" alt="division_body_design" width="100%" height="auto"><br>
-<h1>Weitere Möglichkeiten zu designen</h1>
-<h2>Design im Kopf(head)</h2>
-Es gibt noch zahlreiche weitere Möglichkeiten seine HTML-Seite zu designen.<br>
-Man kann zum Beispiel schon im Kopf ein Design für verschiedene Elemente vorgeben.<br>
-Wenn man beispielsweise möchte, dass Überschriften (h1) immer rot sind und Absätze (p) immer blau während die Hintergrundfarbe hellblau ist, dann sieht das so aus:<br><br>
-<img src="../img/hilfestellung/head_design.jpeg" alt="head-style" width="50%" height="auto"><br>
-<h2>Design in einer eigenen CSS-Datei</h2>
-Möchte man noch mehr Designvorgaben für z. B. bestimmte Bereiche der Seite, oder alle Knöpfe die es auf der Seite gibt machen, so geschieht das in eigenen Dateien, die auf .css enden.<br>
-Man nennt sie deshalb CSS-Dateien. Möchtest du mehr über CSS-Dateien erfahren und wie man sie einbindet, kannst du <a href="https://phlow.de/magazin/webdesign/html/css-einbinden/" target="_blank">hier</a> nachlesen.<br>
-Dort ist auch ein Video in dem CSS erklärt wird.
 
 <h1>Bilder</h1>
 <p>
@@ -36,7 +26,7 @@ Dort ist auch ein Video in dem CSS erklärt wird.
 </p>
 <table>
   <tr>
-    <td><img src="../img/hilfestellung/Bild_Blöcke.png"/></td>
+    <td><img src="../img/hilfestellung/Bild_Blöcke.png" alt="Bild_Blöcke"/></td>
     <td>
       Zusätzlich kann noch die Breite <b>(width=" ")</b> und die Höhe <b>(height= " ")</b> vorgegeben werden, um das Bild zu skalieren.<br>
       Hier ist zu beachten, dass bei den Größenangaben die Bilder nicht verzerrt werden. (siehe unten)<br>
@@ -44,12 +34,12 @@ Dort ist auch ein Video in dem CSS erklärt wird.
     </td>
   </tr>
 </table>
-<img src="../img/hilfestellung/Bild_Code.png"/>
+<img src="../img/hilfestellung/Bild_Code.png" alt="Bild_Code"/>
 
 <table><tr>
   <td>Achte auf eine Größenangabe <b>ohne Verzerrung</b>!<br>
     So sollten eingefügte Bilder nicht aussehen:</td>
-  <td><img src="../img/hilfestellung/hausl_verzerrt.png"/></td>
+  <td><img src="../img/hilfestellung/hausl_verzerrt.png" alt="Hausl verzerrt"/></td>
 </tr>
 </table>
 <p>In diesem Tool sind bereits einige Bilder als Blöcke vorgeben, die für die Erstellung der Schulhomepage benötigt werden.<br>
@@ -60,9 +50,9 @@ Dort ist auch ein Video in dem CSS erklärt wird.
     <td>
       Suche hierzu bei google ein beliebiges Bild und klicke es an. Dann mache einen Rechtsklick und wähle "Bildadresse kopieren" aus. <br>
       Füge anschließend die kopierte Bildadresse im Block "Bilderlink" ein. Vergiss auch hier nicht, eine passende Größenangabe zu machen!<br>
-      <img src="../img/hilfestellung/Bilderlink_Blöcke.png" width="150" height="90"/>
+      <img src="../img/hilfestellung/Bilderlink_Blöcke.png" width="150" height="90" alt="Bilderlink Blöcke"/>
     </td>
-    <td><img src="../img/hilfestellung/blumen.png" width="260" height="170"/></td>
+    <td><img src="../img/hilfestellung/blumen.png" width="260" height="170" alt="Blumen"/></td>
   </tr>
   <tr>
     <td>
@@ -71,5 +61,23 @@ Dort ist auch ein Video in dem CSS erklärt wird.
   </tr>
 </table>
 
+<h1>Weitere Möglichkeiten zu designen</h1>
+<h2>Design im Kopf(head)</h2>
+Es gibt noch zahlreiche weitere Möglichkeiten seine HTML-Seite zu designen.<br>
+Man kann zum Beispiel schon im Kopf ein Design für verschiedene Elemente vorgeben.<br>
+Wenn man beispielsweise möchte, dass Überschriften (h1) immer rot sind und Absätze (p) immer blau während die Hintergrundfarbe hellblau ist, dann sieht das so aus:<br><br>
+<img src="../img/hilfestellung/head_design.jpeg" alt="head-style" width="50%" height="auto"><br>
+<h2>Design in einer eigenen CSS-Datei</h2>
+Möchte man noch mehr Designvorgaben für z. B. bestimmte Bereiche der Seite, oder alle Knöpfe die es auf der Seite gibt machen, so geschieht das in eigenen Dateien, die auf .css enden.<br>
+Man nennt sie deshalb CSS-Dateien. Möchtest du mehr über CSS-Dateien erfahren und wie man sie einbindet, kannst du <a href="https://phlow.de/magazin/webdesign/html/css-einbinden/" target="_blank">hier</a> nachlesen.<br>
+Oder du siehst dir dieses Video an:
+
+<iframe id="VideoCSS" width="" height="" src="https://www.youtube.com/embed/3Jdi-TpGLEA" title="#013 CSS in HTML einbinden" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
 </body>
+<script>
+  document.getElementById("VideoCSS").width=Math.round(window.innerWidth*0.95);
+  document.getElementById("VideoCSS").height=Math.round(window.innerHeight*0.95);
+</script>
 </html>
