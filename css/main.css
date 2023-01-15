@@ -26,7 +26,8 @@
     'blocklyDiv HTMLCode CodeButton'
     'blocklyDiv HTMLCode nextLevelButton'
     'blocklyDiv HTMLPage nextLevelButton'
-    'blocklyDiv HTMLPage switch';
+    'blocklyDiv HTMLPage switch'
+    'blocklyDiv HTMLPage infoButton';
 }
 
 .button{
@@ -49,6 +50,18 @@
   font-size: 12px;
   cursor: pointer;
 }
+.buttonInfo{
+  border-color: #28913d;
+  border-style: dotted;
+  border-width: medium;
+  border-radius: 15px;
+  margin-bottom: 0.5vh;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
 
 
 .closeButton{
@@ -123,12 +136,12 @@
 }
 
 #CodeButtonDiv{
-  height: 40vh;
+  height: 30vh;
   width: 3vw;
 }
 
 #switchDiv{
-  height: 45vh;
+  height: 30vh;
   width: 3vw;
   margin-bottom: 3vh;
 }
@@ -140,9 +153,8 @@
 }
 
 #infoButtonDiv{
-  position: fixed;
-  bottom: 3vh;
-  right: 2vw;
+  height: 4vw;
+  width: 3vw;
 }
 
 

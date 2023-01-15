@@ -68,8 +68,9 @@
 <!-- Dropdown in dem der User das gewünschte Level auswählen kann-->
   <div class="item7">
     <div id="nextLevelButtonDiv">
+      <button class="buttonNextLevel" onclick=previousLevel()><img src="img/Pfeil2.png" alt="Pfeil"/></button>
       <button class="buttonNextLevel" onclick=nextLevel()><img src="img/Pfeil.png" alt="Pfeil"/></button>
-    </div>
+
     <label for="aufgabenauswahl"></label><select name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
       <option value="1">Level 1</option>
       <option value="2">Level 2</option>
@@ -85,7 +86,7 @@
       <option value="12">Level 12</option>
       <option value="13">Level 13</option>
       <option value="14">Level 14</option>
-    </select>
+    </select></div>
   </div>
 
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
@@ -108,7 +109,7 @@
 
   <!-- InfoButton-->
   <div id="infoButtonDiv">
-    <button class="button" onclick=showStartPopup()><img src="img/info.png" alt="info"/></button>
+    <button class="buttonInfo" onclick=showStartPopup()><img src="img/info.png" alt="info"/></button>
   </div>
   <!-- Impressum und Datenschutz Link-->
   <div id="impressumDiv"><a href="Impressum.html">Impressum & Datenschutz</a></div>
@@ -242,6 +243,11 @@
   //function die aufgerufen wird, wenn auf den Nächstes-Level-Button geklickt wird
   function nextLevel(){
     switchLevel(level+1);
+  }
+
+  //function, die aufgerufen wird, wenn vorherhiges-Level-Button geklickt wird
+  function previousLevel(){
+    switchLevel(level-1);
   }
 
   //function die aufgerufen wird, wenn der User im Dropdown das Level ändert
