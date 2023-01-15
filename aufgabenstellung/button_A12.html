@@ -1,15 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html lang="de">
+<meta charset="utf-8">
+<style>
+  body{
+    background-color: #dc764f;
+  }
+</style>
 <head>
-  <meta charset="UTF-8">
-  <title>A12</title>
+  <title>Level 12</title>
+  <meta charset="utf-8">
 </head>
 <body style="font-family: Cambria">
-<div style="background-color: ghostwhite; font-size: 14pt; border: 3px solid black;">
-  <b>Textstruktur</b> <br><br>
+
+
+<table>
+  <tr>
+    <td><img id="Hausl" src="Hausl2.png" alt="Hausl" width="" height=""/>
+    </td>
+    <td>
+      <div style="background-color: ghostwhite; font-size: 11pt; font-family: 'Courier New'">
+
+        <img id="Tafelbild" src="Tafelbild.jpeg" alt="Tafelbild" width="" height=""/></div>
+    </td>
+  </tr>
+</table>
+
+<div style="background-color: ghostwhite; font-size: 14pt; border: 3px solid black; font-family: Cambria">
+  <h4>Textstruktur</h4>
   Füge eine <b>Überschrift</b> „Unsere Klassenleiter/innen der 5. Klassen:“ mit der Ebene 3 ein.
   <br><br>
-  <b>Tabelle</b><br><br>
+  <h4>Tabelle</h4>
   Erstelle eine Tabelle mit den <b>Spaltenüberschriften</b>:
   <ul>
     <li>Name:</li>
@@ -18,5 +38,14 @@
   </ul>
   Füge <b>Tabellenreihen</b> und <b>Datenzellen</b> gemäß dem Tafelbild ein!<br><br>
 </div>
+
 </body>
+
+<script>
+  document.getElementById("Hausl").width=Math.round(window.innerWidth*0.15);
+  document.getElementById("Hausl").height=Math.round(window.innerHeight*0.25);
+  document.getElementById("Tafelbild").width=Math.round(window.innerWidth*0.80);
+  document.getElementById("Tafelbild").height=Math.round(window.innerHeight*0.90);
+</script>
 </html>
+
