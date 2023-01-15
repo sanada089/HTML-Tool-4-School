@@ -7,6 +7,7 @@
     body{
       background-color: #ffbc70;
     }
+
   </style>
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/x-icon" href="img/favicon2.png">
@@ -71,7 +72,8 @@
       <button class="buttonNextLevel" onclick=previousLevel()><img src="img/Pfeil2.png" alt="Pfeil"/></button>
       <button class="buttonNextLevel" onclick=nextLevel()><img src="img/Pfeil.png" alt="Pfeil"/></button>
 
-    <label for="aufgabenauswahl"></label><select name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
+    <label for="aufgabenauswahl"></label>
+      <select select class="box" name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
       <option value="1">Level 1</option>
       <option value="2">Level 2</option>
       <option value="3">Level 3</option>
