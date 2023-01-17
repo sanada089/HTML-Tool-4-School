@@ -5,6 +5,7 @@
 <style>
   body{
     background-color: lemonchiffon;
+    font-family: Cambria;
   }
 </style>
 <head>
@@ -20,14 +21,14 @@
   <div class="item2" id="hilfestellungButtons">
     <table>
       <tr>
-        <td><button class ="helpButton" onclick=showHTML()>HTML</button></td>
-        <td><button class ="helpButton" onclick=showTemplateHelp()>Grundgerüst</button></td>
-        <td><button class ="helpButton" onclick=showTextstruktur()>Textstruktur</button></td>
+        <td><button class ="helpButton" onclick=showHTML()><b>HTML</b></button></td>
+        <td><button class ="helpButton" onclick=showTemplateHelp()><b>Grundgerüst</b></button></td>
+        <td><button class ="helpButton" onclick=showTextstruktur()><b>Textstruktur</b></button></td>
       </tr>
       <tr>
-        <td><button class ="helpButton" onclick=showDesign()>Design</button></td>
-        <td><button class ="helpButton" onclick=showListe()>Liste</button></td>
-        <td><button class ="helpButton" onclick=showTabelle()>Tabelle</button></td>
+        <td><button class ="helpButton" onclick=showDesign()><b>Design</b></button></td>
+        <td><button class ="helpButton" onclick=showListe()><b>Liste</b></button></td>
+        <td><button class ="helpButton" onclick=showTabelle()><b>Tabelle</b></button></td>
       </tr>
     </table>
 
@@ -35,13 +36,9 @@
   <div class ="item3" id="hilfestellung">
     <iframe name="HilfeFrame" id= "HilfeFrame" width="" height="" src=""></iframe>
   </div>
-
 </div>
 
-
-
 </body>
-
 <script>
   document.getElementById("HilfeFrame").width=Math.round(window.innerWidth*0.95);
   document.getElementById("HilfeFrame").height=Math.round(window.innerHeight*0.65);

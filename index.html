@@ -7,7 +7,6 @@
     body{
       background-color: #ffbc70;
     }
-
   </style>
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" type="image/x-icon" href="img/favicon2.png">
@@ -24,7 +23,6 @@
 <script src="js/main.js"></script>
 
 <!-- Einleitungs-Popup, in dem die ersten Schritte erklärt werden -->
-
 <div id="startPopup">
   <div id="startPopupFläche" class="reveal-modal">
     <button class="closeButton" onclick="closeStartPopup()"><img src="img/redcross.png" alt="schliessen"></button>
@@ -66,14 +64,30 @@
       <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
     </div>
   </div>
-<!-- Dropdown in dem der User das gewünschte Level auswählen kann-->
+
+  <!-- restartButton: Blöcke mit aktuellem Stand werden geladen -->
+  <div class="item10">
+    <div id="restartDiv">
+      <button class="buttonRestart" onclick=loadState()><img src="img/restart.png" alt="restart"/></button>
+    </div>
+  </div>
+
+  <!-- Buttons: vorheriges und naechstes Level -->
   <div class="item7">
     <div id="nextLevelButtonDiv">
-      <button class="buttonNextLevel" onclick=previousLevel()><img src="img/Pfeil2.png" alt="Pfeil"/></button>
-      <button class="buttonNextLevel" onclick=nextLevel()><img src="img/Pfeil.png" alt="Pfeil"/></button>
+      <table>
+        <tr>
+          <td><button class="buttonNextLevel" onclick=previousLevel()><img src="img/pfeil_zurueck.png" alt="Pfeil"/></button></td>
+          <td><button class="buttonNextLevel" onclick=nextLevel()><img src="img/pfeil_vor.png" alt="Pfeil"/></button></td>
+        </tr>
+      </table>
+   </div>
+  </div>
 
+  <!-- Dropdown, in dem der User das gewünschte Level auswählen kann-->
+  <div id="levelListeDiv">
     <label for="aufgabenauswahl"></label>
-      <select select class="box" name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
+    <select select class="box" name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
       <option value="1">Level 1</option>
       <option value="2">Level 2</option>
       <option value="3">Level 3</option>
@@ -88,7 +102,7 @@
       <option value="12">Level 12</option>
       <option value="13">Level 13</option>
       <option value="14">Level 14</option>
-    </select></div>
+    </select>
   </div>
 
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
@@ -109,15 +123,14 @@
     </div>
   </div>
 
-  <!-- InfoButton-->
-  <div id="infoButtonDiv">
-    <button class="buttonInfo" onclick=showStartPopup()><img src="img/info.png" alt="info"/></button>
+  <!-- InfoButton + Impressum und Datenschutz Link-->
+  <div class="item8">
+    <div id="infoImpressumDiv">
+      <button class="buttonInfo" onclick=showStartPopup()><img src="img/info.png" alt="info"/></button>
+      <a href="Impressum.html">Impressum</a>
+    </div>
   </div>
-  <!-- Impressum und Datenschutz Link-->
-  <div id="impressumDiv"><a href="Impressum.html">Impressum & Datenschutz</a></div>
 </div>
-
-
 
 <!-- Beginn Skript-Block -->
 
@@ -144,14 +157,12 @@
   //level zeigt an in welchem level sich der User aktuell befindet
   var level;
 
-
   //Popup auf die richtige größe des Bildschirms resizen und anschließend anzeigen
   document.getElementById("startPopupFrame").width=Math.round(window.innerWidth*0.40);
   document.getElementById("startPopupFrame").height=Math.round(window.innerHeight*0.60);
   showStartPopup();
 
   //LevelPopup auf die richtige Größe resizen
-
   document.getElementById("levelPopupFrame").width=Math.round(window.innerWidth*0.40);
   document.getElementById("levelPopupFrame").height=Math.round(window.innerHeight*0.60);
 
@@ -283,7 +294,6 @@
   }
 
   //function die das Einleitungspopup schließt (rotes X)
-
   function closeStartPopup(){
     document.getElementById("startPopup").style.display="none";
   }
@@ -496,13 +506,9 @@
         state_xml_text = "";
         break;
     }
-
-
     var xml = Blockly.Xml.textToDom(state_xml_text);
     Blockly.Xml.domToWorkspace(xml, workspace);
   }
-
-
 </script>
 </body>
 </html>
