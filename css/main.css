@@ -139,14 +139,14 @@
 }
 
 #blocklyDiv {
-  height: 98vh;
+  height: 97vh;
   width: 46vw;
   display: grid;
   background-color: whitesmoke;
 }
 
 #HTMLCodeDiv{
-  height: 48vh;
+  height: 47vh;
   width: 45vw;
   margin-bottom: 1vh;
   background-color: whitesmoke;
@@ -155,7 +155,7 @@
 }
 
 #HTMLPageDiv{
-  height: 48vh;
+  height: 47vh;
   width: 45vw;
   background-color: whitesmoke;
   display: grid;
@@ -185,7 +185,7 @@
 }
 
 #switchDiv{
-  height: 29vh;
+  height: 13vh;
   width: 3vw;
   margin-bottom: 3vh;
 }

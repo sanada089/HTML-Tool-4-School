@@ -1,0 +1,76 @@
+.item1 {
+  grid-area: blocklyDiv;
+}
+.item2 {
+  grid-area: HTMLPage;
+}
+.item3 {
+  grid-area: switch;
+}
+.item4 {
+  grid-area: infoImpressum;
+}
+
+
+.grid-container{
+  display: grid;
+  grid-area: auto;
+  background-color: #beff95;
+  grid-template-areas:
+
+    'blocklyDiv HTMLPage switch'
+    'blocklyDiv HTMLPage infoImpressum'
+}
+
+.button{
+  border-color: #100cff;
+  background-color: white;
+  border-style: solid;
+  border-radius: 8px;
+  margin-bottom: 0.5vh;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.buttonInfo{
+  border-color: #28913d;
+  background-color: white;
+  border-style: dotted;
+  border-width: medium;
+  border-radius: 15px;
+  margin-bottom: 0.5vh;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#blocklyDiv {
+  height: 97vh;
+  width: 46vw;
+  display: grid;
+  background-color: whitesmoke;
+}
+
+#HTMLPageDiv{
+  height: 97vh;
+  width: 45vw;
+  background-color: whitesmoke;
+  display: grid;
+  overflow: scroll;
+}
+
+#switchDiv{
+  height: 60vh;
+  width: 3vw;
+  margin-bottom: 3vh;
+}
+
+#infoImpressumDiv{
+  height: 6vh;
+  width: 3vw;
+  font-family: Arial;
+  font-size: 12px;
+}
+
+
+
