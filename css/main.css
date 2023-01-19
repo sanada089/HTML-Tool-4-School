@@ -19,9 +19,6 @@
 .item8 {
   grid-area: infoImpressum;
 }
-.item10 {
-  grid-area: restart;
-}
 
 .grid-container{
   display: grid;
@@ -29,9 +26,7 @@
   background-color: #ffbc70;
   grid-template-areas:
     'blocklyDiv HTMLCode CodeButton'
-    'blocklyDiv HTMLCode restart'
     'blocklyDiv HTMLCode nextLevelButton'
-    'blocklyDiv HTMLCode levelListe'
     'blocklyDiv HTMLPage switch'
     'blocklyDiv HTMLPage infoImpressum'
 }
@@ -63,15 +58,17 @@
   background-color: white;
   border-style: dotted;
   border-width: medium;
-  border-radius: 10px;
-  margin-bottom: 0.5vh;
+  border-radius: 5px;
   display: inline-block;
   cursor: pointer;
-  padding: 0.1px 0.1px;
+  text-align: center;
+  height: 25px;
+  width: 22px;
+  color: black;
 }
 
 .box {
-  width: 4.5vw;
+  width: 75px;
   height: 30px;
   font-size: 13px;
   color: black;

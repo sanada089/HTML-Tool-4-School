@@ -65,45 +65,37 @@
     </div>
   </div>
 
-  <!-- restartButton: Blöcke mit aktuellem Stand werden geladen -->
-  <div class="item10">
-    <div id="restartDiv">
-      <button class="buttonRestart" onclick=loadState()><img src="img/restart.png" alt="restart"/></button>
-    </div>
-  </div>
-
   <!-- Buttons: vorheriges und naechstes Level -->
   <div class="item7">
-    <div id="nextLevelButtonDiv">
+    <div id="nextLevelButtonDiv" style="text-align: center">
       <table>
         <tr>
-          <td><button class="buttonNextLevel" onclick=previousLevel()><img src="img/pfeil_zurueck.png" alt="Pfeil"/></button></td>
-          <td><button class="buttonNextLevel" onclick=nextLevel()><img src="img/pfeil_vor.png" alt="Pfeil"/></button></td>
+          <th><button class="buttonNextLevel" onclick=previousLevel()>&#129136;</button></th>
+          <th><button class="buttonNextLevel" onclick=loadState()>&#11148;</button></th>
+          <th><button class="buttonNextLevel" onclick=nextLevel()>&#129138;</button></th>
         </tr>
+
       </table>
+          <label for="aufgabenauswahl"></label>
+            <select select class="box" name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
+              <option value="1">Level 1</option>
+              <option value="2">Level 2</option>
+              <option value="3">Level 3</option>
+              <option value="4">Level 4</option>
+              <option value="5">Level 5</option>
+              <option value="6">Level 6</option>
+              <option value="7">Level 7</option>
+              <option value="8">Level 8</option>
+              <option value="9">Level 9</option>
+              <option value="10">Level 10</option>
+              <option value="11">Level 11</option>
+              <option value="12">Level 12</option>
+              <option value="13">Level 13</option>
+              <option value="14">Level 14</option>
+            </select>
    </div>
   </div>
 
-  <!-- Dropdown, in dem der User das gewünschte Level auswählen kann-->
-  <div id="levelListeDiv">
-    <label for="aufgabenauswahl"></label>
-    <select select class="box" name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
-      <option value="1">Level 1</option>
-      <option value="2">Level 2</option>
-      <option value="3">Level 3</option>
-      <option value="4">Level 4</option>
-      <option value="5">Level 5</option>
-      <option value="6">Level 6</option>
-      <option value="7">Level 7</option>
-      <option value="8">Level 8</option>
-      <option value="9">Level 9</option>
-      <option value="10">Level 10</option>
-      <option value="11">Level 11</option>
-      <option value="12">Level 12</option>
-      <option value="13">Level 13</option>
-      <option value="14">Level 14</option>
-    </select>
-  </div>
 
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3">
