@@ -77,7 +77,7 @@
 
       </table>
           <label for="aufgabenauswahl"></label>
-            <select select class="box" name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
+            <select class="box" name="aufgabenauswahl" id="aufgabenauswahl" onchange="chooseLevel(this.selectedIndex)">
               <option value="1">Level 1</option>
               <option value="2">Level 2</option>
               <option value="3">Level 3</option>
@@ -139,8 +139,6 @@
 
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
-  //previewCode ist die Vorschau der aktuell erwünschten Seite
-  var previewCode;
   //code ist der aktuell aus den Blocks erzeugte Code
   var code;
   //codeFlag zeigt an, was gerade in der HTMLCodeDiv angezeigt werden soll
@@ -158,16 +156,6 @@
   //LevelPopup auf die richtige Größe resizen
   document.getElementById("levelPopupFrame").width=Math.round(window.innerWidth*0.40);
   document.getElementById("levelPopupFrame").height=Math.round(window.innerHeight*0.60);
-
-  //Setzen von previewCode anhand des aktuellen Lernstandes !!!TO DO!!!
-  previewCode="<!DOCTYPE HTML>\n" +
-    "<html>\n" +
-    "<meta charset=\"utf-8\">\n" +
-    "<head>\n" +
-    "Testschnieselei\n" +
-    "</head>\n" +
-    "\n" +
-    "</html>";
 
   //Laden des Levels, bei dem sich der User aktuell befindet. Sollte kein gespeichertes Level vorhanden sein wird das Level auf 1 gesetzt
   if (localStorage.getItem("level")){
@@ -203,10 +191,52 @@
   workspace.addChangeListener(update);
   //function, die den Code im IFrame zwischen der erwünschten Vorschau und dem Ist-Stand des Users wechselt
   function switchToPreview(){
-    html=previewCode;
-    const previewIfr = document.preview;
-    previewIfr.document.write(html);
-    previewIfr.document.close();
+    switch (level) {
+      case 1:
+        document.getElementById("HTMLPageDiv").src="preview/Level1.html";
+        break;
+      case 2:
+        document.getElementById("HTMLPageDiv").src="preview/Level2.html";
+        break;
+      case 3:
+        document.getElementById("HTMLPageDiv").src="preview/Level3.html";
+        break;
+      case 4:
+        document.getElementById("HTMLPageDiv").src="preview/Level4.html";
+        break;
+      case 5:
+        document.getElementById("HTMLPageDiv").src="preview/Level5.html";
+        break;
+      case 6:
+        document.getElementById("HTMLPageDiv").src="preview/Level6.html";
+        break;
+      case 7:
+        document.getElementById("HTMLPageDiv").src="preview/Level7.html";
+        break;
+      case 8:
+        document.getElementById("HTMLPageDiv").src="preview/Level8.html";
+        break;
+      case 9:
+        document.getElementById("HTMLPageDiv").src="preview/Level9.html";
+        break;
+      case 10:
+        document.getElementById("HTMLPageDiv").src="preview/Level10.html";
+        break;
+      case 11:
+        document.getElementById("HTMLPageDiv").src="preview/Level11.html";
+        break;
+      case 12:
+        document.getElementById("HTMLPageDiv").src="preview/Level12.html";
+        break;
+      case 13:
+        document.getElementById("HTMLPageDiv").src="preview/Level13.html";
+        break;
+      case 14:
+        document.getElementById("HTMLPageDiv").src="preview/Level14.html";
+        break;
+
+    }
+
   }
   //function die den aktuellen Zustand der HTML-Seite anzeigt
   function showIstZustand(){
@@ -507,6 +537,7 @@
     }
     var xml = Blockly.Xml.textToDom(state_xml_text);
     Blockly.Xml.domToWorkspace(xml, workspace);
+    showCode();
   }
 </script>
 </body>
