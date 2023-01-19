@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InfoPopup 3</title>
+  <style>
+    img {
+      max-width:90%;
+      height: auto;
+    }
+  </style>
+</head>
+<body style="font-family: Cambria; font-size: 14px">
+
+<h3>Buttons:</h3>
+<table>
+  <tr>
+    <td><img id="exit" src="../img/Bastelecke/exit_button.png" height="" width="" alt="exit"/></td>
+    <td>Klickst du den Button mit der Tür kommst du wieder zurück zur Hauptseite. <br>
+      (Keine Angst, dein aktueller Stand der HTML-Seite wird gespeichert!)<br></td>
+  </tr>
+</table>
+<br><br>
+<table>
+  <tr>
+    <td><img id="info" src="../img/Bastelecke/info_button.png" alt="Info" height="" width=""/></td>
+    <td>Falls du vergessen hast, wie die Bastelecke funktioniert, klickst du einfach auf den Info-Button!
+      Hier wird dir dieses Popup noch einmal angezeigt und der Seitenaufbau erklärt.</td>
+  </tr>
+</table>
+
+
+</body>
+
+<script>
+  document.getElementById("exit").width=Math.round(innerWidth*0.1);
+  document.getElementById("exit").height=Math.round(innerHeight*0.1);
+  document.getElementById("info").width=Math.round(innerWidth*0.2);
+  document.getElementById("info").height=Math.round(innerHeight*0.2);
+</script>
+</html>

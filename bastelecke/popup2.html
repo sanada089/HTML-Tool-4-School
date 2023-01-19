@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InfoPopup 2</title>
+  <style>
+    img {
+      max-width:90%;
+      height: auto;
+    }
+  </style>
+</head>
+<body style="font-family: Cambria; font-size: 14px">
+<p>
+
+  Wie auch auf der Hauptseite wechselst du mit den Buttons oben rechts zwischen dem HTML-Code und der Vorschau:
+
+<table style="text-align: center">
+  <tr>
+    <td><img id="bastelecke" src="../img/Bastelecke/bastelecke_code.png" alt="Bastelecke" width="" height=""/></td>
+  </tr>
+  <tr><td><img id="basteleckeVorschau" src="../img/Bastelecke/bastelecke_vorschau.png" width="" height=""/></td></tr>
+</table>
+
+</body>
+
+<script>
+  document.getElementById("bastelecke").width=Math.round(innerWidth*2.5);
+  document.getElementById("bastelecke").height=Math.round(innerHeight*2.6);
+  document.getElementById("basteleckeVorschau").width=Math.round(innerWidth*2.5);
+  document.getElementById("basteleckeVorschau").height=Math.round(innerHeight*2.6);
+</script>
+</html>
