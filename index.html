@@ -526,7 +526,9 @@
         xml = xmlHTTP.responseText;
         break;
     }
-    Blockly.Xml.domToWorkspace(xml,workspace);
+
+    var xml_new = Blockly.Xml.textToDom(xml);
+    Blockly.Xml.domToWorkspace(xml_new,workspace);
     showCode();
   }
 </script>
