@@ -1,0 +1,460 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="html_page" id="4sY=c~wn^zO+(3*b6rYg" x="32" y="-146">
+    <statement name="HEAD">
+      <block type="head" id="ej^W]zC1y;w?Yu3S@u8p">
+        <field name="TITLE">Realschule Schöndorf</field>
+      </block>
+    </statement>
+    <statement name="BODY">
+      <block type="body" id="L7(RArPkjag.$g=V+O64">
+        <value name="STYLE">
+          <block type="style" id="Ae5r;,,yxWAj[fZ%n(qw">
+            <field name="FONT">Verdana, sans-serif</field>
+            <field name="BACKGROUND">#33ccff</field>
+            <field name="TEXTCOLOR">#000000</field>
+          </block>
+        </value>
+        <statement name="CONTENT">
+          <block type="headline" id="9FP7/0(z{]0CllMh[$5J">
+            <field name="LEVEL">h3</field>
+            <field name="CONTENT">Herzlich willkommen!</field>
+            <next>
+              <block type="headline" id="ADCB^qFwUl5?PGRk92)Z">
+                <field name="LEVEL">h2</field>
+                <field name="CONTENT">Realschule am schönen Platz - deine Schule für gutes Lernen</field>
+                <next>
+                  <block type="specialtext" id="v%edwQGIgL1y-%p.Q+Yx">
+                    <field name="CONTENT">Willkommen bei der Realschule am Schönen Platz im Internet!</field>
+                    <field name="TEXTCOLOR">#000099</field>
+                    <field name="FONTSIZE">14</field>
+                    <field name="FETT">TRUE</field>
+                    <field name="KURSIV">FALSE</field>
+                    <field name="UNTERSTRICHEN">FALSE</field>
+                    <next>
+                      <block type="paragraph" id="PL2QI5TOi*OUg]?7HSlG">
+                        <statement name="CONTENT">
+                          <block type="string" id="7~iG@@MzGTV.d-i.bdaa">
+                            <field name="CONTENT">Bereits seit über 50 Jahren begleiten wir Schülerinnen und Schüler bestmöglich auf ihrem Weg zum Abschluss der Mittleren Reife. Unser Lehrerkollegium besucht regelmäßig Fortbildungen und ist somit immer auf dem neuesten Stand.</field>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="specialtext" id="}k;s{S5*J2o@g0|E~R()">
+                            <field name="CONTENT">Unsere Wahlpflichtfächergruppen ab der 7. Jahrgangsstufe:</field>
+                            <field name="TEXTCOLOR">#000099</field>
+                            <field name="FONTSIZE">12</field>
+                            <field name="FETT">FALSE</field>
+                            <field name="KURSIV">FALSE</field>
+                            <field name="UNTERSTRICHEN">TRUE</field>
+                            <next>
+                              <block type="orderedlist" id="/d^2,.8F$XCg%*Df~,a,">
+                                <statement name="CONTENT">
+                                  <block type="listitem" id="Sg4n_cu%I0I8ncI{iX##">
+                                    <statement name="CONTENT">
+                                      <block type="string" id="^VRyN~1NC-X^O4{15tBp">
+                                        <field name="CONTENT">-mathematisch-naturwissenschaftlich-technisch</field>
+                                      </block>
+                                    </statement>
+                                    <next>
+                                      <block type="listitem" id="gmd6FdRO4:]W8f%z~Yc$">
+                                        <statement name="CONTENT">
+                                          <block type="string" id="gT9Fakv56{Os|zCSgQJS">
+                                            <field name="CONTENT">-wirtschaftlich</field>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="listitem" id="NLA]ujF:Gjo,xhpmoyb2">
+                                            <statement name="CONTENT">
+                                              <block type="string" id="73}iz8gHcD:z9}*b[4-%">
+                                                <field name="CONTENT">-fremdsprachlich (Französisch)</field>
+                                              </block>
+                                            </statement>
+                                            <next>
+                                              <block type="listitem" id="9K*KImN~{#K*gcS:=zKk">
+                                                <statement name="CONTENT">
+                                                  <block type="string" id="*cUTjz#]66m$2ABM=]W-">
+                                                    <field name="CONTENT">-musisch-gestaltend</field>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <next>
+                                  <block type="break" id="x;[ekfXG$HU.fB3{!$Xx">
+                                    <next>
+                                      <block type="specialtext" id="^zDg{ZCT/]7!$BEAWB(#">
+                                        <field name="CONTENT">Unter diesem Link finden Sie eine genaue Beschreibung der Wahlpflichtfächergruppen:</field>
+                                        <field name="TEXTCOLOR">#000000</field>
+                                        <field name="FONTSIZE">14</field>
+                                        <field name="FETT">FALSE</field>
+                                        <field name="KURSIV">TRUE</field>
+                                        <field name="UNTERSTRICHEN">FALSE</field>
+                                        <next>
+                                          <block type="link" id="I^7#d?m2/2Kz)^=~NDB?">
+                                            <field name="LINK">https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/</field>
+                                            <next>
+                                              <block type="break" id="3}.x/EW3LQWCA2JmmK3)">
+                                                <next>
+                                                  <block type="linkdescription" id="{$K8OwreI8{/b2P.!zJ+">
+                                                    <field name="LINK">https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/</field>
+                                                    <field name="LINKDESCRIPTION">Klick!</field>
+                                                    <next>
+                                                      <block type="headline" id="Vwp#AonnB-^3!j$O[iRW">
+                                                        <field name="LEVEL">h2</field>
+                                                        <field name="CONTENT">Aktuelles</field>
+                                                        <next>
+                                                          <block type="headline" id="uXHl[4q;DQc{w{Nm/aXy">
+                                                            <field name="LEVEL">h3</field>
+                                                            <field name="CONTENT">Anmeldung für das neue Schuljahr 2023/2024</field>
+                                                            <next>
+                                                              <block type="specialtext" id="1(hFSGR3A0Bo{n8rNCS^">
+                                                                <field name="CONTENT">Wann:</field>
+                                                                <field name="TEXTCOLOR">#990000</field>
+                                                                <field name="FONTSIZE">14</field>
+                                                                <field name="FETT">TRUE</field>
+                                                                <field name="KURSIV">FALSE</field>
+                                                                <field name="UNTERSTRICHEN">FALSE</field>
+                                                                <next>
+                                                                  <block type="string" id="va_zFU@]D{Th(tM4^`wT">
+                                                                    <field name="CONTENT">13. bis 17. Mai von 9:00 Uhr bis 15:00 Uhr</field>
+                                                                    <next>
+                                                                      <block type="break" id="]D~Z%vS)ceW55w_B?]^4">
+                                                                        <next>
+                                                                          <block type="specialtext" id="D!.S0,jwI}O(I$b@3_Zq">
+                                                                            <field name="CONTENT">Wie:</field>
+                                                                            <field name="TEXTCOLOR">#990000</field>
+                                                                            <field name="FONTSIZE">14</field>
+                                                                            <field name="FETT">TRUE</field>
+                                                                            <field name="KURSIV">FALSE</field>
+                                                                            <field name="UNTERSTRICHEN">FALSE</field>
+                                                                            <next>
+                                                                              <block type="string" id="(2qy8E2ct%kUyk+m2J}l">
+                                                                                <field name="CONTENT">in Präsenz im Sekretariat</field>
+                                                                                <next>
+                                                                                  <block type="break" id="`L7R+,uA~bK_A$nNXFRk">
+                                                                                    <next>
+                                                                                      <block type="specialtext" id="_QH~-jv}r!]t_lG?C$o~">
+                                                                                        <field name="CONTENT">Was wird benötigt:</field>
+                                                                                        <field name="TEXTCOLOR">#990000</field>
+                                                                                        <field name="FONTSIZE">14</field>
+                                                                                        <field name="FETT">TRUE</field>
+                                                                                        <field name="KURSIV">FALSE</field>
+                                                                                        <field name="UNTERSTRICHEN">FALSE</field>
+                                                                                        <next>
+                                                                                          <block type="break" id="c=rS2QZx,PF06%,)ZgB*">
+                                                                                            <next>
+                                                                                              <block type="unorderedlist" id="*f}I4$LXa|sh*de-8w,q">
+                                                                                                <field name="TYPE">disc</field>
+                                                                                                <statement name="CONTENT">
+                                                                                                  <block type="listitem" id="?0#OtfKueX*fdxaBNZS$">
+                                                                                                    <statement name="CONTENT">
+                                                                                                      <block type="string" id="QFk%my|uU*9rGdtWqE#R">
+                                                                                                        <field name="CONTENT">ausgefülltes Anmeldeformular</field>
+                                                                                                      </block>
+                                                                                                    </statement>
+                                                                                                    <next>
+                                                                                                      <block type="listitem" id="Zi[-uad:$!jx:l+{vt(,">
+                                                                                                        <statement name="CONTENT">
+                                                                                                          <block type="string" id="RABtj,*`pE1gZ:2*vDeR">
+                                                                                                            <field name="CONTENT">Übertrittszeugnis (im Original)</field>
+                                                                                                          </block>
+                                                                                                        </statement>
+                                                                                                        <next>
+                                                                                                          <block type="listitem" id="l5N%E]mcW]cIi*d^DT7~">
+                                                                                                            <statement name="CONTENT">
+                                                                                                              <block type="string" id="Sy}ffL![s{+d$/:,sxO|">
+                                                                                                                <field name="CONTENT">Geburtsurkunde (im Original)</field>
+                                                                                                              </block>
+                                                                                                            </statement>
+                                                                                                            <next>
+                                                                                                              <block type="listitem" id="9.Ihfj(SyE6Aw?DrcurC">
+                                                                                                                <statement name="CONTENT">
+                                                                                                                  <block type="string" id=":G9|UFceqJ@$k^S0d|Jt">
+                                                                                                                    <field name="CONTENT">Passbild für Busausweis</field>
+                                                                                                                  </block>
+                                                                                                                </statement>
+                                                                                                                <next>
+                                                                                                                  <block type="listitem" id="2l|%us^v0eMhah7J5svp">
+                                                                                                                    <statement name="CONTENT">
+                                                                                                                      <block type="string" id="Q,!!2^Pre=a_r4xzaenP">
+                                                                                                                        <field name="CONTENT">Nachweis für Masernschutz (Impfpass)</field>
+                                                                                                                      </block>
+                                                                                                                    </statement>
+                                                                                                                    <next>
+                                                                                                                      <block type="listitem" id="t1Q`mST?s.$%PK4^djGe">
+                                                                                                                        <statement name="CONTENT">
+                                                                                                                          <block type="string" id="n~0vHqCSW]P:T1G7E9gt">
+                                                                                                                            <field name="CONTENT">ggf. Bescheinigung über eine Lese-Rechtschreib-Störung</field>
+                                                                                                                          </block>
+                                                                                                                        </statement>
+                                                                                                                      </block>
+                                                                                                                    </next>
+                                                                                                                  </block>
+                                                                                                                </next>
+                                                                                                              </block>
+                                                                                                            </next>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </statement>
+                                                                                                <next>
+                                                                                                  <block type="headline" id="`8iCdy}pm(ebUTl@WWEh">
+                                                                                                    <field name="LEVEL">h3</field>
+                                                                                                    <field name="CONTENT">Unsere Klassenleiter/innen der 5. Klassen:</field>
+                                                                                                    <next>
+                                                                                                      <block type="table" id=":RA{V^~SHe0+%A@3+f{E">
+                                                                                                        <field name="BORDER">1</field>
+                                                                                                        <statement name="CONTENT">
+                                                                                                          <block type="tablehead" id="*5{{rrBGR8R8Z_fb!gzw">
+                                                                                                            <field name="CONTENT">Name:</field>
+                                                                                                            <next>
+                                                                                                              <block type="tablehead" id="1VmN?gnmZ`:$@gRp2g?v">
+                                                                                                                <field name="CONTENT">So sehe ich aus:</field>
+                                                                                                                <next>
+                                                                                                                  <block type="tablehead" id="OC2%pF;]Igzp;y}32%OO">
+                                                                                                                    <field name="CONTENT">Fächer:</field>
+                                                                                                                    <next>
+                                                                                                                      <block type="tablerow" id="|$jjy$FGRRo+_oMOBRP8">
+                                                                                                                        <statement name="CONTENT">
+                                                                                                                          <block type="tabledata" id="mPOr7LjKT#nPt0lb!]T^">
+                                                                                                                            <statement name="CONTENT">
+                                                                                                                              <block type="string" id="Vd~.+AW/eR6bNAfEl+I/">
+                                                                                                                                <field name="CONTENT">Lukas Rainer</field>
+                                                                                                                              </block>
+                                                                                                                            </statement>
+                                                                                                                            <next>
+                                                                                                                              <block type="tabledata" id="?zdJ#BxNmJz=.pvDdO%;">
+                                                                                                                                <statement name="CONTENT">
+                                                                                                                                  <block type="image" id="7+,viDSO?AM3}SOq4CJ=">
+                                                                                                                                    <field name="WIDTH">240</field>
+                                                                                                                                    <field name="HEIGHT">150</field>
+                                                                                                                                    <statement name="CONTENT">
+                                                                                                                                      <block type="rainer" id="MFbTNZxteavLe=YRbfD;">
+                                                                                                                                      </block>
+                                                                                                                                    </statement>
+                                                                                                                                  </block>
+                                                                                                                                </statement>
+                                                                                                                                <next>
+                                                                                                                                  <block type="tabledata" id="v!q]:6/1nJxUJu;NteSa">
+                                                                                                                                    <statement name="CONTENT">
+                                                                                                                                      <block type="string" id="BxPD7+6{-/^!0o(LO7T*">
+                                                                                                                                        <field name="CONTENT">IT, Mathematik</field>
+                                                                                                                                      </block>
+                                                                                                                                    </statement>
+                                                                                                                                  </block>
+                                                                                                                                </next>
+                                                                                                                              </block>
+                                                                                                                            </next>
+                                                                                                                          </block>
+                                                                                                                        </statement>
+                                                                                                                        <next>
+                                                                                                                          <block type="tablerow" id="@,2c$km.5ZzO;^T@h)b4">
+                                                                                                                            <statement name="CONTENT">
+                                                                                                                              <block type="tabledata" id="fIDkX;I?`2OJHpeA/Pl~">
+                                                                                                                                <statement name="CONTENT">
+                                                                                                                                  <block type="string" id="=n)RBc|c9SLPv%M{v[7@">
+                                                                                                                                    <field name="CONTENT">Kerstin Rimpft</field>
+                                                                                                                                  </block>
+                                                                                                                                </statement>
+                                                                                                                                <next>
+                                                                                                                                  <block type="tabledata" id="9ZP7;K;0!;U$~PyiT~OE">
+                                                                                                                                    <statement name="CONTENT">
+                                                                                                                                      <block type="image" id="DQWhsbI{tc]CXfP#;mg3">
+                                                                                                                                        <field name="WIDTH">240</field>
+                                                                                                                                        <field name="HEIGHT">150</field>
+                                                                                                                                        <statement name="CONTENT">
+                                                                                                                                          <block type="rimpfl" id="9(j~#@:~C#6/9oS(|}4=">
+                                                                                                                                          </block>
+                                                                                                                                        </statement>
+                                                                                                                                      </block>
+                                                                                                                                    </statement>
+                                                                                                                                    <next>
+                                                                                                                                      <block type="tabledata" id="K}lFBNl%oJ3.!pNeJ?pb">
+                                                                                                                                        <statement name="CONTENT">
+                                                                                                                                          <block type="string" id="0Uy()ya^Pa4RTF(18F=?">
+                                                                                                                                            <field name="CONTENT">Erdkunde, BwR, WR</field>
+                                                                                                                                          </block>
+                                                                                                                                        </statement>
+                                                                                                                                      </block>
+                                                                                                                                    </next>
+                                                                                                                                  </block>
+                                                                                                                                </next>
+                                                                                                                              </block>
+                                                                                                                            </statement>
+                                                                                                                            <next>
+                                                                                                                              <block type="tablerow" id="3BAa|z0a}kGxVy1j6d,w">
+                                                                                                                                <statement name="CONTENT">
+                                                                                                                                  <block type="tabledata" id="!ehkA8F;{pEaOWK*bx}C">
+                                                                                                                                    <statement name="CONTENT">
+                                                                                                                                      <block type="string" id=",rL:7O1aRP%+zWmKMLCd">
+                                                                                                                                        <field name="CONTENT">Anna Scott</field>
+                                                                                                                                      </block>
+                                                                                                                                    </statement>
+                                                                                                                                    <next>
+                                                                                                                                      <block type="tabledata" id="i=tpyprO6#)pm;gFmqF#">
+                                                                                                                                        <statement name="CONTENT">
+                                                                                                                                          <block type="image" id="3IviO~yR$I$d`B?hHYlT">
+                                                                                                                                            <field name="WIDTH">240</field>
+                                                                                                                                            <field name="HEIGHT">150</field>
+                                                                                                                                            <statement name="CONTENT">
+                                                                                                                                              <block type="scott" id="$-ak+vaXI$uD_AlE3~8w">
+                                                                                                                                              </block>
+                                                                                                                                            </statement>
+                                                                                                                                          </block>
+                                                                                                                                        </statement>
+                                                                                                                                        <next>
+                                                                                                                                          <block type="tabledata" id="z2+6v/}Kn_wN5im67]SD">
+                                                                                                                                            <statement name="CONTENT">
+                                                                                                                                              <block type="string" id="Y[++{6zf`$[|u$WXJP*(">
+                                                                                                                                                <field name="CONTENT">Deutsch, Englisch</field>
+                                                                                                                                              </block>
+                                                                                                                                            </statement>
+                                                                                                                                          </block>
+                                                                                                                                        </next>
+                                                                                                                                      </block>
+                                                                                                                                    </next>
+                                                                                                                                  </block>
+                                                                                                                                </statement>
+                                                                                                                                <next>
+                                                                                                                                  <block type="tablerow" id="0BEUimmCxUumiWVsN.2n">
+                                                                                                                                    <statement name="CONTENT">
+                                                                                                                                      <block type="tabledata" id="kVcl}{x#!v2:7[Y^rTGM">
+                                                                                                                                        <statement name="CONTENT">
+                                                                                                                                          <block type="string" id="AqGh70,GM.wUn65?PW4L">
+                                                                                                                                            <field name="CONTENT">Elisabeth Smith</field>
+                                                                                                                                          </block>
+                                                                                                                                        </statement>
+                                                                                                                                        <next>
+                                                                                                                                          <block type="tabledata" id="oFS5CuY5$S|8GxdLdk/1">
+                                                                                                                                            <statement name="CONTENT">
+                                                                                                                                              <block type="image" id="vXkDIxp6S[raw((l5Yl_">
+                                                                                                                                                <field name="WIDTH">240</field>
+                                                                                                                                                <field name="HEIGHT">150</field>
+                                                                                                                                                <statement name="CONTENT">
+                                                                                                                                                  <block type="smith" id="P5L$[4qmjqCN-(_KI4/_">
+                                                                                                                                                  </block>
+                                                                                                                                                </statement>
+                                                                                                                                              </block>
+                                                                                                                                            </statement>
+                                                                                                                                            <next>
+                                                                                                                                              <block type="tabledata" id="x.4PWnIB;ex4qqlTc![J">
+                                                                                                                                                <statement name="CONTENT">
+                                                                                                                                                  <block type="string" id="bc`pyyt,7*Mc(!uvO6[}">
+                                                                                                                                                    <field name="CONTENT">Biologie, Chemie</field>
+                                                                                                                                                  </block>
+                                                                                                                                                </statement>
+                                                                                                                                              </block>
+                                                                                                                                            </next>
+                                                                                                                                          </block>
+                                                                                                                                        </next>
+                                                                                                                                      </block>
+                                                                                                                                    </statement>
+                                                                                                                                    <next>
+                                                                                                                                      <block type="tablerow" id="6`3wDLDO`TacZ4`sonc`">
+                                                                                                                                        <statement name="CONTENT">
+                                                                                                                                          <block type="tabledata" id=",Myq#D5lRjTuHK:/Jh=T">
+                                                                                                                                            <statement name="CONTENT">
+                                                                                                                                              <block type="string" id="*}zI=|a}IG|.m(#Vw83s">
+                                                                                                                                                <field name="CONTENT">Thomas Winter</field>
+                                                                                                                                              </block>
+                                                                                                                                            </statement>
+                                                                                                                                            <next>
+                                                                                                                                              <block type="tabledata" id="`tf9$9~jT~@Kv)nJJ34^">
+                                                                                                                                                <statement name="CONTENT">
+                                                                                                                                                  <block type="image" id="%1^rVu|PZKd5p(m4gB?T">
+                                                                                                                                                    <field name="WIDTH">240</field>
+                                                                                                                                                    <field name="HEIGHT">150</field>
+                                                                                                                                                    <statement name="CONTENT">
+                                                                                                                                                      <block type="winter" id="bVi2lO%sF]^BVlep-s`+">
+                                                                                                                                                      </block>
+                                                                                                                                                    </statement>
+                                                                                                                                                  </block>
+                                                                                                                                                </statement>
+                                                                                                                                                <next>
+                                                                                                                                                  <block type="tabledata" id="Sz7@h!5Lc=sXcXdlE.XA">
+                                                                                                                                                    <statement name="CONTENT">
+                                                                                                                                                      <block type="string" id="2NWxJzQ[^vFS{?}kq6xr">
+                                                                                                                                                        <field name="CONTENT">Mathematik, Physik</field>
+                                                                                                                                                      </block>
+                                                                                                                                                    </statement>
+                                                                                                                                                  </block>
+                                                                                                                                                </next>
+                                                                                                                                              </block>
+                                                                                                                                            </next>
+                                                                                                                                          </block>
+                                                                                                                                        </statement>
+                                                                                                                                      </block>
+                                                                                                                                    </next>
+                                                                                                                                  </block>
+                                                                                                                                </next>
+                                                                                                                              </block>
+                                                                                                                            </next>
+                                                                                                                          </block>
+                                                                                                                        </next>
+                                                                                                                      </block>
+                                                                                                                    </next>
+                                                                                                                  </block>
+                                                                                                                </next>
+                                                                                                              </block>
+                                                                                                            </next>
+                                                                                                          </block>
+                                                                                                        </statement>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
+

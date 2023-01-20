@@ -1,0 +1,45 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="html_page" id="4sY=c~wn^zO+(3*b6rYg" x="71" y="40">
+    <statement name="HEAD">
+      <block type="head" id="ej^W]zC1y;w?Yu3S@u8p">
+        <field name="TITLE">Realschule Schöndorf</field>
+      </block>
+    </statement>
+    <statement name="BODY">
+      <block type="body" id="L7(RArPkjag.$g=V+O64">
+        <statement name="CONTENT">
+          <block type="headline" id="9FP7/0(z{]0CllMh[$5J">
+            <field name="LEVEL">h3</field>
+            <field name="CONTENT">Herzlich willkommen!</field>
+            <next>
+              <block type="headline" id="ADCB^qFwUl5?PGRk92)Z">
+                <field name="LEVEL">h2</field>
+                <field name="CONTENT">Realschule am schönen Platz - deine Schule für gutes Lernen</field>
+                <next>
+                  <block type="specialtext" id="v%edwQGIgL1y-%p.Q+Yx">
+                    <field name="CONTENT">Willkommen bei der Realschule am Schönen Platz im Internet!</field>
+                    <field name="TEXTCOLOR">#000099</field>
+                    <field name="FONTSIZE">14</field>
+                    <field name="FETT">TRUE</field>
+                    <field name="KURSIV">FALSE</field>
+                    <field name="UNTERSTRICHEN">FALSE</field>
+                    <next>
+                      <block type="paragraph" id="PL2QI5TOi*OUg]?7HSlG">
+                        <statement name="CONTENT">
+                          <block type="string" id="7~iG@@MzGTV.d-i.bdaa">
+                            <field name="CONTENT">Bereits seit über 50 Jahren begleiten wir Schülerinnen und Schüler bestmöglich auf ihrem Weg zum Abschluss der Mittleren Reife. Unser Lehrerkollegium besucht regelmäßig Fortbildungen und ist somit immer auf dem neuesten Stand.</field>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+</xml>
+
