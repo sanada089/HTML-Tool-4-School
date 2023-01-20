@@ -37,18 +37,7 @@
   </div>
 </div>
 
-<!-- Levelpopup, in dem die aktuelle Aufgabe erklärt wird -->
-<div id="levelPopup">
-  <div id="levelPopupFläche" class="reveal-modal">
-    <button class="closeButton" onclick="closeLevelPopup()"><img src="img/redcross.png" alt="schliessen"></button>
-    <!-- Inneres des Startpopups in das die einzelnen popupx.html-files geladen werden-->
-    <div id="levelPopupFrameContainer">
-      <iframe name="popupFrame" id="levelPopupFrame" width="600" height="450" src=""></iframe>
-    </div>
-    <div class="popup-container">
-    </div>
-  </div>
-</div>
+
 
 <!-- Kompletter Mittelteil der Seite, der komplette grid mit zugehörigen divs -->
 
@@ -152,15 +141,11 @@
   document.getElementById("startPopupFrame").height=Math.round(window.innerHeight*0.60);
   showStartPopup();
 
-  //LevelPopup auf die richtige Größe resizen
-  document.getElementById("levelPopupFrame").width=Math.round(window.innerWidth*0.40);
-  document.getElementById("levelPopupFrame").height=Math.round(window.innerHeight*0.60);
 
   //Laden des Levels, bei dem sich der User aktuell befindet. Sollte kein gespeichertes Level vorhanden sein wird das Level auf 1 gesetzt
   if (localStorage.getItem("level")){
     level=localStorage.getItem("level");
     switchLevel(level);
-    closeLevelPopup();
   }
   else{
     level = 1;
@@ -314,11 +299,6 @@
     document.getElementById("startPopup").style.display="block";
   }
 
-  //function, die zur Bastelecke führt
-  function showBastelecke() {
-    document.getElementById()
-    bastelecke.html
-  }
 
   //function die das Einleitungspopup schließt (rotes X)
   function closeStartPopup(){
@@ -407,18 +387,7 @@
         break;
     }
     document.getElementById("aufgabenauswahl").options[level-1].selected=true;
-    showLevelPopup();
     showHausl();
-  }
-
-  //function die das Popup zu Beginn jeden Levels anzeigt
-  function showLevelPopup(){
-    document.getElementById("levelPopup").style.display="block";
-  }
-
-  //function die das Popup zu Beginn jeden Levels schließt
-  function closeLevelPopup(){
-    document.getElementById("levelPopup").style.display="none";
   }
 
 
@@ -489,12 +458,6 @@
     workspace.clear();
 
     switch (level) {
-      case 1:
-        var xmlHTTP = new XMLHttpRequest();
-        xmlHTTP.open("GET", "state1.xml", false);
-        xmlHTTP.send(null);
-        xml = xmlHTTP.responseText;
-        break;
 
       case 2:
         var xmlHTTP = new XMLHttpRequest();

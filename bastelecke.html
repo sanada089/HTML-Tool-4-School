@@ -71,8 +71,8 @@
   // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
   const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
   //Laden des vorherigen Zustandes des workspace aus der localStorage des Browsers
-  if (localStorage.getItem("blockly-html-code-learning")) {
-    var xml_text = localStorage.getItem("blockly-html-code-learning");
+  if (localStorage.getItem("blockly-html-code-crafting")) {
+    var xml_text = localStorage.getItem("blockly-html-code-crafting");
     var xml = Blockly.Xml.textToDom(xml_text);
     Blockly.Xml.domToWorkspace(xml, workspace);
   }
@@ -114,7 +114,7 @@
     // Speichern des Zustandes des workspace in der localStorage des Browsers
     var xml = Blockly.Xml.workspaceToDom(workspace);
     xml_text = Blockly.Xml.domToText(xml);
-    localStorage.setItem("blockly-html-code-learning", xml_text);
+    localStorage.setItem("blockly-html-code-crafting", xml_text);
   }
 
   //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
