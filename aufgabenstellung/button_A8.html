@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE HTML>
 <html lang="de">
 <meta charset="utf-8">
@@ -13,40 +11,54 @@
   <meta charset="utf-8">
 </head>
 <body style="font-family: Cambria">
+<div style="font-size: 10pt; font-family:'Segoe Script'">
+  <table>
+    <tr>
+      <th>
+        <img id="Hausl" src="../img/Hausl2.png" alt="Hausl" width="" height=""/></th>
+      <td>
+        <b>Beim Surfen im Internet kann man ja oft wo draufklicken, und kommt dann auf eine andere Seite.<br>
+          Damit wir nicht alles über die Wahlpflichtfächergruppen auf unserer Schulhomepage erklären müssen,
+          sollen die Besucher auf die Seite des Bayerischen Realschulnetzes weitergeleitet werden.<br>
+          Für die beschreibende Zeile "Unter diesem Link ..." wünsche ich mir einen kursiven Text, mit
+          einer etwas größeren Schriftgröße.</b>
+      </td>
+    </tr>
+  </table>
+  <div style="background-color: ghostwhite; font-size: 12pt; font-family: 'Courier New'">
+    <p><br>
+      Unter diesem Link finden Sie eine genaue Beschreibung der Wahlpflichtfächergruppen:<br>
+      https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/<br><br>
+    </p>
+  </div>
+</div>
 
+<div style="background-color: ghostwhite; font-size: 12pt; border: 3px solid black; font-family: Cambria">
 
-<table>
-  <tr>
-    <td><img id="Hausl" src="Hausl2.png" alt="Hausl" width="" height=""/>
-    </td>
-    <td>
-      <div style="background-color: ghostwhite; font-size: 11pt; font-family: 'Courier New'">
-        <p><br>
-          Unter diesem Link finden Sie eine genaue Beschreibung der Wahlpflichtfächergruppen:<br>
-          https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/<br><br>
-        </p>
-      </div>
-    </td>
-  </tr>
-</table>
-
-<div style="background-color: ghostwhite; font-size: 14pt; border: 3px solid black; font-family: Cambria">
-
-  <h4>Textstruktur</h4>
+  <h3>Textstruktur und Design</h3>
   Erstelle zunächst einen <b>Zeilenumbruch</b>.<br><br>
-  Füge einen Specialtext ein:
+
+  Füge einen <b>Specialtext</b> ein:
   <ol><li>Textfarbe: schwarz</li>
     <li>Schriftgröße: 14</li>
     <li>kursiv</li></ol><br>
 
-  Füge den vorgegebenen <b>Hyperlink</b> ein,
+  Baue nun den vorgegebenen <b>Hyperlink</b> ein,
   <ul>
-    <li>sodass der Hyperlink zu sehen und zum Anklicken ist</li>
-    <li>sodass „Klick!“ auf der Homepage erscheint und der Besucher trotzdem zum vorgegebenen Hyperlink weitergeleitet wird</li>
+    <li>sodass der Hyperlink zu sehen und zum Anklicken ist.</li>
+    <li>sodass „Klick!“ auf der Homepage erscheint und der Besucher trotzdem zum vorgegebenen Hyperlink weitergeleitet wird.</li>
   </ul>
-  Achte darauf, dass die beiden Varianten untereinander angezeigt werden!<br><br>
+  Achte darauf, dass die beiden Varianten <b>untereinander angezeigt</b> werden!<br><br>
 
   <b>Tipp:</b> Kopiere den Hyperlink aus Herrn Hausls Schreibmaschinen-Text, damit es zu keinem Fehler beim Abtippen kommt!<br><br>
+ <table>
+  <tr>
+    <td>Klicke hierzu bei den Hilfeseiten auf die Buttons:</td>
+    <th><img id="textstruktur" src="../img/aufgabenstellung/textstruktur_button.png" alt="HTML" width="" height="" /></th>
+    <th><img id="button" src="../img/aufgabenstellung/design_button.png" alt="HTML" width="" height="" /></th>
+  </tr>
+  </table>
+  <br><br>
 
 </div>
 
@@ -55,6 +67,9 @@
 <script>
   document.getElementById("Hausl").width=Math.round(window.innerWidth*0.15);
   document.getElementById("Hausl").height=Math.round(window.innerHeight*0.25);
+  document.getElementById("button").width=Math.round(window.innerWidth*0.15);
+  document.getElementById("button").height=Math.round(window.innerHeight*0.1);
+  document.getElementById("textstruktur").width=Math.round(window.innerWidth*0.15);
+  document.getElementById("textstruktur").height=Math.round(window.innerHeight*0.1);
 </script>
 </html>
-
