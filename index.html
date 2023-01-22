@@ -57,9 +57,9 @@
     <div id="nextLevelButtonDiv" style="text-align: center">
       <table>
         <tr>
-          <th><button class="buttonNextLevel" onclick=previousLevel()>&#129136;</button></th>
-          <th><button class="buttonNextLevel" onclick=loadState()>&#11148;</button></th>
-          <th><button class="buttonNextLevel" onclick=nextLevel()>&#129138;</button></th>
+          <th><button class="buttonRestart" onclick=previousLevel()><img src="img/pfeil_zurueck.png"/></button></th>
+          <th><button class="buttonRestart" onclick=loadState()><img src="img/reload.png"/></button></th>
+          <th><button class="buttonRestart" onclick=nextLevel()><img src="img/pfeil_vor.png"/></button></th>
         </tr>
 
       </table>
@@ -80,6 +80,7 @@
               <option value="12">Level 12</option>
               <option value="13">Level 13</option>
               <option value="14">Level 14</option>
+              <option value="14">Level 15</option>
             </select>
    </div>
   </div>
@@ -98,8 +99,8 @@
   <div class="item6">
     <div id="switchDiv">
       <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Code" /></button>
-      <button class="button" onclick=switchToPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
       <button class="button" onclick=showIstZustand()><img src="img/Vorschau.png" alt="Vorschau"/></button>
+      <button class="button" onclick=switchToPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
     </div>
   </div>
 
@@ -221,6 +222,8 @@
       case 14:
         document.getElementById("HTMLPageDiv").src="preview/Level14.html";
         break;
+      case 15:
+        document.getElementById("HTMLPageDiv").src="preview/Level15.html";
     }
   }
 
@@ -291,6 +294,9 @@
       case 14:
         document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A14.html";
         break;
+      case 15:
+        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A15.html";
+        break;
     }
   }
 
@@ -324,8 +330,8 @@
   //function die level-Variable, Level-Popup und Aufgabenstellung an das gewünschte Level newLevel anpasst so wie das aktuelle Level in der localStorage speichert.
   function switchLevel(newLevel){
     level=parseInt(newLevel);
-    if(level>14){
-      level=14;
+    if(level>15){
+      level=15;
     }
     localStorage.setItem("level", level);
     switch(level){
