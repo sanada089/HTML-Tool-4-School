@@ -57,9 +57,9 @@
     <div id="nextLevelButtonDiv" style="text-align: center">
       <table>
         <tr>
-          <th><button class="buttonRestart" onclick=previousLevel()><img src="img/pfeil_zurueck.png"/></button></th>
-          <th><button class="buttonRestart" onclick=loadState()><img src="img/reload.png"/></button></th>
-          <th><button class="buttonRestart" onclick=nextLevel()><img src="img/pfeil_vor.png"/></button></th>
+          <th><button class="buttonRestart" onclick=previousLevel()><img src="img/pfeil_zurueck.png" alt="Vorheriges Level"/></button></th>
+          <th><button class="buttonRestart" onclick=loadState()><img src="img/reload.png" alt="Neu Laden"/></button></th>
+          <th><button class="buttonRestart" onclick=nextLevel()><img src="img/pfeil_vor.png" alt="Nächstes Level"/></button></th>
         </tr>
 
       </table>
@@ -528,6 +528,13 @@
       case 14:
         var xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state14.xml", false);
+        xmlHTTP.send(null);
+        xml = xmlHTTP.responseText;
+        break;
+
+      case 15:
+        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP.open("GET", "state15.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;

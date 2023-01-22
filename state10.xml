@@ -44,28 +44,28 @@
                                   <block type="listitem" id="Sg4n_cu%I0I8ncI{iX##">
                                     <statement name="CONTENT">
                                       <block type="string" id="^VRyN~1NC-X^O4{15tBp">
-                                        <field name="CONTENT">-mathematisch-naturwissenschaftlich-technisch</field>
+                                        <field name="CONTENT">mathematisch-naturwissenschaftlich-technisch</field>
                                       </block>
                                     </statement>
                                     <next>
                                       <block type="listitem" id="gmd6FdRO4:]W8f%z~Yc$">
                                         <statement name="CONTENT">
                                           <block type="string" id="gT9Fakv56{Os|zCSgQJS">
-                                            <field name="CONTENT">-wirtschaftlich</field>
+                                            <field name="CONTENT">wirtschaftlich</field>
                                           </block>
                                         </statement>
                                         <next>
                                           <block type="listitem" id="NLA]ujF:Gjo,xhpmoyb2">
                                             <statement name="CONTENT">
                                               <block type="string" id="73}iz8gHcD:z9}*b[4-%">
-                                                <field name="CONTENT">-fremdsprachlich (Französisch)</field>
+                                                <field name="CONTENT">fremdsprachlich (Französisch)</field>
                                               </block>
                                             </statement>
                                             <next>
                                               <block type="listitem" id="9K*KImN~{#K*gcS:=zKk">
                                                 <statement name="CONTENT">
                                                   <block type="string" id="*cUTjz#]66m$2ABM=]W-">
-                                                    <field name="CONTENT">-musisch-gestaltend</field>
+                                                    <field name="CONTENT">musisch-gestaltend</field>
                                                   </block>
                                                 </statement>
                                               </block>
