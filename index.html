@@ -52,16 +52,16 @@
     </div>
   </div>
 
+
+
   <!-- Buttons: vorheriges und naechstes Level -->
   <div class="item7">
     <div id="nextLevelButtonDiv" style="text-align: center">
       <table>
         <tr>
-          <th><button class="buttonRestart" onclick=previousLevel()><img src="img/pfeil_zurueck.png" alt="Vorheriges Level"/></button></th>
-          <th><button class="buttonRestart" onclick=loadState()><img src="img/reload.png" alt="Neu Laden"/></button></th>
-          <th><button class="buttonRestart" onclick=nextLevel()><img src="img/pfeil_vor.png" alt="Nächstes Level"/></button></th>
+          <th><button class="buttonNextLevel" onclick=previousLevel()><b>&#9664;</b></button></th>
+          <th><button class="buttonNextLevel" onclick=nextLevel()><b>&#9654;</b></button></th>
         </tr>
-
       </table>
       <!-- Dropdown zur Auswahl der Level, wird geändert, wird chooseLevel mit dem gewählten Level aufgerufen-->
           <label for="aufgabenauswahl"></label>
@@ -82,9 +82,16 @@
               <option value="14">Level 14</option>
               <option value="14">Level 15</option>
             </select>
+
+
    </div>
   </div>
+    <div class="item9">
+      <div id="restartButtonDiv" style="text-align: center; align-content: center">
+          <button class="buttonNextLevel" onclick=loadState()>&#8635;</button>
 
+      </div>
+    </div>
 
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3">
@@ -407,12 +414,18 @@
       if(popupFlag===6){
         document.getElementById("startPopupFrame").src="popup/popup6.html"
       }
+      if(popupFlag===7){
+        document.getElementById("startPopupFrame").src="popup/popup7.html"
+      }
+      if(popupFlag===8){
+        document.getElementById("startPopupFrame").src="popup/popup8.html"
+      }
     }
   }
 
   //function die im Startpopup wenn auf den Pfeil nach rechts geklickt wird, das nächste Popup (popupx.html) als Quelle lädt
   function showNextPopup(){
-    if (popupFlag === 6){
+    if (popupFlag === 8){
     }
     else {
       popupFlag = popupFlag+1
@@ -433,6 +446,12 @@
       }
       if(popupFlag===6){
         document.getElementById("startPopupFrame").src="popup/popup6.html"
+      }
+      if(popupFlag===7){
+        document.getElementById("startPopupFrame").src="popup/popup7.html"
+      }
+      if(popupFlag===8){
+        document.getElementById("startPopupFrame").src="popup/popup8.html"
       }
     }
   }
@@ -535,7 +554,7 @@
       case 15:
         var xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state15.xml", false);
-        xmlHTTP.send(null);
+        //xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
     }

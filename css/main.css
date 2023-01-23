@@ -19,6 +19,9 @@
 .item8 {
   grid-area: infoImpressum;
 }
+.item9 {
+  grid-area: restartButton;
+}
 
 .grid-container{
   display: grid;
@@ -27,6 +30,7 @@
   grid-template-areas:
     'blocklyDiv HTMLCode CodeButton'
     'blocklyDiv HTMLCode nextLevelButton'
+    'blocklyDiv HTMLCode restartButton'
     'blocklyDiv HTMLPage switch'
     'blocklyDiv HTMLPage infoImpressum'
 }
@@ -41,18 +45,6 @@
   cursor: pointer;
 }
 
-.buttonRestart{
-  border-color: #dc4129;
-  background-color: white;
-  border-style: dotted;
-  border-width: medium;
-  border-radius: 10px;
-  margin-bottom: 0.5vh;
-  display: inline-block;
-  cursor: pointer;
-
-}
-
 .buttonNextLevel{
   border-color: #dc4129;
   background-color: white;
@@ -62,8 +54,7 @@
   display: inline-block;
   cursor: pointer;
   text-align: center;
-  height: 25px;
-  width: 22px;
+  font-size: 18px;
 }
 
 .box {
@@ -76,6 +67,7 @@
   border-width: medium;
   border-radius: 15px;
   font-family: Arial;
+  margin-bottom: 0.5vh;
 }
 
 .buttonInfo{
@@ -159,19 +151,20 @@
 }
 
 #CodeButtonDiv{
-  height: 25vh;
+  height: 27vh;
   width: 3vw;
   margin-bottom: 3vh;
 }
 
-#restartDiv{
-  height: 6vh;
-  width: 3vw;
-  margin-bottom: 2vh;
-}
 #nextLevelButtonDiv{
-  height: 2vw;
+  height: 3vw;
   width: 3vw;
+  margin-bottom: 1vh;
+}
+
+#restartButtonDiv{
+  height: 2vw;
+  width: 5vw;
   margin-bottom: 1vh;
 }
 
@@ -194,15 +187,6 @@
 }
 
 #startPopup {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  visibility:visible;
-  display:none;
-  background-color: rgba(22,22,22,0.5);
-}
-
-#levelPopup {
   width: 100%;
   height: 100%;
   position: absolute;

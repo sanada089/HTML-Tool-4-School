@@ -5,7 +5,7 @@
   <title>popup4</title>
 </head>
 <body style="font-family: Cambria">
-<p>Auch der dritte Teil hat verschiedene Funktionen.</p>
+<p>Der <b>dritte Bereich</b> unten rechts hat viele Funktionen und Buttons:</p>
 <table>
   <colgroup>
     <col>
@@ -21,19 +21,48 @@
   </colgroup>
   <tr>
     <td colspan="7"><img src="../img/popup/preview_click.gif" id="Bild1" alt="preview_click" width="240" height="135"></td>
-    <td colspan="3">Im Normalfall siehst du hier eine Live-Vorschau, wie deine Blöcke bzw. dein Code gerade als HTML-Seite aussehen. <br>
-      Diese kannst du auch aufrufen in dem du auf den Knopf mit dem Klemmbrett klickst, sie erscheint aber auch automatisch, sobald du etwas bei deinen Blöcken veränderst.</td>
-  </tr>
-  <tr>
-    <td colspan="7"><img src="../img/popup/solution_click.gif" id="Bild2" alt="solution_click" width="240" height="135"></td>
-    <td colspan="3">Klickst du auf die Lupe, wird dir angezeigt, wie deine Seite in etwa aussehen sollte, sobald du die aktuelle Aufgabe bzw. das aktuelle Level abgeschlossen hast.</td>
+    <td colspan="3">
+      Sobald du einen Block in das Feld ziehst, wird dir der dazugehörige <b>HTML-Code</b> angezeigt. Möchtest du sehen, wie
+      der Code in der <b>Vorschau</b> aussieht, klickst du den Button mit der <b>Lupe</b>. Möchtest du wieder zurück zum Code,
+      drückst du den oberen Button.
+    </td>
   </tr>
 </table>
+
+<table>
+  <tr><td><img src="../img/popup/button_klemmbrett.png" id="Bild3" alt="Klemmbrett" width="80" height="70"/></td>
+    <td>Dieser Button zeigt dir eine <b>Vorschau</b> zum aktuellen Level<br>
+      – hier kannst du vergleichen, ob deine erstellte Seite dementsprechend aussieht.</td></tr>
+  <tr>
+    <td><img src="../img/popup/button_bastelecke.png" id="Bild4" alt="Bastelecke" width="80" height="70"/></td>
+    <td>Drückst du den Button, gelangst du zur <b>Bastelecke</b>. In der Bastelecke kannst du deine eigene HTML-Seite gestalten
+      und deiner Kreativität freien Lauf lassen.</td></tr>
+  <tr>
+    <td><img src="../img/popup/button_info.png" id="Bild5" alt="Bastelecke" width="80" height="70"/></td>
+    <td>
+      Ging dir das ganze zu schnell, kannst du jederzeit nochmal nachlesen wie das HTML-Tool funktioniert,
+      indem du einfach auf den <b>Info-Button</b> klickst.
+    </td>
+  </tr>
+</table>
+
+<br><br>
+Und das ist auch schon alles, was du wissen musst, um mit dem Erstellen deiner ersten HTML-Seite anzufangen.<br>
+<b>ODER:</b><br>
+Das war auch schon alles, was du über die Funktionalität des Tools wissen musst. <br>
+Dann kann es jetzt ja losgehen...
+
 </body>
 <script>
   document.getElementById("Bild1").width=Math.round(window.innerWidth*0.45);
   document.getElementById("Bild1").height=Math.round(window.innerHeight*0.38);
   document.getElementById("Bild2").width=Math.round(window.innerWidth*0.45);
   document.getElementById("Bild2").height=Math.round(window.innerHeight*0.38);
+  document.getElementById("Bild3").width=Math.round(window.innerWidth*0.25);
+  document.getElementById("Bild3").height=Math.round(window.innerHeight*0.25);
+  document.getElementById("Bild4").width=Math.round(window.innerWidth*0.25);
+  document.getElementById("Bild4").height=Math.round(window.innerHeight*0.25);
+  document.getElementById("Bild5").width=Math.round(window.innerWidth*0.25);
+  document.getElementById("Bild5").height=Math.round(window.innerHeight*0.25);
 </script>
 </html>
