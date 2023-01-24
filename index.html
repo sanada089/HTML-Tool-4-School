@@ -107,7 +107,7 @@
     <div id="switchDiv">
       <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Code" /></button>
       <button class="button" onclick=showIstZustand()><img src="img/Vorschau.png" alt="Vorschau"/></button>
-      <button class="button" onclick=switchToPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
+      <button class="button" onclick=showPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
     </div>
   </div>
 
@@ -185,7 +185,7 @@
   workspace.addChangeListener(update);
 
   //function, die die Preview der Lösung des aktuellen Levels aufruft und in den IFrame unten rechts lädt
-  function switchToPreview(){
+  function showPreview(){
     switch (level) {
       case 1:
         document.getElementById("HTMLPageDiv").src="preview/Level1.html";
@@ -554,7 +554,7 @@
       case 15:
         var xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state15.xml", false);
-        //xmlHTTP.send(null);
+        xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
     }
