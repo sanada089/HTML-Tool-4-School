@@ -3,7 +3,6 @@
 const htmlBlocks = [
 
   //Grundgerüst-Block
-
   {
     "type": "html_page",
     "message0": "HTML-Seite %1 %2 %3 %4",
@@ -33,7 +32,6 @@ const htmlBlocks = [
   },
 
   //Kopf-Block
-
   {
     "type": "head",
     "message0": "Kopf %1 Titel %2",
@@ -55,7 +53,6 @@ const htmlBlocks = [
   },
 
   //Body-Block
-
   {
     "type": "body",
     "message0": "Körper %1 Style %2 Inhalt %3",
@@ -93,7 +90,6 @@ const htmlBlocks = [
   },
 
   //Division-Block
-
   {
     "type": "division",
     "message0": "Division %1 Style %2 Inhalt %3",
@@ -136,13 +132,12 @@ const htmlBlocks = [
       "link",
       "linkdescription",
       "table"],
-    "colour": 100,
+    "colour": 0,
     "tooltip": "",
     "helpUrl": ""
   },
 
   //Text-Block
-
   {
     "type": "string",
     "message0": "Text %1",
@@ -172,7 +167,6 @@ const htmlBlocks = [
   },
 
   //Überschrift-Block
-
   {
     "type": "headline",
     "message0": "Überschrift %1 %2 %3",
@@ -217,7 +211,6 @@ const htmlBlocks = [
   },
 
   //Absatz-Block
-
   {
     "type": "paragraph",
     "message0": "Absatz %1",
@@ -248,7 +241,6 @@ const htmlBlocks = [
   },
 
   //Zeilenumbruch-Block
-
   {
     "type": "break",
     "message0": "Zeilenumbruch %1",
@@ -274,7 +266,6 @@ const htmlBlocks = [
   },
 
 //Nummerierte Liste
-
   {
     "type": "orderedlist",
     "message0": "Nummerierte Liste %1",
@@ -303,8 +294,7 @@ const htmlBlocks = [
     "helpUrl": ""
   },
 
-  //unnummerierte List
-
+  //unnummerierte Liste
   {
     "type": "unorderedlist",
     "message0": "Unnummerierte Liste %1 %2 %3",
@@ -346,7 +336,6 @@ const htmlBlocks = [
   },
 
   //Listeneintrag
-
   {
     "type": "listitem",
     "message0": "Listeneintrag %1",
@@ -373,7 +362,6 @@ const htmlBlocks = [
   },
 
   //Bild-Block
-
   {
     "type": "image",
     "message0": "Bild %1 Breite %2 Höhe %3",
@@ -629,7 +617,6 @@ const htmlBlocks = [
   },
 
   //Special-Text-Block, der Texthervorhebung durch Schriftgröße, unterstreichen, fett oder kursiv erlaubt
-
   {
     "type": "specialtext",
     "message0": "Specialtext %1 %2 Textfarbe %3 Schriftgröße %4 %5 fett %6 kursiv %7 unterstrichen %8",
@@ -701,7 +688,6 @@ const htmlBlocks = [
   },
 
   //Link-Block, mit dem Links erzeugt werden können
-
   {
     "type": "link",
     "message0": "Link %1",
@@ -731,7 +717,6 @@ const htmlBlocks = [
   },
 
   //Link-Block, der zusätzlich eine Anzeige der Linkbeschreibung, anstelle der URL erlaubt
-
   {
     "type": "linkdescription",
     "message0": "Link %1 Linkbeschreibung %2 %3",
@@ -771,7 +756,6 @@ const htmlBlocks = [
   },
 
   //Tabelle
-
   {
     "type": "table",
     "message0": "Tabelle %1 Rand %2 %3",

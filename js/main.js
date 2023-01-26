@@ -23,6 +23,10 @@ var toolbox = {
           "kind": "block",
           "type": "body",
         },
+        {
+          "kind": "block",
+          "type": "division",
+        },
       ]
     },
 
@@ -63,10 +67,6 @@ var toolbox = {
       "name": "Design",
       "colour": "100",
       "contents": [
-        {
-          "kind": "block",
-          "type": "division",
-        },
         {
           "kind": "block",
           "type": "style",
