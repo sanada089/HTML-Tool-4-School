@@ -25,14 +25,15 @@
 <!-- Einleitungs-Popup, in dem die ersten Schritte erklärt werden -->
 <div id="startPopup">
   <div id="startPopupFläche" class="reveal-modal">
-    <button class="closeButton" onclick="closeStartPopup()"><img src="img/redcross.png" alt="schliessen"></button>
+    <button class="closeButton" onclick="closeStartPopup()"><img src="img/popup/cancel.png" id="close" alt="schliessen"></button>
     <!-- Inneres des Startpopups in das die einzelnen popupx.html-files geladen werden-->
     <div id="startPopupFrameContainer">
       <iframe name="popupFrame" id="startPopupFrame" width="" height="" src="popup/popup1.html"></iframe>
     </div>
     <div class="popup-container">
-      <div class="left-arrow"><button class="arrow-button" onclick="showPreviousPopup()"><img src="img/arrow-left.png" alt="zurück"></button></div>
-      <div class="right-arrow"><button class="arrow-button" onclick="showNextPopup()"><img src="img/arrow-right.png" alt="weiter"></button></div>
+      <div class="left-arrow"><button class="arrow-button" onclick="showPreviousPopup()">&#9664;</button></div>
+      <div class="right-arrow"><button class="arrow-button" onclick="showNextPopup()"> &#9654;</button></div>
+      <div class="start"><button class="start-button" onclick="closeStartPopup()"><b>START</b></button></div>
     </div>
   </div>
 </div>
@@ -563,6 +564,10 @@
     Blockly.Xml.domToWorkspace(xml_new,workspace);
     showCode();
   }
+
+  document.getElementById("close").width=Math.round(window.innerWidth*0.015);
+  document.getElementById("close").height=Math.round(window.innerHeight*0.03);
+
 </script>
 </body>
 </html>
