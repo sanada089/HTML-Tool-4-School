@@ -11,16 +11,16 @@ HtmlGenerator.finish = function (code) {
 };
 
 HtmlGenerator.scrub_ = function (block, code) {
-  var nextBlock = block.nextConnection && block.nextConnection.targetBlock();
-  var nextCode = HtmlGenerator.blockToCode(nextBlock);
+  let nextBlock = block.nextConnection && block.nextConnection.targetBlock();
+  let nextCode = HtmlGenerator.blockToCode(nextBlock);
   return code + nextCode;
 };
 
 
 
 HtmlGenerator["html_page"] = function (block) {
-  var statements_head = HtmlGenerator.statementToCode(block, "HEAD");
-  var statements_body = HtmlGenerator.statementToCode(block, "BODY");
+  let statements_head = HtmlGenerator.statementToCode(block, "HEAD");
+  let statements_body = HtmlGenerator.statementToCode(block, "BODY");
 
   return code =
     '<!DOCTYPE HTML>\n<html lang="de">\n<meta charset="utf-8">\n' +
@@ -30,13 +30,13 @@ HtmlGenerator["html_page"] = function (block) {
 };
 
 HtmlGenerator["head"] = function (block) {
-  var title_content = block.getFieldValue("TITLE");
+  let title_content = block.getFieldValue("TITLE");
   return code = "<head>\n<title>\n" + title_content + "\n</title>\n </head>\n";
 };
 
 HtmlGenerator["body"] = function (block) {
-  var statements_style = HtmlGenerator.statementToCode(block, "STYLE");
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let statements_style = HtmlGenerator.statementToCode(block, "STYLE");
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
   return code = '<body' +
     statements_style + ">\n" +
     statements_content +
@@ -44,8 +44,8 @@ HtmlGenerator["body"] = function (block) {
 };
 
 HtmlGenerator["division"] = function (block) {
-  var statements_style = HtmlGenerator.statementToCode(block, "STYLE");
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let statements_style = HtmlGenerator.statementToCode(block, "STYLE");
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
   return code =
     '<div' +
@@ -54,18 +54,14 @@ HtmlGenerator["division"] = function (block) {
     "</div>\n";
 };
 
-
-
 HtmlGenerator["string"] = function (block) {
-  var text_content = block.getFieldValue("CONTENT");
+  let text_content = block.getFieldValue("CONTENT");
   return code = text_content + "\n";
 };
 
-//Überschrift-Block
-
 HtmlGenerator["headline"] = function (block) {
-  var dropdown_level = block.getFieldValue("LEVEL");
-  var text_content = block.getFieldValue("CONTENT");
+  let dropdown_level = block.getFieldValue("LEVEL");
+  let text_content = block.getFieldValue("CONTENT");
   return code =
     "<" +
     dropdown_level +
@@ -77,7 +73,7 @@ HtmlGenerator["headline"] = function (block) {
 };
 
 HtmlGenerator["paragraph"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
   return code = "<p>" + statements_content + "</p> \n";
 };
 
@@ -86,14 +82,14 @@ HtmlGenerator["break"] = function (){
 }
 
 HtmlGenerator["orderedlist"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
   return code = "<ol>\n" + statements_content + "</ol>\n";
 };
 
 HtmlGenerator["unorderedlist"] = function (block) {
-  var dropdown_type = block.getFieldValue("TYPE");
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let dropdown_type = block.getFieldValue("TYPE");
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
   return code = "<ul type=" +
     dropdown_type +
     ">\n" +
@@ -102,16 +98,16 @@ HtmlGenerator["unorderedlist"] = function (block) {
 };
 
 HtmlGenerator["listitem"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
 
   return code = "<li>" + statements_content + "</li>\n";
 };
 
 //Bild-Block
 HtmlGenerator["image"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var statements_width = block.getFieldValue("WIDTH")
-  var statements_height = block.getFieldValue("HEIGHT")
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let statements_width = block.getFieldValue("WIDTH");
+  let statements_height = block.getFieldValue("HEIGHT");
 
   return code = '<img src="'  + statements_content + '" width="'+ statements_width + '" height="'+ statements_height + '"' + ' alt="default"/>\n';
 };
@@ -147,9 +143,9 @@ HtmlGenerator["imagelink"] = function(block) {
 };
 
 HtmlGenerator["style"] = function (block) {
-  var font = block.getFieldValue("FONT");
-  var backgroundcolor = block.getFieldValue("BACKGROUND");
-  var textcolor = block.getFieldValue("TEXTCOLOR");
+  let font = block.getFieldValue("FONT");
+  let backgroundcolor = block.getFieldValue("BACKGROUND");
+  let textcolor = block.getFieldValue("TEXTCOLOR");
   return code = " style='font-family: " + font + ";background-color: " + backgroundcolor + ";color: " + textcolor + ";'";
 };
 
@@ -183,7 +179,7 @@ HtmlGenerator["specialtext"] = function(block) {
 
 
 HtmlGenerator["link"] = function(block) {
-  var text_link = block.getFieldValue("LINK");
+  let text_link = block.getFieldValue("LINK");
   return code = "<a href= '" + text_link + "' target=_blank>"
     + text_link +
     "</a>\n";
@@ -191,33 +187,33 @@ HtmlGenerator["link"] = function(block) {
 
 
 HtmlGenerator["linkdescription"] = function(block) {
-  var text_link = block.getFieldValue("LINK");
-  var text_linkdescription = block.getFieldValue("LINKDESCRIPTION");
+  let text_link = block.getFieldValue("LINK");
+  let text_linkdescription = block.getFieldValue("LINKDESCRIPTION");
   return code = "<a href= '\n" + text_link + "' target=_blank>\n"
     + text_linkdescription +
     "</a>\n";
 };
 
 HtmlGenerator["table"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
-  var border_groesse = block.getFieldValue("BORDER");
-  return code = "<table border =" + border_groesse +  ">" + statements_content + "</table>\n";
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let border_groesse = block.getFieldValue("BORDER");
+  return code = '<table border =' + border_groesse +  '>' + statements_content + '</table>\n';
 };
 
 
 
 HtmlGenerator["tablehead"] = function (block) {
-  var field_content = block.getFieldValue("CONTENT");
+  let field_content = block.getFieldValue("CONTENT");
   return code = "<th>" + field_content + "</th>\n";
 };
 
 HtmlGenerator["tablerow"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
   return code = "<tr>" + statements_content + "</tr>\n";
 };
 
 HtmlGenerator["tabledata"] = function (block) {
-  var statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
+  let statements_content = HtmlGenerator.statementToCode(block, "CONTENT");
   return code = "<td>" + statements_content + "</td>\n";
 }
 

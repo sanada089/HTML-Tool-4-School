@@ -22,11 +22,11 @@
 <script src="js/html_generator.js"></script>
 <script src="js/main.js"></script>
 
-<!-- Einleitungs-Popup, in dem die ersten Schritte erklärt werden -->
+<!-- Einleitung-Popup, in dem die ersten Schritte erklärt werden -->
 <div id="startPopup">
   <div id="startPopupFläche" class="reveal-modal">
     <button class="closeButton" onclick="closeStartPopup()"><img src="img/popup/cancel.png" id="close" alt="schliessen"></button>
-    <!-- Inneres des Startpopups in das die einzelnen popupx.html-files geladen werden-->
+    <!-- Inneres des Start-Popups in das die einzelnen popup[x].html-files geladen werden-->
     <div id="startPopupFrameContainer">
       <iframe name="popupFrame" id="startPopupFrame" width="" height="" src="popup/popup1.html"></iframe>
     </div>
@@ -53,7 +53,7 @@
     </div>
   </div>
 
-  <!-- Buttons: vorheriges und naechstes Level -->
+  <!-- Buttons: vorheriges und nächstes Level -->
   <div class="item7">
     <div id="nextLevelButtonDiv" style="text-align: center">
       <table>
@@ -124,27 +124,23 @@
 <script>
   // Einfügen des Blockly-Workspace mit zugehöriger Toolbox in die blocklyDiv
   const workspace = Blockly.inject('blocklyDiv', {toolbox: toolbox});
-  //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
-  var html;
   //code ist der aktuell aus den Blocks erzeugte Code
-  var code;
-  //codeFlag zeigt an, was gerade in der HTMLCodeDiv angezeigt werden soll
-  var codeFlag;
+  let code;
   //popupFlag zeigt, bei welchem Popup sich der User befindet
-  var popupFlag=1;
+  let popupFlag=1;
   //level zeigt an in welchem level sich der User aktuell befindet
-  var level;
+  let level;
 
   //Laden des vorherigen Zustandes des workspace aus der localStorage des Browsers
   if (localStorage.getItem("blockly-html-code-learning")) {
-    var xml_text = localStorage.getItem("blockly-html-code-learning");
-    var xml = Blockly.Xml.textToDom(xml_text);
-    Blockly.Xml.domToWorkspace(xml, workspace);
+    let xml_text = localStorage.getItem("blockly-html-code-learning");
+    let xml = Blockly["Xml"].textToDom(xml_text);
+    Blockly["Xml"].domToWorkspace(xml, workspace);
   }
 
 
 
-  //Popup auf die richtige größe des Bildschirms resizen und anschließend anzeigen
+  //Popup-Größe auf 40 Prozent der Breite und 60 Prozent der Höhe des Inneren des Fensters setzen
   document.getElementById("startPopupFrame").width=Math.round(window.innerWidth*0.40);
   document.getElementById("startPopupFrame").height=Math.round(window.innerHeight*0.60);
   showStartPopup();
@@ -166,21 +162,18 @@
   //Ab hier beginnen die Functions
 
   // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
-  function update(event){
+  function update(){
     // Umwandlung des workspace zu HTML-Code via HTMLGenerator
     code = HtmlGenerator.workspaceToCode(workspace);
-    // Will der User gerade den Code sehen wird dieser aktualisiert in der HTMLCodeDiv
-    if(!codeFlag || codeFlag ===0){
-      showCode();
-    }
+    showCode();
 
     // Speichern des Zustandes des workspace in der localStorage des Browsers
-    let xml = Blockly.Xml.workspaceToDom(workspace);
-    xml_text = Blockly.Xml.domToText(xml);
+    let xml = Blockly["Xml"].workspaceToDom(workspace);
+    xml_text = Blockly["Xml"].domToText(xml);
     localStorage.setItem("blockly-html-code-learning", xml_text);
   }
 
-  //Aufruf der Updatefunktion, sobald eine Änderung im workspace passiert
+  //Aufruf der function update(), sobald eine Änderung im workspace passiert
   workspace.addChangeListener(update);
 
   //function, die die Preview der Lösung des aktuellen Levels aufruft und in den IFrame unten rechts lädt
@@ -236,18 +229,16 @@
   //function die den aktuellen Zustand der HTML-Seite anzeigt
   function showIstZustand(){
     const ifr = document.preview;
-    html = code;
-    ifr.document.write(html);
+    ifr.document.write(code);
     ifr.document.close();
   }
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
   function showCode(){
     document.getElementById("switchDiv").src="";
-    var htmlCode="<xmp>" + code + "</xmp>";
+    let htmlCode="<xmp>" + code + "</xmp>";
     const ifr = document.preview;
     ifr.document.write(htmlCode);
     ifr.document.close();
-    codeFlag=0;
   }
 
   //wird aufgerufen, wenn auf den Gscheidhaferl-Knopf gedrückt wird. Zeigt dann die Gscheidhaferl-Page
@@ -306,14 +297,14 @@
     }
   }
 
-  //function die das Einleitungspopup aufruft
+  //function die das Einleitung-Popup aufruft
   function showStartPopup(){
     document.getElementById("startPopupFrame").src="popup/popup1.html";
     popupFlag=1;
     document.getElementById("startPopup").style.display="block";
   }
 
-  //function die das Einleitungspopup schließt (rotes X)
+  //function die das Einleitung-Popup schließt (rotes X)
   function closeStartPopup(){
     document.getElementById("startPopup").style.display="none";
   }
@@ -323,7 +314,7 @@
     switchLevel(level+1);
   }
 
-  //function, die aufgerufen wird, wenn vorherhiges-Level-Button geklickt wird. Ruft switchLevel mit level-1 auf
+  //function, die aufgerufen wird, wenn vorheriges-Level-Button geklickt wird. Ruft switchLevel mit level-1 auf
   function previousLevel(){
     switchLevel(level-1);
   }
@@ -389,12 +380,11 @@
   }
 
 
-  //function die im Startpopup wenn auf den Pfeil nach links geklickt wird, das vorherige Popup (popupx.html) als Quelle lädt
-  function showPreviousPopup(){
+  //function die im Einleitung-Popup, sobald auf den Pfeil nach links geklickt wird, das vorherige Popup (popup[x].html) als Quelle lädt
+  function showPopup(){
     if (!popupFlag || popupFlag === 1){
     }
     else {
-      popupFlag = popupFlag-1
       if(popupFlag===1){
         document.getElementById("startPopupFrame").src="popup/popup1.html"
       }
@@ -422,144 +412,127 @@
     }
   }
 
-  //function die im Startpopup wenn auf den Pfeil nach rechts geklickt wird, das nächste Popup (popupx.html) als Quelle lädt
+  //function die im Einleitung-Popup, sobald auf den Pfeil nach rechts geklickt wird, showPopup("next") aufruft
+
   function showNextPopup(){
-    if (popupFlag === 8){
-    }
-    else {
-      popupFlag = popupFlag+1
-      if(popupFlag===1){
-        document.getElementById("startPopupFrame").src="popup/popup1.html"
-      }
-      if(popupFlag===2){
-        document.getElementById("startPopupFrame").src="popup/popup2.html"
-      }
-      if(popupFlag===3){
-        document.getElementById("startPopupFrame").src="popup/popup3.html"
-      }
-      if(popupFlag===4){
-        document.getElementById("startPopupFrame").src="popup/popup4.html"
-      }
-      if(popupFlag===5){
-        document.getElementById("startPopupFrame").src="popup/popup5.html"
-      }
-      if(popupFlag===6){
-        document.getElementById("startPopupFrame").src="popup/popup6.html"
-      }
-      if(popupFlag===7){
-        document.getElementById("startPopupFrame").src="popup/popup7.html"
-      }
-      if(popupFlag===8){
-        document.getElementById("startPopupFrame").src="popup/popup8.html"
-      }
-    }
+    popupFlag = popupFlag+1;
+    showPopup();
   }
 
-  //function die den Zustand lädt, der gebraucht wird um das aktuelle Level zu bearbeiten. Lädt aus statex.xml und schreibt es dann in den workspace
+  //function die im Einleitung-Popup, sobald auf den Pfeil nach links geklickt wird, showPopup("previous") aufruft
+
+  function showPreviousPopup(){
+    popupFlag = popupFlag-1;
+    showPopup();
+  }
+
+  //function die den Zustand lädt, der gebraucht wird um das aktuelle Level zu bearbeiten. Lädt aus state[x].xml und schreibt es dann in den workspace
   function loadState(){
     workspace.clear();
+    let xmlHTTP;
+    let xml;
     switch (level) {
       case 2:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP= new XMLHttpRequest();
         xmlHTTP.open("GET", "state2.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 3:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state3.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 4:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state4.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 5:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state5.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 6:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state6.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 7:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state7.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 8:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state8.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 9:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state9.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 10:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state10.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 11:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state11.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 12:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state12.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 13:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state13.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 14:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state14.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
 
       case 15:
-        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open("GET", "state15.xml", false);
         xmlHTTP.send(null);
         xml = xmlHTTP.responseText;
         break;
     }
 
-    var xml_new = Blockly.Xml.textToDom(xml);
-    Blockly.Xml.domToWorkspace(xml_new,workspace);
+    let xml_new = Blockly["Xml"].textToDom(xml);
+    Blockly["Xml"].domToWorkspace(xml_new,workspace);
     showCode();
   }
 
