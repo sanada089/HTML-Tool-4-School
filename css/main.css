@@ -2,10 +2,10 @@
   grid-area: blocklyDiv;
 }
 .item3 {
-  grid-area: HTMLPage;
+  grid-area: CodePreview;
 }
 .item4 {
-  grid-area: HTMLCode;
+  grid-area: DidaktikDiv;
 }
 .item5 {
   grid-area: CodeButton;
@@ -28,11 +28,11 @@
   grid-area: auto;
   background-color: #ffbc70;
   grid-template-areas:
-    'blocklyDiv HTMLCode CodeButton'
-    'blocklyDiv HTMLCode nextLevelButton'
-    'blocklyDiv HTMLCode restartButton'
-    'blocklyDiv HTMLPage switch'
-    'blocklyDiv HTMLPage infoImpressum'
+    'blocklyDiv DidaktikDiv CodeButton'
+    'blocklyDiv DidaktikDiv nextLevelButton'
+    'blocklyDiv DidaktikDiv restartButton'
+    'blocklyDiv CodePreview switch'
+    'blocklyDiv CodePreview infoImpressum'
 }
 
 .button{
@@ -151,7 +151,7 @@
   background-color: whitesmoke;
 }
 
-#HTMLCodeDiv{
+#DidaktikDiv{
   height: 47vh;
   width: 45vw;
   margin-bottom: 1vh;
@@ -160,7 +160,7 @@
   overflow: scroll;
 }
 
-#HTMLPageDiv{
+#CodePreviewDiv{
   height: 47vh;
   width: 45vw;
   background-color: whitesmoke;

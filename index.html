@@ -45,13 +45,18 @@
     <div id="blocklyDiv"></div>
   </div>
 
-  <!-- Die Buttons neben dem Iframe oben rechts-->
-  <div class="item5">
-    <div id="CodeButtonDiv">
-      <button class="button" onclick=showHausl()><img src="img/Ausrufezeichen.png" alt="Ausrufezeichen" /></button>
-      <button class="button" onclick=showGscheidhaferl()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
+    <!-- Die Buttons neben dem Iframe oben rechts-->
+    <div class="item5">
+     <div id="CodeButtonDiv">
+       <button class="button" onclick=showTask()><img src="img/Ausrufezeichen.png" alt="Ausrufezeichen" /></button>
+       <button class="button" onclick=showHelp()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
+     </div>
     </div>
-  </div>
+
+    <!-- Iframe oben rechts-->
+    <div class="item4">
+      <iframe name="buttonPreview" id="DidaktikDiv" src=""></iframe>
+    </div>
 
   <!-- Buttons: vorheriges und nächstes Level -->
   <div class="item7">
@@ -94,12 +99,9 @@
 
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item3">
-    <iframe name="preview" id="HTMLPageDiv"></iframe>
+    <iframe name="preview" id="CodePreviewDiv"></iframe>
   </div>
-  <!-- Iframe oben rechts-->
-  <div class="item4">
-    <iframe name="buttonPreview" id="HTMLCodeDiv" src=""></iframe>
-  </div>
+
 
   <!-- Die Buttons neben dem Iframe unten rechts-->
   <div class="item6">
@@ -156,8 +158,11 @@
   }
 
   //Aufrufen der aktuellen Aufgabenstellung in den Iframe oben rechts und einblenden des Codes unten rechts
-  showHausl();
+  showTask();
   showCode();
+
+  //Aufruf der function update(), sobald eine Änderung im workspace passiert
+  workspace.addChangeListener(update);
 
   //Ab hier beginnen die Functions
 
@@ -173,56 +178,53 @@
     localStorage.setItem("blockly-html-code-learning", xml_text);
   }
 
-  //Aufruf der function update(), sobald eine Änderung im workspace passiert
-  workspace.addChangeListener(update);
-
-  //function, die die Preview der Lösung des aktuellen Levels aufruft und in den IFrame unten rechts lädt
+   //function, die die Preview der Lösung des aktuellen Levels aufruft und in den IFrame unten rechts lädt
   function showPreview(){
     switch (level) {
       case 1:
-        document.getElementById("HTMLPageDiv").src="preview/Level1.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level1.html";
         break;
       case 2:
-        document.getElementById("HTMLPageDiv").src="preview/Level2.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level2.html";
         break;
       case 3:
-        document.getElementById("HTMLPageDiv").src="preview/Level3.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level3.html";
         break;
       case 4:
-        document.getElementById("HTMLPageDiv").src="preview/Level4.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level4.html";
         break;
       case 5:
-        document.getElementById("HTMLPageDiv").src="preview/Level5.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level5.html";
         break;
       case 6:
-        document.getElementById("HTMLPageDiv").src="preview/Level6.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level6.html";
         break;
       case 7:
-        document.getElementById("HTMLPageDiv").src="preview/Level7.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level7.html";
         break;
       case 8:
-        document.getElementById("HTMLPageDiv").src="preview/Level8.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level8.html";
         break;
       case 9:
-        document.getElementById("HTMLPageDiv").src="preview/Level9.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level9.html";
         break;
       case 10:
-        document.getElementById("HTMLPageDiv").src="preview/Level10.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level10.html";
         break;
       case 11:
-        document.getElementById("HTMLPageDiv").src="preview/Level11.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level11.html";
         break;
       case 12:
-        document.getElementById("HTMLPageDiv").src="preview/Level12.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level12.html";
         break;
       case 13:
-        document.getElementById("HTMLPageDiv").src="preview/Level13.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level13.html";
         break;
       case 14:
-        document.getElementById("HTMLPageDiv").src="preview/Level14.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level14.html";
         break;
       case 15:
-        document.getElementById("HTMLPageDiv").src="preview/Level15.html";
+        document.getElementById("CodePreviewDiv").src="preview/Level15.html";
     }
   }
 
@@ -235,64 +237,64 @@
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
   function showCode(){
     document.getElementById("switchDiv").src="";
-    let htmlCode="<xmp>" + code + "</xmp>";
+    let htmlCode="<pre>" + code + "</pre>";
     const ifr = document.preview;
     ifr.document.write(htmlCode);
     ifr.document.close();
   }
 
-  //wird aufgerufen, wenn auf den Gscheidhaferl-Knopf gedrückt wird. Zeigt dann die Gscheidhaferl-Page
-  function showGscheidhaferl(){
-    document.getElementById("HTMLCodeDiv").src="hilfestellung.html";
+  //wird aufgerufen, wenn auf den Hilfe-Knopf gedrückt wird. Ändert die Source im IFrame
+  function showHelp(){
+    document.getElementById("DidaktikDiv").src="hilfestellung.html";
   }
 
   //wird aufgerufen, wenn auf den Hausl-Knopf gedrückt wird. Zeigt dann die zum Level gehörige Hausl-Page
-  function showHausl(){
+  function showTask(){
     switch(level){
       case 1:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A1.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A1.html";
         break;
       case 2:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A2.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A2.html";
         break;
       case 3:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A3.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A3.html";
         break;
       case 4:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A4.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A4.html";
         break;
       case 5:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A5.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A5.html";
         break;
       case 6:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A6.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A6.html";
         break;
       case 7:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A7.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A7.html";
         break;
       case 8:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A8.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A8.html";
         break;
       case 9:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A9.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A9.html";
         break;
       case 10:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A10.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A10.html";
         break;
       case 11:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A11.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A11.html";
         break;
       case 12:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A12.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A12.html";
         break;
       case 13:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A13.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A13.html";
         break;
       case 14:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A14.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A14.html";
         break;
       case 15:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A15.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A15.html";
         break;
     }
   }
@@ -333,50 +335,50 @@
     localStorage.setItem("level", level);
     switch(level){
       case 1:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A1.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A1.html";
         break;
       case 2:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A2.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A2.html";
         break;
       case 3:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A3.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A3.html";
         break;
       case 4:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A4.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A4.html";
         break;
       case 5:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A5.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A5.html";
         break;
       case 6:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A6.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A6.html";
         break;
       case 7:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A7.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A7.html";
         break;
       case 8:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A8.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A8.html";
         break;
       case 9:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A9.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A9.html";
         break;
       case 10:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A10.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A10.html";
         break;
       case 11:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A11.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A11.html";
         break;
       case 12:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A12.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A12.html";
         break;
       case 13:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A13.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A13.html";
         break;
       case 14:
-        document.getElementById("HTMLCodeDiv").src="aufgabenstellung/button_A14.html";
+        document.getElementById("DidaktikDiv").src="aufgabenstellung/button_A14.html";
         break;
     }
     document.getElementById("aufgabenauswahl").options[level-1].selected=true;
-    showHausl();
+    showTask();
   }
 
 

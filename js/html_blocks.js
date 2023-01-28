@@ -399,9 +399,7 @@ const htmlBlocks = [
       "link",
       "linkdescription",
       "table"],
-    "colour": 300,
-    "tooltip": "",
-    "helpUrl": ""
+    "colour": 300
   },
 
   //Bildlink-Block, in den der Link des Bildes geschrieben wird um ihn dann in den zugehörigen Bild-Block einzusetzen
@@ -719,7 +717,7 @@ const htmlBlocks = [
   //Link-Block, der zusätzlich eine Anzeige der Linkbeschreibung, anstelle der URL erlaubt
   {
     "type": "linkdescription",
-    "message0": "Link %1 Linkbeschreibung %2 %3",
+    "message0": "Link %1 %2 Linkbeschreibung %3",
     "args0": [
       {
         "type": "field_input",
@@ -727,14 +725,12 @@ const htmlBlocks = [
         "text": ""
       },
       {
+        "type": "input_dummy"
+      },
+      {
         "type": "field_input",
         "name": "LINKDESCRIPTION",
         "text": ""
-      },
-      {
-        "type": "input_value",
-        "name": "NAME",
-        "check": "String"
       }
     ],
     "previousStatement": "link",

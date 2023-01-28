@@ -1,7 +1,7 @@
 //Definition der Toolbox
 
 
-var toolbox = {
+let toolbox = {
   "kind": "categoryToolbox",
 
   //Blöcke, die in der Toolbox (jeweiligen Kategorie) verwendet werden
