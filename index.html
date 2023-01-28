@@ -231,7 +231,10 @@
   //function die den aktuellen Zustand der HTML-Seite anzeigt
   function showIstZustand(){
     const ifr = document.preview;
-    ifr.document.write(code);
+    const searchRegExp = "&lt;";
+    const replaceWith = "<";
+    let previewCode = code.replaceAll(searchRegExp, replaceWith);
+    ifr.document.write(previewCode);
     ifr.document.close();
   }
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
