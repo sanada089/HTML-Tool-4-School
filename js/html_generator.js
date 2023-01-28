@@ -109,7 +109,8 @@ HtmlGenerator["image"] = function (block) {
   let statements_width = block.getFieldValue("WIDTH");
   let statements_height = block.getFieldValue("HEIGHT");
 
-  return code = '&lt;img src="'  + statements_content + '" width="'+ statements_width + '" height="'+ statements_height + '"' + ' alt="default"/>\n';
+  return code = '&lt;img src="'  + statements_content + '" width="'+ statements_width
+    + '" height="'+ statements_height + '"' + ' alt="default"/>\n';
 };
 
 //Bilder Lehrkräfte

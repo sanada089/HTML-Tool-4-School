@@ -24,7 +24,7 @@
 
 <!-- Einleitungs-Popup, in dem die ersten Schritte erklärt werden -->
 <div id="infoPopup">
-  <div id="infoPopupFläche" class="reveal-modal">
+  <div id="infoPopupFläche" class="BastelPopup">
     <button class="closeButton" onclick="closeInfoPopup()"><img src="img/popup/cancel.png" id="close" alt="schliessen"></button>
     <!-- Inneres des Startpopups in das die einzelnen popupx.html-files geladen werden-->
     <div id="infoPopupFrameContainer">
@@ -45,7 +45,7 @@
 
   <!-- Hier wird der Preview iframe, der in der update-Funktion im Script-Block befüllt wird in die HTMLPageDiv geladen -->
   <div class="item2">
-    <iframe name="preview" id="HTMLPageDiv"></iframe>
+    <iframe name="preview" id="CodePreviewDiv"></iframe>
   </div>
 
   <!-- Die Buttons neben dem Iframe unten rechts-->
@@ -103,7 +103,7 @@
   }
 
   // Update-Funktion, die aufgerufen wird, wenn sich im Workspace etwas ändert
-  function update(event){
+  function update(){
     // Umwandlung des workspace zu HTML-Code via HTMLGenerator
     code = HtmlGenerator.workspaceToCode(workspace);
     // Will der User gerade den Code sehen wird dieser aktualisiert in der HTMLCodeDiv
@@ -123,15 +123,16 @@
   //function die den aktuellen Zustand der HTML-Seite anzeigt
   function showIstZustand(){
     const ifr = document.preview;
-    html = code;
-    ifr.document.write(html);
+    const searchRegExp = "&lt;";
+    const replaceWith = "<";
+    let previewCode = code.replaceAll(searchRegExp, replaceWith);
+    ifr.document.write(previewCode);
     ifr.document.close();
   }
 
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
   function showCode(){
-    document.getElementById("switchDiv").src="";
-    var htmlCode="<xmp>" + code + "</xmp>";
+    var htmlCode="<pre>" + code + "</pre>";
     const ifr = document.preview;
     ifr.document.write(htmlCode);
     ifr.document.close();
