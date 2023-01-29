@@ -33,7 +33,7 @@
     <div class="popup-container">
       <div class="left-arrow"><button class="arrow-button" onclick="showPreviousPopup()">&#9664;</button></div>
       <div class="right-arrow"><button class="arrow-button" onclick="showNextPopup()">&#9654;</button></div>
-      <div class="start"><button class="start-button" onclick="closeStartPopup()"><b>START</b></button></div>
+      <div class="start"><button class="start-button" id="startButton" onclick="closeStartPopup()" style="display: none"><b>START</b></button></div>
     </div>
   </div>
 </div>
@@ -107,7 +107,7 @@
   <div class="item6">
     <div id="switchDiv">
       <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Code" /></button>
-      <button class="button" onclick=showIstZustand()><img src="img/Vorschau.png" alt="Vorschau"/></button>
+      <button class="button" onclick=showCurrentState()><img src="img/Vorschau.png" alt="Vorschau"/></button>
       <button class="button" onclick=showPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
     </div>
   </div>
@@ -226,7 +226,7 @@
   }
 
   //function die den aktuellen Zustand der HTML-Seite anzeigt
-  function showIstZustand(){
+  function showCurrentState(){
     const ifr = document.preview;
     const searchRegExp = "&lt;";
     const replaceWith = "<";
@@ -234,6 +234,7 @@
     ifr.document.write(previewCode);
     ifr.document.close();
   }
+
   //wird aufgerufen, wenn auf den Code-Knopf gedrückt wird. Zeigt dann den aktuellen aus Blocks erzeugten Code
   function showCode(){
     let htmlCode="<pre>" + code + "</pre>";
@@ -343,28 +344,29 @@
     }
     else {
       if(popupFlag===1){
-        document.getElementById("startPopupFrame").src="popup/popup1.html"
+        document.getElementById("startPopupFrame").src="popup/popup1.html";
       }
       if(popupFlag===2){
-        document.getElementById("startPopupFrame").src="popup/popup2.html"
+        document.getElementById("startPopupFrame").src="popup/popup2.html";
       }
       if(popupFlag===3){
-        document.getElementById("startPopupFrame").src="popup/popup3.html"
+        document.getElementById("startPopupFrame").src="popup/popup3.html";
       }
       if(popupFlag===4){
-        document.getElementById("startPopupFrame").src="popup/popup4.html"
+        document.getElementById("startPopupFrame").src="popup/popup4.html";
       }
       if(popupFlag===5){
-        document.getElementById("startPopupFrame").src="popup/popup5.html"
+        document.getElementById("startPopupFrame").src="popup/popup5.html";
       }
       if(popupFlag===6){
-        document.getElementById("startPopupFrame").src="popup/popup6.html"
+        document.getElementById("startPopupFrame").src="popup/popup6.html";
       }
       if(popupFlag===7){
-        document.getElementById("startPopupFrame").src="popup/popup7.html"
+        document.getElementById("startPopupFrame").src="popup/popup7.html";
       }
       if(popupFlag===8){
-        document.getElementById("startPopupFrame").src="popup/popup8.html"
+        document.getElementById("startPopupFrame").src="popup/popup8.html";
+        document.getElementById("startButton").style.display="block";
       }
     }
   }

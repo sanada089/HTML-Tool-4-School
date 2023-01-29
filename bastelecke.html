@@ -52,7 +52,7 @@
   <div class="item3">
     <div id="switchDiv">
       <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Code" /></button>
-      <button class="button" onclick=showIstZustand()><img src="img/Vorschau.png" alt="Vorschau"/></button>
+      <button class="button" onclick=showCurrentState()><img src="img/Vorschau.png" alt="Vorschau"/></button>
     </div>
   </div>
 
@@ -121,7 +121,7 @@
   workspace.addChangeListener(update);
 
   //function die den aktuellen Zustand der HTML-Seite anzeigt
-  function showIstZustand(){
+  function showCurrentState(){
     const ifr = document.preview;
     const searchRegExp = "&lt;";
     const replaceWith = "<";
@@ -143,16 +143,6 @@
   function closeInfoPopup(){
     document.getElementById("infoPopup").style.display="none";
   }
-
-  function downloadFile(){
-    const link = document.createElement("a");
-    const file = new Blob([xml_text], { type: 'text/plain' });
-    link.href = URL.createObjectURL(file);
-    link.download = "sample.txt";
-    link.click();
-    URL.revokeObjectURL(link.href);
-  }
-
 
   //function die im Infopopup, wenn auf den Pfeil nach links geklickt wird, das vorherige Popup (popupx.html) als Quelle lädt
   function showPreviousPopup(){
