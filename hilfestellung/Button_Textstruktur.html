@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Textstruktur Hilfe</title>
+  <meta charset="UTF-8">
+  <title>Textstruktur Hilfe</title>
 </head>
-<body style="font-family: Cambria">
+<body style="font-family: Cambria, serif">
 <h1>Textstruktur</h1>
 
 <p>
@@ -14,19 +14,19 @@
   &#10140; Hier müssen alle auf der Webseite sichtbaren Informationen eingefügt werden!
 </p>
 
-<div style="text-indent:45px;"><b>< body></b><br></div>
+<div style="text-indent:45px;"><b>&lt;body></b><br></div>
 <div style="text-indent:60px;"> <i>Inhalt deiner Seite </i><br></div>
-<div style="text-indent:45px;"> <b>< /body></b></div>
+<div style="text-indent:45px;"> <b>&lt;/body></b></div>
 
-<p>
-  <h1>Überschriften</h1>
-  Beginnen wir, wie auch bei einem gewöhnlichen Text, mit der Überschrift. <br>
-  Eine Überschrift dient zur Strukturierung eines Dokuments und hilft dem Leser, sich im Dokument zurechtzufinden. <br>
-</p>
+
+<h1>Überschriften</h1>
+Beginnen wir, wie auch bei einem gewöhnlichen Text, mit der Überschrift. <br>
+Eine Überschrift dient zur Strukturierung eines Dokuments und hilft dem Leser, sich im Dokument zurechtzufinden. <br>
+
 
 <p>
   Für eine Überschrift benötigen wir den Tag
-  <b>< h1></b><i>Hier steht die Überschrift</i><b> < /h1></b>
+  <b>&lt;h1></b><i>Hier steht die Überschrift</i><b> &lt;/h1></b>
 </p>
 
 <div><table>
@@ -39,12 +39,12 @@
 </div>
 
 <p>
-  Es gibt <b>6 Überschriftenebenen</b>, um Hierarchieebenen im Dokument abzubilden.
-  Die jeweilige Zahl steht für die Überschriftenebene (1 ist die höchste und 6 die niedrigste Ebene) - sie helfen beim Gliedern des Seitenaufbaus.
+  Es gibt <b>6 Überschriften-Ebenen</b>, um Hierarchieebenen im Dokument abzubilden.
+  Die jeweilige Zahl steht für die Überschriften-Ebene (1 ist die höchste und 6 die niedrigste Ebene) - sie helfen beim Gliedern des Seitenaufbaus.
 </p>
 
 
-  <h1>Zeilenumbruch und Absätze</h1>
+<h1>Zeilenumbruch und Absätze</h1>
 
 <p>Herr Hausl hat in seiner Vorlage Leerzeilen gemacht und dadurch einen Zeilenumbruch eingefügt bzw. verschiedene Absätze gebildet.
 </p>
@@ -56,7 +56,7 @@
       <th><img src="../img/hilfestellung/Zeilenumbruch_Code.png" alt="Zeilenumbruch_Code"/> </th>
       <th><img src="../img/hilfestellung/Zeilenumbruch_Vorschau.png" alt="Zeilenumbruch_Vorschau"/></th>
       <td>
-        In HTML benötigen wir für einen <b>Zeilenumbruch</b> das Tag <b>< br></b> an der Stelle, an der er stattfinden soll.
+        In HTML benötigen wir für einen <b>Zeilenumbruch</b> das Tag <b>&lt;br></b> an der Stelle, an der er stattfinden soll.
       </td>
     </tr>
   </table>
@@ -68,17 +68,17 @@
     <tr>
       <td>
         <b> Zum Vergleich: </b><br>
-        Wird das <b>< br>-Tag</b> weggelassen, wird der eingegebene Text in der Vorschau hintereinander geschrieben.
+        Wird das <b>&lt;br>-Tag</b> weggelassen, wird der eingegebene Text in der Vorschau hintereinander geschrieben.
       </td>
-      <th><img src="../img/hilfestellung/ohneZU_Blöcke.png"/></th>
-      <th><img src="../img/hilfestellung/ohneZU_Code.png"/></th>
-      <th><img src="../img/hilfestellung/ohneZU_Vorschau.png"/></th>
+      <th><img src="../img/hilfestellung/ohneZU_Blöcke.png" alt="ohneZU_Blöcke"/></th>
+      <th><img src="../img/hilfestellung/ohneZU_Code.png" alt="ohneZU_Code"/></th>
+      <th><img src="../img/hilfestellung/ohneZU_Vorschau.png" alt="ohneZU_Vorschau"/></th>
     </tr>
   </table>
 </div>
 
 <p>
-  Um mit HTML <b>Absätze</b> zu bilden, benötigen wir das <b>< p>-Tag</b>. Dies wird aus dem Englischen abgeleitet, denn das Wort für „Absatz“ lautet <i> paragraph </i>.
+  Um mit HTML <b>Absätze</b> zu bilden, benötigen wir das <b>&lt;p>-Tag</b>. Dies wird aus dem Englischen abgeleitet, denn das Wort für „Absatz“ lautet <i> paragraph </i>.
   Absätze sind bei längeren Texten besonders hilfreich. Sie gliedern den Text und teilen ihn in Sinnabschnitte ein, wodurch der Leser sich besser im Text zurechtfindet.
 </p>
 <div><table>
@@ -91,23 +91,23 @@
 </div>
 
 
-  <h1>Hyperlinks</h1>
+<h1>Hyperlinks</h1>
 
 <p>
   Mit einem Hyperlink kann man auf eine andere Seite oder ein anderes Dokument <i>verweisen</i>.
-  Hierfür benötigen wir das <b>< a>-Tag: </b>
+  Hierfür benötigen wir das <b>&lt;a>-Tag: </b>
 </p>
 <p>
 <div style="text-align: center;">
-  <b>< a href=" </b> https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/" <b>></b> <i>Klick </i><b>< /a></b><br>
+  <b>&lt;a href=" </b> https://www.realschulebayern.de/realschule/realschule-in-bayern/wahlpflichtfaechergruppen/" <b>></b> <i>Klick </i><b>&lt;/a></b><br>
 </div>
-</p>
+
 
 <p>
   Das a-Element liefert den <i>Verweis</i> auf die Zieldatei, die nach dem Klicken angezeigt werden soll.
   Auch dieser Tag kommt aus dem Englischen: <b><i>anchor</i></b> - <i>dt. Verbindung, Verknüpfung</i> <br>
   Im href-Attribut (englisch: <i><b>hyper reference</b> = Hyper[text]-Referenz</i>) innerhalb der spitzen Klammern
-wird die URL (= die <i>Adresse</i> der Datei), zu der man gelangen soll, eingefügt.
+  wird die URL (= die <i>Adresse</i> der Datei), zu der man gelangen soll, eingefügt.
 
 </p>
 
@@ -127,10 +127,10 @@ wird die URL (= die <i>Adresse</i> der Datei), zu der man gelangen soll, eingef�
       <td>
         In der Vorschau sieht das so aus: <br><br>
       </td>
-        <td>
-          <img src="../img/hilfestellung/Link_Vorschau.png" alt="Link_Vorschau"/>
-        </td>
-      </tr>
+      <td>
+        <img src="../img/hilfestellung/Link_Vorschau.png" alt="Link_Vorschau"/>
+      </td>
+    </tr>
 
   </table>
 
@@ -141,3 +141,4 @@ wird die URL (= die <i>Adresse</i> der Datei), zu der man gelangen soll, eingef�
 </div>
 </body>
 </html>
+

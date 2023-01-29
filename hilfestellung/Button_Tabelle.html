@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Tabelle Hilfe-Button</title>
+  <meta charset="UTF-8">
+  <title>Tabelle Hilfe-Button</title>
 </head>
-<body style="font-family: Cambria">
+<body style="font-family: Cambria, serif">
 <h2>Tabellen</h2>
 In Tabellen können Texte oder andere Daten geordnet zusammengestellt werden. <br>
 Inhalte werden in Zeilen und Spalten gegliedert. HTML gibt den Aufbau der Gitterstruktur vor.<br>
 Für den Aufbau einer Gitterstruktur sind mehrere Elemente notwendig:
 <ul>
   <li>
-    <b>< table></b> leitet eine Tabelle ein (table = <i>Tabelle</i>), <b>< /table></b> schließt die Tabelle
+    <b>&lt;table></b> leitet eine Tabelle ein (table = <i>Tabelle</i>), <b>&lt;/table></b> schließt die Tabelle
   </li>
   <li>
-    <b>< th></b> <i>Kopfzelle</i> <b>< /th></b> (<b>t</b>able <b>h</b>eader = <i>Tabellenkopf</i>)<br>
+    <b>&lt;th></b> <i>Kopfzelle</i> <b>&lt;/th></b> (<b>t</b>able <b>h</b>eader = <i>Tabellenkopf</i>)<br>
     &#10140; Der Tabellenkopf ist sozusagen die <i>Überschrift</i> der Tabellenspalte.
   </li>
   <li>
-    <b>< tr></b>: <b>t</b>able <b>r</b>ow = <i>Tabellenzeile</i> <br>
+    <b>&lt;tr></b>: <b>t</b>able <b>r</b>ow = <i>Tabellenzeile</i> <br>
     &#10140; leitet eine Tabellenzeile ein, die Datenzellen folgen<br>
-     <b>< /tr></b> ist das schließende Tag der Zeile
+    <b>&lt;/tr></b> ist das schließende Tag der Zeile
   </li>
   <li>
-    <b>< td></b> Datenzelle</i> <b>< /td></b> (<b>t</b>able<b>d</b>ata = <i>Tabellendaten</i>)<br>
+    <b>&lt;td></b> Datenzelle <b>&lt;/td></b> (<b>t</b>able<b>d</b>ata = <i>Tabellendaten</i>)<br>
     &#10140; Hier wird der eigentliche Inhalt der Tabelle notiert (z. B. Text oder Bilder)
   </li>
 </ul>
 Beispiel für eine einfache Tabelle:<br><br>
 
 <table>
-<tr>
-  <td><img src="../img/hilfestellung/Tabelle_Blöcke1.png" width="220" height="120"/></td>
-  <td><img src="../img/hilfestellung/Tabelle_Code1.png" width="200" height="90"/></td>
-  <td>Das Attribut <b>border</b> gibt die Stärke des Randes der Tabelle an.</td>
-</tr>
+  <tr>
+    <td><img src="../img/hilfestellung/Tabelle_Blöcke1.png" alt="Tabelle_Blöcke" id="Tabelle_Blöcke" width="" height=""/></td>
+    <td><img src="../img/hilfestellung/Tabelle_Code1.png" alt="Tabelle_Code" id="Tabelle_Code" width="" height=""/></td>
+    <td>Das Attribut <b>border</b> gibt die Stärke des Randes der Tabelle an.</td>
+  </tr>
   <tr>
     <td>So sieht die Tabelle in der Vorschau aus:</td>
-    <td><img src="../img/hilfestellung/Tabelle_Vorschau.png" width="200" height="60"/></td></tr>
+    <td><img src="../img/hilfestellung/Tabelle_Vorschau.png" alt="Tabelle_Vorschau" id="Tabelle_Vorschau" width="" height=""/></td></tr>
 
 </table>
 
 </body>
+<script>
+  document.getElementById("Tabelle_Blöcke").width=Math.round(window.innerWidth*0.3);
+  document.getElementById("Tabelle_Code").width=Math.round(window.innerWidth*0.3);
+  document.getElementById("Tabelle_Vorschau").width=Math.round(window.innerWidth*0.3);
+</script>
 </html>
+

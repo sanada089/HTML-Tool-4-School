@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Liste Hilfe-Button</title>
+  <meta charset="UTF-8">
+  <title>Liste Hilfe-Button</title>
 </head>
-<body style="font-family: Cambria">
+<body style="font-family: Cambria, serif">
 <h1>Listen</h1>
 
 
-Sie werden verwendet, um formatierte Informationslisten zu erstellen. <br>
+Listen werden verwendet, um formatierte Informationslisten zu erstellen. <br>
 In HTML gibt es <br>
 <ul>
-  <li>geordnete Listen:
-    <b>< ol></b> <i>Listeninhalt</i> <b>< /ol></b> <br>
+  <li>geordnete bzw. nummerierte Listen:
+    <b>&lt;ol></b> <i>Listeninhalt</i> <b>&lt;/ol></b> <br>
     (engl. <b>o</b>rdered <b>l</b>ist)
   </li>
 
-  <li>ungeordnete Listen:
-    <b>< ul></b> <i>Listeninhalt</i> <b>< /ul></b> <br>
+  <li>ungeordnete bzw. unnummerierte Listen:
+    <b>&lt;ul></b> <i>Listeninhalt</i> <b>&lt;/ul></b> <br>
     (engl. <b>u</b>nordered <b>l</b>ist)
   </li>
 </ul>
 
 <p>
   Die Elemente (also der Inhalt) der Listen werden zwischen den Tags <br>
-  <b>< li></b>  <i>Listeninhalt</i> <b>< /li></b>  platziert. <br>
+  <b>&lt;li></b>  <i>Listeninhalt</i> <b>&lt;/li></b>  platziert. <br>
 </p>
 
 
@@ -33,13 +33,13 @@ In HTML gibt es <br>
 <div><table>
   <tr>
     <td>
-      <img src="../img/hilfestellung/Liste_Blöcke.png" width="210" height="80" alt="Liste_Blöcke"/>
+      <img src="../img/hilfestellung/Liste_Blöcke.png" id="Liste_Blöcke" width="" height="" alt="Liste_Blöcke"/>
     </td>
     <td>
-      <img src="../img/hilfestellung/Liste_Code.png" width="120" height="60"alt="Liste_Code"/>
+      <img src="../img/hilfestellung/Liste_Code.png" id="Liste_Code" width="" height="" alt="Liste_Code"/>
     </td>
     <td>
-      <img src="../img/hilfestellung/Liste_Vorschau.png" width="160" height="50"alt="Liste_Vorschau"/>
+      <img src="../img/hilfestellung/Liste_Vorschau.png" id="Liste_Vorschau" width="" height="" alt="Liste_Vorschau"/>
     </td>
   </tr>
 </table>
@@ -53,9 +53,9 @@ In HTML gibt es <br>
   <tr>
     <td>
       Der Aufbau von ungeordneten bzw. unnummerierten Listen ist identisch zu den geordneten Listen, nur das entsprechende Listen-Tag ändert sich (siehe oben).
-      Mit dem Attribut <b>type</b> kann der Aufzählungsstil verändert werden.
+      Mit dem Attribut <b>type</b> können die Aufzählungs-Symbole verändert werden.
     </td>
-    <td><img src="../img/hilfestellung/unnummerierteListe-Blöcke.png" width="150" height="90"/></td>
+    <td><img src="../img/hilfestellung/unnummerierteListe-Blöcke.png" id="Liste_unnummeriert" alt="unnummerierte Liste" width="" height=""/></td>
   </tr>
 </table>
 
@@ -70,10 +70,16 @@ In HTML gibt es <br>
 <ul type="disc">
   <li>disc (= ausgemalter Kreis)</li>
 </ul>
-</p>
 
 
 
 
 </body>
+<script>
+  document.getElementById("Liste_Blöcke").width=Math.round(window.innerWidth*0.4);
+  document.getElementById("Liste_Vorschau").width=Math.round(window.innerWidth*0.3);
+  document.getElementById("Liste_Code").width=Math.round(window.innerWidth*0.2);
+  document.getElementById("Liste_unnummeriert").width=Math.round(window.innerWidth*0.2);
+</script>
 </html>
+

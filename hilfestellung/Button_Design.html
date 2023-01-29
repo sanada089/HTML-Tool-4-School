@@ -1,45 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Design</title>
+  <meta charset="UTF-8">
+  <title>Design</title>
 </head>
-<body style="font-family: Cambria">
+<body style="font-family: Cambria, serif">
 <h1>Design</h1>
 In HTML gibt es viele verschiedene Möglichkeiten die Seite zu gestalten bzw. zu designen. <br>
-In diesem Tool findest du erst einmal nur die leichteren Funktionen wie das ändern von Textfarbe, Hintergrundfarbe oder Schriftart. <br>
+In diesem Tool findest du erst einmal nur die leichteren Funktionen wie das Ändern von Textfarbe, Hintergrundfarbe oder Schriftart. <br>
 Aber auch damit kann man schon eine Menge Dinge verändern und gestalten. <br>
 <h1>Der Designblock im Allgemeinen</h1>
-Das Tool bietet dir die Möglichkeit bei dem Körper- oder dem Divisionblock einen <b>Designblock</b> einzusetzen. Tust du das, wird im Code hinter dem jeweiligen Block noch "style=" eingefügt, gefolgt von dem was in diesem Block ausgewählt wurde.<br><br>
-<img src="../img/hilfestellung/style_insert.gif" alt="style_insert" width="80%" height="auto"><br><br>
+Das Tool bietet dir die Möglichkeit bei dem Körper- oder dem Divisionsblock einen <b>Designblock</b> einzusetzen. Tust du das, wird im Code hinter dem jeweiligen Block noch "style=" eingefügt, gefolgt von dem, was in diesem Block ausgewählt wurde.<br><br>
+<img src="../img/hilfestellung/style_insert.gif" id="style_insert" alt="style_insert" width="" height=""><br><br>
 <h1>Design in Körper und Division</h1>
 Haben sowohl Körper als auch Division eine Stylevorgabe, überschreibt die der Division die Vorgabe des Körpers.
-Es gilt also immer, was in der Division vorgegeben ist und erst wenn hier nichts steht wird im Körper geschaut.<br><br>
-<img src="../img/hilfestellung/style_design_body.png" alt="division_body_design" width="100%" height="auto"><br>
+Es gilt also immer, was in der Division vorgegeben ist und erst wenn hier nichts steht, wird im Körper geschaut.<br><br>
+<img src="../img/hilfestellung/style_design_body.png" id="division_body_design" alt="division_body_design" width="" height=""><br>
 <h1>Specialtext</h1>
 Mittels dem Specialtext-Block kann ein Textbereich anders formatiert werden. <br>
-Dafür wird das Start- und End-Tag <b>< span></b> <i>Textbereich</i><b>< /span></b> benötigt.<br>
+Dafür wird das Start- und End-Tag <b>&lt;span></b> <i>Textbereich</i><b>&lt;/span></b> benötigt.<br>
 In diesem Tool kann im Specialtext-Block eingestellt werden:<br><br>
 <table border="1" align="center">
   <tr><th>Kategorie</th><th>HTML-Code</th></tr>
   <tr><td>Textfarbe</td><td>color: </td></tr>
   <tr><td>Schriftgröße</td><td>font-size: </td></tr>
-  <tr><td>fett</td><td>< b> < /b></td></tr>
-  <tr><td>kursiv</td><td>< i> < /i></td></tr>
-  <tr><td>unterstrichen</td><td>< u> < /u></td></tr>
+  <tr><td>fett</td><td>&lt;b> &lt;/b></td></tr>
+  <tr><td>kursiv</td><td>&lt;i> &lt;/i></td></tr>
+  <tr><td>unterstrichen</td><td>&lt;u> &lt;/u></td></tr>
 </table>
 
-<table><tr><td><img src="../img/hilfestellung/specialtext_block.png" alt="Specialtext_Block" height="90" width="220"/></td>
-<td><img src="../img/hilfestellung/specialtext_vorschau.png" alt="Specialtext-Vorschau" height="60" width="200"/></td></tr>
+<table><tr><td><img src="../img/hilfestellung/specialtext_block.png" id="Specialtext_Block" alt="Specialtext_Block" height="" width=""/></td>
+  <td><img src="../img/hilfestellung/specialtext_vorschau.png" id="Specialtext_Vorschau" alt="Specialtext_Vorschau" height="" width=""/></td></tr>
 </table>
-<img src="../img/hilfestellung/specialtext_code.png" alt="Specialtext-Code" width="600" height="50"/>
+<img src="../img/hilfestellung/specialtext_code.png" id="Specialtext_Code" alt="Specialtext_Code" width="" height=""/>
 
 <h1>Bilder</h1>
 <p>
-  Das Tag <b>< img></b> wird in HTML für die Beschreibung von Bildern verwendet. Anders als beispielsweise bei Word, wird das Bild selbst nicht direkt platziert, sondern es wird aus einer Quelle geladen.<br>
+  Das Tag <b>&lt;img></b> wird in HTML für die Beschreibung von Bildern verwendet. Anders als beispielsweise bei Word, wird das Bild selbst nicht direkt platziert, sondern es wird aus einer Quelle geladen.<br>
   Für dieses Tag sind zwei Attribute erforderlich. Zum einen das Attribut <b>src</b>, es wird für die Eingabe der Bildquelle verwendet.
   Zum anderen <b>alt</b>, welches einen alternativen Text für das Bild definiert.<br>
-  Eine Besonderheit beim Einfügen von Bildern ist, dass das Tag <b>< img></b> ungepaart verwendet wird, und somit <u>kein</u> Endtag notwendig ist.
+  Eine Besonderheit beim Einfügen von Bildern ist, dass das Tag <b>&lt;img></b> ungepaart verwendet wird, und somit <u>kein</u> Endtag (<b>&lt;/img></b>) notwendig ist.
 </p>
 <table>
   <tr>
@@ -65,11 +65,11 @@ In diesem Tool kann im Specialtext-Block eingestellt werden:<br><br>
 <table>
   <tr>
     <td>
-      Suche hierzu bei google ein beliebiges Bild und klicke es an. Dann mache einen Rechtsklick und wähle "Bildadresse kopieren" aus. <br>
+      Suche hierzu bei Google ein beliebiges Bild und klicke es an. Dann mache einen Rechtsklick und wähle "Bildadresse kopieren" aus. <br>
       Füge anschließend die kopierte Bildadresse im Block "Bilderlink" ein. Vergiss auch hier nicht, eine passende Größenangabe zu machen!<br>
-      <img src="../img/hilfestellung/Bilderlink_Blöcke.png" width="150" height="90" alt="Bilderlink Blöcke"/>
+      <img src="../img/hilfestellung/Bilderlink_Blöcke.png" id="Bilderlink_Blöcke" width="" height="" alt="Bilderlink Blöcke"/>
     </td>
-    <td><img src="../img/hilfestellung/blumen.png" width="260" height="170" alt="Blumen"/></td>
+    <td><img src="../img/hilfestellung/blumen.png" id="Blumen" width="" height="" alt="Blumen"/></td>
   </tr>
 </table>
 <b>Hinweis:</b> Normalerweise muss beim Einfügen von Bildern aus dem Internet aus datenschutzrechtlichen Gründen eine Quelle angegeben werden!
@@ -80,9 +80,9 @@ Aber, da in diesem Fall deine erstellte Seite nicht online gestellt wird, kann d
 Es gibt noch zahlreiche weitere Möglichkeiten seine HTML-Seite zu designen.<br>
 Man kann zum Beispiel schon im Kopf ein Design für verschiedene Elemente vorgeben.<br>
 Wenn man beispielsweise möchte, dass Überschriften (h1) immer rot sind und Absätze (p) immer blau während die Hintergrundfarbe hellblau ist, dann sieht das so aus:<br><br>
-<img src="../img/hilfestellung/head_design.jpeg" alt="head-style" width="50%" height="auto"><br>
+<img src="../img/hilfestellung/head_design.jpeg" id="head_design" alt="head-style" width="" height=""><br>
 <h2>Design in einer eigenen CSS-Datei</h2>
-Möchte man noch mehr Designvorgaben für z. B. bestimmte Bereiche der Seite, oder alle Knöpfe die es auf der Seite gibt machen, so geschieht das in eigenen Dateien, die auf .css enden.<br>
+Möchte man noch mehr Designvorgaben für z. B. bestimmte Bereiche der Seite, oder alle Knöpfe, die es auf der Seite gibt, machen, so geschieht das in eigenen Dateien, die auf .css enden.<br>
 Man nennt sie deshalb CSS-Dateien. Möchtest du mehr über CSS-Dateien erfahren und wie man sie einbindet, kannst du <a href="https://phlow.de/magazin/webdesign/html/css-einbinden/" target="_blank">hier</a> nachlesen.<br>
 Oder du siehst dir dieses Video an:
 
@@ -93,5 +93,15 @@ Oder du siehst dir dieses Video an:
 <script>
   document.getElementById("VideoCSS").width=Math.round(window.innerWidth*0.95);
   document.getElementById("VideoCSS").height=Math.round(window.innerHeight*0.95);
+  document.getElementById("style_insert").width=Math.round(window.innerWidth*0.7);
+  document.getElementById("style_insert").height=Math.round(window.innerHeight);
+  document.getElementById("division_body_design").width=Math.round(window.innerWidth*0.9);
+  document.getElementById("Specialtext_Block").width=Math.round(window.innerWidth*0.25);
+  document.getElementById("Specialtext_Vorschau").width=Math.round(window.innerWidth*0.25);
+  document.getElementById("Specialtext_Code").width=Math.round(window.innerWidth*0.8);
+  document.getElementById("Bilderlink_Blöcke").width=Math.round(window.innerWidth*0.25);
+  document.getElementById("Blumen").width=Math.round(window.innerWidth*0.35);
+  document.getElementById("head_design").width=Math.round(window.innerWidth*0.5);
 </script>
 </html>
+
