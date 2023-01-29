@@ -340,9 +340,7 @@
 
   //function die im Einleitung-Popup, sobald auf den Pfeil nach links geklickt wird, das vorherige Popup (popup[x].html) als Quelle lädt
   function showPopup(){
-    if (!popupFlag || popupFlag === 1){
-    }
-    else {
+
       if(popupFlag===1){
         document.getElementById("startPopupFrame").src="popup/popup1.html";
       }
@@ -368,20 +366,24 @@
         document.getElementById("startPopupFrame").src="popup/popup8.html";
         document.getElementById("startButton").style.display="block";
       }
-    }
+
   }
 
   //function die im Einleitung-Popup, sobald auf den Pfeil nach rechts geklickt wird, showPopup("next") aufruft
 
   function showNextPopup(){
-    popupFlag = popupFlag+1;
+    if(popupFlag!==8) {
+      popupFlag = popupFlag + 1;
+    }
     showPopup();
   }
 
   //function die im Einleitung-Popup, sobald auf den Pfeil nach links geklickt wird, showPopup("previous") aufruft
 
   function showPreviousPopup(){
-    popupFlag = popupFlag-1;
+    if(popupFlag!==1) {
+      popupFlag = popupFlag - 1;
+    }
     showPopup();
   }
 
