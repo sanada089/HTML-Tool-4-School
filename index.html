@@ -48,8 +48,8 @@
     <!-- Die Buttons neben dem Iframe oben rechts-->
     <div class="item5">
      <div id="CodeButtonDiv">
-       <button class="button" onclick=showTask()><img src="img/Ausrufezeichen.png" alt="Ausrufezeichen" /></button>
-       <button class="button" onclick=showHelp()><img src="img/Fragezeichen.png" alt="Fragezeichen" /></button>
+       <button class="button" onclick=showTask()><img src="img/Ausrufezeichen.png" id="Ausrufezeichen" alt="Ausrufezeichen" /></button>
+       <button class="button" onclick=showHelp()><img src="img/Fragezeichen.png"  id="Fragezeichen" alt="Fragezeichen" /></button>
      </div>
     </div>
 
@@ -106,17 +106,17 @@
   <!-- Die Buttons neben dem Iframe unten rechts-->
   <div class="item6">
     <div id="switchDiv">
-      <button class="button" onclick=showCode()><img src="img/Code.jpg" alt="Code" /></button>
-      <button class="button" onclick=showCurrentState()><img src="img/Vorschau.png" alt="Vorschau"/></button>
-      <button class="button" onclick=showPreview()><img src="img/Aufgabe.png" alt="Aufgabe"/></button>
+      <button class="button" onclick=showCode()><img src="img/Code.jpg" id="Code" alt="Code" /></button>
+      <button class="button" onclick=showCurrentState()><img src="img/Vorschau.png" id="Vorschau" alt="Vorschau"/></button>
+      <button class="button" onclick=showPreview()><img src="img/Aufgabe.png" id="Aufgabe" alt="Aufgabe"/></button>
     </div>
   </div>
 
   <!-- InfoButton + Impressum und Datenschutz Link-->
   <div class="item8">
     <div id="infoImpressumDiv">
-     <button class="buttonInfo" onclick="window.location.href = 'bastelecke.html';"><img src="img/buttonBastelecke.jpg" alt="bastelecke"/></button>
-      <button class="buttonInfo" onclick=showStartPopup()><img src="img/info.png" alt="info"/></button>
+     <button class="buttonInfo" onclick="window.location.href = 'bastelecke.html';"><img src="img/buttonBastelecke.jpg" id="Bastelecke" alt="bastelecke"/></button>
+      <button class="buttonInfo" onclick=showStartPopup()><img src="img/info.png" id="Info" alt="info"/></button>
       <a href="Impressum.html">Impressum</a>
     </div>
   </div>
@@ -152,6 +152,18 @@
   //Popup-Größe auf 40 Prozent der Breite und 60 Prozent der Höhe des Inneren des Fensters setzen
   document.getElementById("startPopupFrame").width=Math.round(window.innerWidth*0.40);
   document.getElementById("startPopupFrame").height=Math.round(window.innerHeight*0.60);
+
+  //Dynamisches Anpassen der in den Buttons benötigten Bilder
+  document.getElementById("close").width=Math.round(window.innerWidth*0.015);
+  document.getElementById("close").height=Math.round(window.innerHeight*0.03);
+  document.getElementById("Fragezeichen").width=Math.round(window.innerWidth*0.025);
+  document.getElementById("Ausrufezeichen").width=Math.round(window.innerWidth*0.025);
+  document.getElementById("Code").width=Math.round(window.innerWidth*0.025);
+  document.getElementById("Vorschau").width=Math.round(window.innerWidth*0.025);
+  document.getElementById("Aufgabe").width=Math.round(window.innerWidth*0.025);
+  document.getElementById("Bastelecke").width=Math.round(window.innerWidth*0.025);
+  document.getElementById("info").width=Math.round(window.innerWidth*0.025);
+
 
   //Anzeigen des Startpopups, der Aufgabe in der DidaktikDiv und des Codes in der CodePreviewDiv
   showStartPopup();
@@ -497,8 +509,8 @@
     showCode();
   }
 
-  document.getElementById("close").width=Math.round(window.innerWidth*0.015);
-  document.getElementById("close").height=Math.round(window.innerHeight*0.03);
+
+
 
 </script>
 </body>
