@@ -1,1 +1,1 @@
-Ein Tool sie zu knechten und alle zu finden
+A tool designed to learn HTML by using blockly and a tutor component consisting of levels
