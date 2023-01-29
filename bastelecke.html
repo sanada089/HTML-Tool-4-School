@@ -79,12 +79,8 @@
 
   //Erstellung des Parameters html, der im IFrame ausgegeben wird (wird in update() und switchPreview() benötigt)
   var html;
-  //previewCode ist die Vorschau der aktuell erwünschten Seite
-  var previewCode;
   //code ist der aktuell aus den Blocks erzeugte Code
   var code;
-  //codeFlag zeigt an, was gerade in der HTMLCodeDiv angezeigt werden soll
-  var codeFlag;
   //popupFlag zeigt, bei welchem Popup sich der User befindet
   var popupFlag=1;
 
@@ -106,10 +102,8 @@
   function update(){
     // Umwandlung des workspace zu HTML-Code via HTMLGenerator
     code = HtmlGenerator.workspaceToCode(workspace);
-    // Will der User gerade den Code sehen wird dieser aktualisiert in der HTMLCodeDiv
-    if(!codeFlag || codeFlag ===0){
-      showCode();
-    }
+    showCode();
+
 
     // Speichern des Zustandes des workspace in der localStorage des Browsers
     var xml = Blockly.Xml.workspaceToDom(workspace);
@@ -136,7 +130,6 @@
     const ifr = document.preview;
     ifr.document.write(htmlCode);
     ifr.document.close();
-    codeFlag=0;
   }
 
   //function die das Infopopup schließt (rotes X)
