@@ -56,7 +56,7 @@
   display: inline-block;
   cursor: pointer;
   text-align: center;
-  font-size: 18px;
+  font-size: 13px;
 }
 
 .box {
@@ -135,7 +135,7 @@
   border: none;
   background-color: #e1e1e1;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 40px;
   width: 5vw;
   height: 5vh;
 }
@@ -150,6 +150,7 @@
   font-family: Cambria, serif;
   font-size: 16px;
   align-content: center;
+  margin-right: 2px;
 }
 
 #blocklyDiv {
