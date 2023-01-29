@@ -66,7 +66,7 @@
   border-style: dotted;
   border-width: medium;
   border-radius: 15px;
-  font-family: Arial;
+  font-family: Arial, serif;
   margin-bottom: 0.5vh;
 }
 
@@ -139,7 +139,7 @@
   cursor: pointer;
   display: grid;
   background-color: whitesmoke;
-  font-family: Cambria;
+  font-family: Cambria, serif;
   font-size: 16px;
   align-content: center;
 }
@@ -200,7 +200,7 @@
 #infoImpressumDiv{
   height: 6vh;
   width: 3vw;
-  font-family: Arial;
+  font-family: Arial, serif;
   font-size: 12px;
 }
 
